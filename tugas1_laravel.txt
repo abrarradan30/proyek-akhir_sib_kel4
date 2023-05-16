@@ -1,0 +1,11 @@
+1. Judul atau tema aplikasi 
+= Sistem Informasi Sewa Rumah Kost berbasis WEB
+
+2. Skenario singkat penjelasan aplikasi 
+= Pemilik kost : registrasi, login, mengolah data diri, mengolah data rumah Kost, melihat laporan pembayaran kost.
+Pencari : registrasi, login, mengolah data diri, mencari informasi rumah kost, melakukan pemesanan, melakukan pembayaran.
+admin : login, mengolah informasi rumah kost.
+
+3. Fitur-fitur apa saja yang akan ada didalam aplikasi
+= login, registrasi, data diri, pencarian kost, pesan kost, data kost (fasilitas kost, alamat kost, kontak pemilik kost),
+pembayaran kost, riwayat pemesanan, harga kost, rating, bantuan
