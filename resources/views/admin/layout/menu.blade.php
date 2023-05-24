@@ -21,7 +21,7 @@
                                     <a class="nav-link" href="{{url('admin/pelanggan')}}">Data Pelanggan</a>
                                     <a class="nav-link" href="{{url('admin/pembayaran')}}">Data Pembayaran</a>
                                     <a class="nav-link" href="{{url('admin/riwayat_pesanan')}}">Data Riwayat Pesanan</a>
-                                    <a class="nav-link" href="{{url('admin/user_kos')}}">Data User</a>
+                                    <a class="nav-link" href="{{url('admin/user')}}">Data User</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

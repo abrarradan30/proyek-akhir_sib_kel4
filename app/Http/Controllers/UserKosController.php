@@ -37,9 +37,10 @@ class UserKosController extends Controller
             'nama' => $request->nama,
             'username' => $request->username,
             'password' => $request->password,
-            'email' => $request->role,
+            'email' => $request->email,
+            'role' => $request->role,
         ]);
-        return redirect('admin/user_kos');
+        return redirect('admin/user');
     }
 
     /**

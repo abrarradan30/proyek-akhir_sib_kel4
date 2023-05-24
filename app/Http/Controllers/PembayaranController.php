@@ -24,6 +24,7 @@ class PembayaranController extends Controller
     public function create()
     {
         //
+        return view('admin.pembayaran.create');
     }
 
     /**
@@ -32,6 +33,13 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('pembayaran')->insert([
+            'no_kwitansi' => $request->no_kwitansi,
+            'tanggal'=> $request->tanggal,
+            'jumlah'=> $request->jumlah,
+            'status'=> $request->status,
+        ]);
+        return redirect('admin/pembayaran');
     }
 
     /**

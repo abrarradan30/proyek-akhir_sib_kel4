@@ -42,7 +42,7 @@ class RiwayatPesananController extends Controller
         ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
         ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
         ->get();
-        return view('admin.riwayat_pesanan.index', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
+        return view('admin.riwayat_pesanan.create', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
 
     }
 
@@ -59,7 +59,7 @@ class RiwayatPesananController extends Controller
             'total' => $request->total,
             'data_kos_id' => $request->data_kos_id,
             'pembayaran_id' => $request->pembayaran_id,
-            'pelanggan_id' => $request->pelanggan_id
+            'pelanggan_id' => $request->pelanggan_id,
         ]);
         return redirect('admin/riwayat_pesanan');
     }

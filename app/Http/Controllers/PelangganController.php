@@ -32,18 +32,17 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $pelanggan = new Pelanggan;
-        $pelanggan->nama = $request->name;
-        $pelanggan->username = $request->username;
-        $pelanggan->password = $request->password;
-        $pelanggan->email = $request->email;
-        $pelanggan->jk = $request->jk;
-        $pelanggan->telepon = $request->telepon;
-
-        if($pelanggan->save()){
-            return redirect(route('pelanggan.index'));
-        }
+        // fungsi untuk mengisi data pada form
+        DB::table('pelanggan')->insert([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->email,
+            'jk' => $request->jk,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat,
+        ]);
+        return redirect('admin/pelanggan');
     }
 
     /**
