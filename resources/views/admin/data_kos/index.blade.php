@@ -19,7 +19,7 @@
                 DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
 
-            <a href="#" class="btn btn-primary  btn-sm">Tambah</a>
+            <a href="{{url('admin/data_kos/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
         <div class="card-body">
@@ -76,7 +76,13 @@
                             <td>{{$dk->jenis_kos}}</td>
                             <td>{{$dk->fasilitas}}</td>
                             <td>{{$dk->luas_ruang}}</td>
-                            <td>{{$dk->gambar}}</td>
+                            <td>
+                                @empty($dk->gambar)
+                                <img src="{{url('admin/image/no-image.jpg')}}" width="50%">
+                                @else
+                                <img src="{{url('admin/image')}}/{{$dk->gambar}}" width="50%">
+                                @endempty
+                            </td>
                             <td>{{$dk->harga}}</td>
                             <td>{{$dk->deskripsi}}</td>
                             <td>{{$dk->kabupaten_kota}}</td>

@@ -25,6 +25,8 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function(){
 // route data kos
 Route::get('/data_kos',[DataKosController::class, 'index']);
+Route::get('/data_kos/create',[DataKosController::class, 'create']);
+Route::post('/data_kos/store', [DataKosController::class, 'store']);
 //route pelanggan
 Route::get('/pelanggan',[PelangganController::class, 'index']);
 // route pembayaran
