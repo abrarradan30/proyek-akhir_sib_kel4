@@ -30,7 +30,20 @@ class RiwayatPesananController extends Controller
      */
     public function create()
     {
-        //
+        // arahkan ke folder riwayat_pesanan
+        $data_kos = DB::table('data_kos')
+        ->join('pemilik_kos', 'data_kos.pemilik_kos_id', '=', 'pemilik_kos.id')
+        ->select('data_kos.*', 'pemilik_kos.nama as nama_pemilik_kos')
+        ->get(); 
+        $pelanggan = DB::table('pelanggan')->get();
+        $pembayaran = DB::table('pembayaran')->get();
+        $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
+        ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
+        ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
+        ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
+        ->get();
+        return view('admin.riwayat_pesanan.index', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
+
     }
 
     /**

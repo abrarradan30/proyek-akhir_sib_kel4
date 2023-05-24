@@ -22,9 +22,17 @@ use App\Http\Controllers\UserKosController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix('admin')->group(function(){
+// route data kos
 Route::get('/data_kos',[DataKosController::class, 'index']);
+//route pelanggan
 Route::get('/pelanggan',[PelangganController::class, 'index']);
+// route pembayaran
 Route::get('/pembayaran',[PembayaranController::class, 'index']);
+//route pemilik kos
 Route::get('/pemilik_kos',[PemilikKosController::class, 'index']);
+//route riwayat pesanan
 Route::get('/riwayat_pesanan',[RiwayatPesananController::class, 'index']);
+//route user
 Route::get('/user',[UserKosController::class, 'index']);
+});

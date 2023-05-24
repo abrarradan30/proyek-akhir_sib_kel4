@@ -23,7 +23,8 @@ class UserKosController extends Controller
      */
     public function create()
     {
-        //
+        // arahkan ke file create
+        return view('admin.user_kos.create');
     }
 
     /**
@@ -31,7 +32,11 @@ class UserKosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // fungsi untuk mengisi data pada form
+        DB::table('user')->insert([
+            'nama' => $request->nama,
+        ]);
+        return redirect('admin/user_kos');
     }
 
     /**
