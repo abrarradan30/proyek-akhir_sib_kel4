@@ -24,6 +24,7 @@ class PelangganController extends Controller
     public function create()
     {
         //
+        return view('admin.pelanggan.create');
     }
 
     /**
@@ -32,6 +33,17 @@ class PelangganController extends Controller
     public function store(Request $request)
     {
         //
+        $pelanggan = new Pelanggan;
+        $pelanggan->nama = $request->name;
+        $pelanggan->username = $request->username;
+        $pelanggan->password = $request->password;
+        $pelanggan->email = $request->email;
+        $pelanggan->jk = $request->jk;
+        $pelanggan->telepon = $request->telepon;
+
+        if($pelanggan->save()){
+            return redirect(route('pelanggan.index'));
+        }
     }
 
     /**

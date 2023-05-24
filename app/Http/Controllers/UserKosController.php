@@ -35,6 +35,9 @@ class UserKosController extends Controller
         // fungsi untuk mengisi data pada form
         DB::table('user')->insert([
             'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->role,
         ]);
         return redirect('admin/user_kos');
     }

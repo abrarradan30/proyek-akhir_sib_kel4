@@ -52,6 +52,16 @@ class RiwayatPesananController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('riwayat_pesanan')->insert([
+            'durasi_sewa' => $request->durasi_sewa,
+            'tanggal' => $request->tanggal,
+            'jumlah_kamar' => $request->jumlah_kamar,
+            'total' => $request->total,
+            'data_kos_id' => $request->data_kos_id,
+            'pembayaran_id' => $request->pembayaran_id,
+            'pelanggan_id' => $request->pelanggan_id
+        ]);
+        return redirect('admin/riwayat_pesanan');
     }
 
     /**
