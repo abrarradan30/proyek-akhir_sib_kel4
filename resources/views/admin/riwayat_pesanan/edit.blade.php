@@ -10,6 +10,7 @@
 <form method="POST" action="{{url('admin/riwayat_pesanan/update')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
+  <input type="hidden" name="id" value="{{$rp->id}}"/><br>
     <label for="text" class="col-4 col-form-label">Durasi Sewa</label> 
     <div class="col-8">
       <input id="text" name="durasi_sewa" type="text" class="form-control" value="{{$rp->durasi_sewa}}">
@@ -65,7 +66,7 @@
   </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Edit</button>
+      <button name="submit" type="submit" class="btn btn-primary">Update</button>
     </div>
   </div>
 </form>

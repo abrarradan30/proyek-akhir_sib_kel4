@@ -11,19 +11,19 @@
 {{csrf_field()}}
   <div class="form-group row">
   <input type="hidden" name="id" value="{{$py->id}}"/><br>
-    <label for="text1" class="col-4 col-form-label">{{$py->no_kwitansi}}</label> 
+    <label for="text1" class="col-4 col-form-label">{{$p->no_kwitansi}}</label> 
     <div class="col-8">
       <input id="text1" name="no_kwitansi" type="text" class="form-control" value="{{$py->no_kwitansi}}">
     </div>
   </div>
   <div class="form-group row">
-    <label for="text" class="col-4 col-form-label">{{$py->tanggal}}</label> 
+    <label for="text" class="col-4 col-form-label">{{$p->tanggal}}</label> 
     <div class="col-8">
       <input id="text" name="tanggal" type="date" class="form-control" value="{{$py->tanggal}}">
     </div>
   </div>
   <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">{{$py->jumlah}}</label> 
+    <label for="text2" class="col-4 col-form-label">{{$p->jumlah}}</label> 
     <div class="col-8">
       <input id="text2" name="jumlah" type="text" class="form-control" value="{{$py->jumlah}}">
     </div>
