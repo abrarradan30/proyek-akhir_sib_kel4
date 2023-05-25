@@ -58,7 +58,7 @@ class UserKosController extends Controller
     {
         //
         $user = DB::table('user')->where('id', $id)->get();
-        return view('admin.user.edit', compact('user'));
+        return view('admin.user_kos.edit', compact('user'));
     }
 
     /**

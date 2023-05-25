@@ -13,7 +13,6 @@
     <div class="col-8">
         <input id="text" name="nama" type="text" class="form-control" placeholder="Masukkan Nama">
       </div>
-    </div>
   </div>
   <div class="form-group row">
     <label for="text2" class="col-4 col-form-label">Username</label> 
