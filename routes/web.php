@@ -22,7 +22,6 @@ use App\Http\Controllers\UserKosController;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::prefix('admin')->group(function(){
 // route data kos
 Route::get('/data_kos',[DataKosController::class, 'index']);

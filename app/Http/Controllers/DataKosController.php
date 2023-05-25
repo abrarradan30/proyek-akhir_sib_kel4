@@ -89,6 +89,7 @@ class DataKosController extends Controller
         $data_kos = DB::table('data_kos')->where('id', $id)->get();
 
         return view('admin.data_kos.edit', compact('data_kos', 'pemilik_kos'));
+
     }
 
     /**

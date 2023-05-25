@@ -42,8 +42,8 @@ class RiwayatPesananController extends Controller
         ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
         ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
         ->get();
-        return view('admin.riwayat_pesanan.create', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
 
+        return view('admin.riwayat_pesanan.create', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
     }
 
     /**
@@ -91,6 +91,7 @@ class RiwayatPesananController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request)
     {
         //

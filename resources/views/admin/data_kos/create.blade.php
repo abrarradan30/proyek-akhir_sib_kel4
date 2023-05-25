@@ -6,7 +6,6 @@
 
     <br>
     <h1 align="center"> Form Tambah Data Kos </h2>
-
     <form method="POST" action="{{url('admin/data_kos/store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group row">
@@ -115,4 +114,3 @@
         </div>
     </form>
 @endsection
-

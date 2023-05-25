@@ -98,9 +98,11 @@
                                     <a href="{{url('admin/data_kos/edit/'.$dk->id)}}"
                                         class="btn btn-warning btn-sm">Ubah</a>
 
+
                                     <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                         onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>
 
+                                    <input type="hidden" name="idx" value="">
                                 </form>
                             </td>
                         </tr>
