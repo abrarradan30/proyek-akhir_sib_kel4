@@ -24,6 +24,7 @@ class PelangganController extends Controller
     public function create()
     {
         //
+        return view('admin.pelanggan.create');
     }
 
     /**
@@ -31,7 +32,17 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // fungsi untuk mengisi data pada form
+        DB::table('pelanggan')->insert([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->email,
+            'jk' => $request->jk,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat,
+        ]);
+        return redirect('admin/pelanggan');
     }
 
     /**
