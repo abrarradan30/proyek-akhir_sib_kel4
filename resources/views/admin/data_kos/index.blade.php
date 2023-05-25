@@ -78,7 +78,7 @@
                             <td>{{$dk->luas_ruang}}</td>
                             <td>
                                 @empty($dk->gambar)
-                                <img src="{{url('admin/image/no-image.jpg')}}" width="50%">
+                                <img src="{{url('admin/image/nofoto.png')}}" width="50%">
                                 @else
                                 <img src="{{url('admin/image')}}/{{$dk->gambar}}" width="50%">
                                 @endempty

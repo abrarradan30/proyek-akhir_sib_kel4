@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <br>
+    <h1 align="center"> Form Tambah Data Kos </h2>
+
     <form method="POST" action="{{url('admin/data_kos/store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group row">
@@ -112,4 +114,7 @@
             </div>
         </div>
     </form>
+
+
 @endsection
+
