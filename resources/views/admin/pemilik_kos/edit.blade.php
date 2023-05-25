@@ -7,7 +7,7 @@
 <br>
 <h1 align="center"> Form Edit Pemilik Kos </h2>
 @foreach($pemilik_kos as $pk)
-<form method="POST" action="{{url('admin/pemilik_kos/store')}}" enctype="multipart/form-data">
+<form method="POST" action="{{url('admin/pemilik_kos/update')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
   <input type="hidden" name="id" value="{{$pk->id}}"/><br>
@@ -31,7 +31,7 @@
   <div class="form-group row">
     <label for="text3" class="col-4 col-form-label">Email</label> 
     <div class="col-8">
-      <input id="text3" name="email" type="text" class="form-control" value="{{$pk->email}}">
+      <input id="text3" name="email" type="email" class="form-control" value="{{$pk->email}}">
     </div>
   </div>
   <div class="form-group row">

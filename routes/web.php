@@ -38,10 +38,14 @@ Route::post('/pelanggan/store',[PelangganController::class, 'store']);
 Route::get('/pembayaran',[PembayaranController::class, 'index']);
 Route::get('/pembayaran/create',[PembayaranController::class, 'create']);
 Route::post('/pembayaran/store',[PembayaranController::class, 'store']);
+Route::get('/pembayaran/edit/{id}',[PembayaranController::class, 'edit']);
+Route::post('/pembayaran/update',[PembayaranController::class, 'update']);
 //route pemilik kos
 Route::get('/pemilik_kos',[PemilikKosController::class, 'index']);
 Route::get('/pemilik_kos/create',[PemilikKosController::class, 'create']);
 Route::post('/pemilik_kos/store',[PemilikKosController::class, 'store']);
+Route::get('/pemilik_kos/edit/{id}',[PemilikKosController::class, 'edit']);
+Route::post('/pemilik_kos/update',[PemilikKosController::class, 'update']);
 //route riwayat pesanan
 Route::get('/riwayat_pesanan',[RiwayatPesananController::class, 'index']);
 Route::get('/riwayat_pesanan/create',[RiwayatPesananController::class, 'create']);
