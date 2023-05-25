@@ -33,6 +33,9 @@ Route::get('/pelanggan',[PelangganController::class, 'index']);
 Route::get('/pembayaran',[PembayaranController::class, 'index']);
 Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
 Route::post('/pembayaran/store', [PembayaranController::class, 'store']);
+Route::get('/pembayaran/edit/{id}', [PembayaranController::class, 'edit']);
+Route::post('/pembayaran/update/', [PembayaranController::class, 'update']);
+
 //route pemilik kos
 Route::get('/pemilik_kos',[PemilikKosController::class, 'index']);
 //route riwayat pesanan
