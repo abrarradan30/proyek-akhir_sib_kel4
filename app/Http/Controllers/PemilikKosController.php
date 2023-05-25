@@ -58,15 +58,27 @@ class PemilikKosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //arahkan ke file edit yang ada di pemilikmkos view
+        $pemilik_kos = DB::table('pemilik_kos')->where('id', $id)->get();
+        return view('admin.pemilik_kos.edit', compact('pemilik_kos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        //Buat prose edit form
+        DB::table('pemilik_kos')->where('id', $request->id)->update([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->email,
+            'jk' => $request->jk,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+        ]);
+        return redirect('admin/pemilik_kos');
     }
 
     /**
