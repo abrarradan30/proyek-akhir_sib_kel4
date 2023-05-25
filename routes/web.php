@@ -28,7 +28,8 @@ Route::prefix('admin')->group(function(){
 Route::get('/data_kos',[DataKosController::class, 'index']);
 Route::get('/data_kos/create',[DataKosController::class, 'create']);
 Route::post('/data_kos/store',[DataKosController::class, 'store']);
-
+Route::get('/data_kos/edit/{id}',[DataKosController::class, 'edit']);
+Route::post('/data_kos/update',[DataKosController::class, 'update']);
 //route pelanggan
 Route::get('/pelanggan',[PelangganController::class, 'index']);
 Route::get('/pelanggan/create',[PelangganController::class, 'create']);
