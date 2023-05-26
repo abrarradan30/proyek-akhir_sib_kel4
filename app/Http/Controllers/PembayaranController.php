@@ -24,6 +24,7 @@ class PembayaranController extends Controller
     public function create()
     {
         //
+        return view('admin.pembayaran.create');
     }
 
     /**
@@ -32,11 +33,19 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('pembayaran')->insert([
+            'no_kwitansi' => $request->no_kwitansi,
+            'tanggal'=> $request->tanggal,
+            'jumlah'=> $request->jumlah,
+            'status'=> $request->status,
+        ]);
+        return redirect('admin/pembayaran');
     }
 
     /**
      * Display the specified resource.
      */
+
     public function show(string $id)
     {
         //
@@ -47,15 +56,25 @@ class PembayaranController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //arahkan ke file edit yang ada di pembayaran view
+        $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
+        return view('admin.pembayaran.edit', compact('pembayaran'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+
+    public function update(Request $request)
     {
-        //
+        //Buat prose edit form
+        DB::table('pembayaran')->where('id', $request->id)->update([
+            'no_kwitansi'=> $request->no_kwitansi,
+            'tanggal'=> $request->tanggal,
+            'jumlah'=> $request->jumlah,
+            'status'=> $request->status,
+        ]);
+        return redirect('admin/pembayaran');
     }
 
     /**

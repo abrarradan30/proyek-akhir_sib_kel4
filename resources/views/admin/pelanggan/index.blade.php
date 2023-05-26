@@ -19,35 +19,35 @@
                 DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
 
-            <a href="{{ route('pelanggan.create') }}" class="btn btn-primary  btn-sm">Tambah</a>
+            <a href="{{url('admin/pelanggan/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th class="text-center">No</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">Username</th>
-                        <th class="text-center">Password</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Jenis Kelamin</th>
-                        <th class="text-center">Telepon</th>
-                        <th class="text-center">Alamat</th>
-                        <th class="text-center">Action</th>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Telepon</th>
+                        <th>Alamat</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th class="text-center">No</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">Username</th>
-                        <th class="text-center">Password</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Jenis Kelamin</th>
-                        <th class="text-center">Telepon</th>
-                        <th class="text-center">Alamat</th>
-                        <th class="text-center">Action</th>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Telepon</th>
+                        <th>Alamat</th>
+                        <th>Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -65,17 +65,14 @@
                             <td>{{$p->telepon}}</td>
                             <td>{{$p->alamat}}</td>
                             <td>
-                                <form action="{{ route('pelanggan.destroy') }}" method="POST">
+                                <form action="{{url('admin/pelanggan/delete')}}" method="POST">
                                     @csrf
-                                    
-                                    @method('delete')
-
-                                    <a href="{{ route('pelanggan.edit',$p->id) }}" class="btn btn-warning btn-sm">Ubah</a>
+                                    <a href="{{url('admin/pelanggan/edit/'.$p->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                                     <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                         onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>
 
-                                    <input type="hidden" name="idx" value="{{ $p->id }}">
+                                    <input type="hidden" name="id" value="{{ $p->id }}">
                                 </form>
                             </td>
                         </tr>
