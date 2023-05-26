@@ -19,7 +19,7 @@
                 DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
 
-            <a href="#" class="btn btn-primary  btn-sm">Tambah</a>
+            <a href="{{url('admin/riwayat_pesanan/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
         <div class="card-body">
@@ -68,7 +68,7 @@
                                 <form action="#" method="POST">
                                     <a href="#" class="btn btn-info btn-sm">Detail</a>
 
-                                    <a href="#" class="btn btn-warning btn-sm">Ubah</a>
+                                    <a href="{{url('admin/riwayat_pesanan/edit/'.$rs->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                                     <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                         onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>

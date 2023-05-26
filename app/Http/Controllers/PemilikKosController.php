@@ -24,6 +24,7 @@ class PemilikKosController extends Controller
     public function create()
     {
         //
+        return view('admin.pemilik_kos.create');
     }
 
     /**
@@ -31,7 +32,17 @@ class PemilikKosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // fungsi untuk mengisi data pada form
+        DB::table('pemilik_kos')->insert([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->email,
+            'jk' => $request->jk,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+        ]);
+        return redirect('admin/pemilik_kos');
     }
 
     /**

@@ -24,7 +24,7 @@ class PembayaranController extends Controller
     public function create()
     {
         //
-        return view('admin/pembayaran.create');
+        return view('admin.pembayaran.create');
     }
 
     /**
@@ -45,7 +45,8 @@ class PembayaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+
+    public function show(string $id)
     {
         //
         $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
@@ -66,6 +67,7 @@ class PembayaranController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request)
     {
         //Buat prose edit form
