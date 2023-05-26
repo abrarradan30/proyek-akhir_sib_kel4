@@ -59,21 +59,36 @@ class PelangganController extends Controller
     public function edit(string $id)
     {
         //
+        $p = DB::table('pelanggan')->where('id', $id)->first();
+        return view('admin.pelanggan.update', compact('p'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+
+    public function update(Request $request)
     {
         //
+        DB::table('pelanggan')->where('id', $request->id)->update([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->email,
+            'jk' => $request->jk,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+        ]);
+
+        return redirect('admin/pelanggan');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        DB::table('pelanggan')->where('id', $request->id)->delete();
+        return redirect('admin/pelanggan');
     }
 }
