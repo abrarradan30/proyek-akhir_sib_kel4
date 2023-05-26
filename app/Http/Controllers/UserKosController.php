@@ -85,5 +85,7 @@ class UserKosController extends Controller
     public function destroy(string $id)
     {
         //
+        DB::table('user')->where('id', $id)->delete();
+        return redirect('admin/user');
     }
 }
