@@ -48,6 +48,9 @@ class PembayaranController extends Controller
     public function show($id)
     {
         //
+        $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
+
+        return view('admin.pembayaran.detail', compact('pembayaran'));
     }
 
     /**
@@ -81,5 +84,9 @@ class PembayaranController extends Controller
     public function destroy(string $id)
     {
         //
+        DB::table('pembayaran')->where('id', $id)->delete();
+
+        return redirect('admin/pembayaran');
+        
     }
 }
