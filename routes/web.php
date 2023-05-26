@@ -30,6 +30,8 @@ Route::get('/data_kos/create',[DataKosController::class, 'create']);
 Route::post('/data_kos/store',[DataKosController::class, 'store']);
 Route::get('/data_kos/edit/{id}',[DataKosController::class, 'edit']);
 Route::post('/data_kos/update',[DataKosController::class, 'update']);
+Route::get('/data_kos/show/{id}',[DataKosController::class, 'show']); 
+Route::get('/data_kos/delete/{id}',[DataKosController::class, 'destroy']);
 //route pelanggan
 Route::get('/pelanggan',[PelangganController::class, 'index']);
 Route::get('/pelanggan/create',[PelangganController::class, 'create']);
