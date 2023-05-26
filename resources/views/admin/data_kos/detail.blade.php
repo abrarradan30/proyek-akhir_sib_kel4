@@ -1,7 +1,7 @@
 @extends('admin.layout.appadmin')
 
 @section('content')
-    <h1 align="center">Detail Data Kos</h1>
+    {{-- <h1 align="center">Detail Data Kos</h1> --}}
     <br>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
