@@ -49,6 +49,8 @@ class UserKosController extends Controller
     public function show(string $id)
     {
         //
+        $user = DB::table('user')->where('id', $id)->get();
+        return view('admin.user_kos.detail', compact('user'));
     }
 
     /**

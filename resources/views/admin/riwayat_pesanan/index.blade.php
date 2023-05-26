@@ -66,14 +66,34 @@
                             <td>{{$rs->nama_pelanggan}}</td>
                             <td>
                                 <form action="#" method="POST">
-                                    <a href="#" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="{{url('admin/riwayat_pesanan/show/'.$rs->id)}}" class="btn btn-info btn-sm">Detail</a>
 
                                     <a href="{{url('admin/riwayat_pesanan/edit/'.$rs->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
-                                    <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
-                                        onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>
+                                    <!-- Modal -->
+                                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$rs->id}}">
+  Hapus
+</button>
 
-                                    <input type="hidden" name="idx" value="">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{$rs->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah anda yakin menghapus data ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a class="btn btn-danger" href="{{url('admin/riwayat_pesanan/delete/'.$rs->id)}}">Hapus</a>
+      </div>
+    </div>
+  </div>
+</div>
                                 </form>
                             </td>
                         </tr>

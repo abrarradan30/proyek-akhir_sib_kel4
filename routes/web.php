@@ -34,6 +34,7 @@ Route::post('/data_kos/update',[DataKosController::class, 'update']);
 Route::get('/pelanggan',[PelangganController::class, 'index']);
 Route::get('/pelanggan/create',[PelangganController::class, 'create']);
 Route::post('/pelanggan/store',[PelangganController::class, 'store']);
+Route::post('/pelanggan/update',[PembayaranController::class, 'update']);
 // route pembayaran
 Route::get('/pembayaran',[PembayaranController::class, 'index']);
 Route::get('/pembayaran/create',[PembayaranController::class, 'create']);
@@ -52,10 +53,14 @@ Route::get('/riwayat_pesanan/create',[RiwayatPesananController::class, 'create']
 Route::post('/riwayat_pesanan/store',[RiwayatPesananController::class, 'store']);
 Route::get('/riwayat_pesanan/edit/{id}',[RiwayatPesananController::class, 'edit']);
 Route::post('/riwayat_pesanan/update',[RiwayatPesananController::class, 'update']);
+Route::get('/riwayat_pesanan/show/{id}',[DivisiController::class, 'show']);
+Route::get('/riwayat_pesanan/delete/{id}',[DivisiController::class, 'destroy']);
 //route user
 Route::get('/user',[UserKosController::class, 'index']);
 Route::get('/user/create',[UserKosController::class, 'create']);
 Route::post('/user/store',[UserKosController::class, 'store']);
 Route::get('/user/edit/{id}',[UserKosController::class, 'edit']);
 Route::post('/user/update',[UserKosController::class, 'update']);
+Route::get('/user/show/{id}',[DivisiController::class, 'show']);
+Route::get('/user/delete/{id}',[DivisiController::class, 'destroy']);
 });
