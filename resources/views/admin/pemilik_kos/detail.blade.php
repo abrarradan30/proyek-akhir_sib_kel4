@@ -1,26 +1,26 @@
-@extends('admin/layout.appadmin')
+@extends('admin.layout.appadmin')
 @section('content')
 
-<h1>Details</h1>
+<h1>Details Pemilik Kos</h1>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 <div class="container">
     <div class="row">
         <div class="col-md-5">
             <div class="project-info-box mt-0">
-                <h5>PROJECT DETAILS</h5>
+            @foreach($pemilik_kos as $pk)
+                <h5>PEMILIK KOS DETAILS</h5>
                 <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p>
             </div>
-            <input type="hidden" value="{{$d->id}}" />
+            <input type="hidden" value="{{$pk->id}}" />
             <div class="project-info-box">
-                <p><b>Nama:</b>{{$d->nama}}</p>
-                <p><b>username:</b> {{$d->username}}</p>
-                <p><b>Password:</b>{{$d->password}}</p>
-                <p><b>Email:</b> {{$d->email}}</p>
-                <p><b>Jenis Kelamin:</b> {{$d->jk}}</p>
-                <p><b>Alamat:</b> {{$d->alamat}}</p>
-                <p><b>Telepon:</b> {{$d->telepon}}</p>
-                <p class="mb-0"><b>Budget:</b> $500</p>
+                <p><b>Nama:</b>{{$pk->nama}}</p>
+                <p><b>username:</b> {{$pk->username}}</p>
+                <p><b>Password:</b>{{$pk->password}}</p>
+                <p><b>Email:</b> {{$pk->email}}</p>
+                <p><b>Jenis Kelamin:</b> {{$pk->jk}}</p>
+                <p><b>Alamat:</b> {{$pk->alamat}}</p>
+                <p><b>Telepon:</b> {{$pk->telepon}}</p>
             </div>
             <div class="project-info-box mt-0 mb-0">
                 <p class="mb-0">
@@ -33,7 +33,6 @@
             </div>
         </div>
         <div class="col-md-7">
-            <img src="https://www.bootdey.com/image/400x300/FFB6C1/000000" alt="project-image" class="rounded">
             <div class="project-info-box">
                 <p><b>Pemilik Kos:</b>{{$pk->nama}}</p>
                 <a href="{{url('admin/pemilik_kos')}}">
@@ -48,7 +47,6 @@
 <script type="text/javascript">
 
 </script>
-
-
+@endforeach
 
 @endsection

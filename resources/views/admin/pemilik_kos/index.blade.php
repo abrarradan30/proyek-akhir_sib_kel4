@@ -71,7 +71,7 @@
                             <a href="{{url('admin/pemilik_kos/edit/'.$pk->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Hapus
                             </button>
 
@@ -87,8 +87,8 @@
                                             Apakah Anda Yakin Akan Menghapus Data?
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                                            <a herf="{{url('admin/pemilik_kos/delete/'.$d->id)}}" class="btn btn-danger">Hapus</a>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <a herf="{{url('admin/pemilik_kos/delete/'.$pk->id)}}" class="btn btn-danger">Hapus</a>
                                         </div>
                                     </div>
                                 </div>

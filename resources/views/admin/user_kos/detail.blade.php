@@ -12,13 +12,13 @@
 <h5>USER DETAILS</h5>
 <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p>
 </div>
-<input type="hidden" value="{{$p->id}}"/>
+<input type="hidden" value="{{$u->id}}"/>
 <div class="project-info-box">
-<p><b>Nama:</b> {{$p->nip}}</p>
-<p><b>Username:</b> {{$p->nama}}</p>
-<p><b>Password:</b> {{$p->tgl_lahir}}</p>
-<p><b>Email:</b> {{$p->gender}}</p>
-<p><b>Role:</b> {{$p->tmp_lahir}}</p>
+<p><b>Nama:</b> {{$u->nama}}</p>
+<p><b>Username:</b> {{$u->username}}</p>
+<p><b>Password:</b> {{$u->password}}</p>
+<p><b>Email:</b> {{$u->email}}</p>
+<p><b>Role:</b> {{$u->role}}</p>
 </div>
 <div class="project-info-box mt-0 mb-0">
 <p class="mb-0">

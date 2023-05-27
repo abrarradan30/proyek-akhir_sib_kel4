@@ -1,7 +1,6 @@
 @extends('admin.layout.appadmin')
 
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <h1 class="mt-4">Tables Pembayaran</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -58,7 +57,7 @@
                             <td>{{$py->status}}</td>
                             <td>
                                 <form action="#" method="POST">
-                                    <a class="btn btn-info btn-sm" href="{{url('admin/pembayaran/show/'.$py->id)}}">Detail</a>
+                                    <a href="{{url('admin/pembayaran/show/'.$py->id)}}" class="btn btn-info btn-sm">Detail</a>
 
                                     <a href="{{url('admin/pembayaran/edit/'.$py->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
@@ -86,12 +85,6 @@
     </div>
   </div>
 </div>
-                                        
-                                    
-
-
-
-                                    <input type="hidden" name="idx" value="">
                                 </form>
                             </td>
                         </tr>

@@ -60,7 +60,7 @@
                             <td>{{$u->role}}</td>
                             <td>
                                 <form action="#" method="POST">
-                                    <a href="{{url('admi/user/show/'.$u->id)}}" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="{{url('admin/user/show/'.$u->id)}}" class="btn btn-info btn-sm">Detail</a>
 
                                     <a href="{{url('admin/user/edit/'.$u->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 

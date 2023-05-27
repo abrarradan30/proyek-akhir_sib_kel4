@@ -48,10 +48,11 @@ class PemilikKosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show($id)
     {
         //
-        return view('admin.pemilik_kos.detail');
+        $pemilik_kos =  DB::table('pemilik_kos')->where('id', $id)->get();
+        return view('admin.pemilik_kos.detail', compact('pemilik_kos'));
     }
 
     /**

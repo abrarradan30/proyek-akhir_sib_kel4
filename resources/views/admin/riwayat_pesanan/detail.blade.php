@@ -12,15 +12,15 @@
 <h5>RIWAYAT PESANAN DETAILS</h5>
 <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p>
 </div>
-<input type="hidden" value="{{$p->id}}"/>
+<input type="hidden" value="{{$rp->id}}"/>
 <div class="project-info-box">
 <p><b>Durasi Sewa:</b> {{$rp->durasi_sewa}}</p>
 <p><b>Tanggal:</b> {{$rp->tanggal}}</p>
 <p><b>Jumlah Kamar:</b> {{$rp->jumlah_kamar}}</p>
 <p><b>Total:</b> {{$rp->total}}</p>
-<p><b>Nama Kos:</b> {{$rp->data_kos_id}}</p>
-<p><b>Status Pembayaran:</b> {{$p->pembayaran_id}}</p>
-<p><b>Nama Pelanggan:</b> {{$p->pelanggan_id}}</p>
+<p><b>Nama Kos:</b> {{$rp->nama_kos}}</p>
+<p><b>Status Pembayaran:</b> {{$rp->status_pembayaran}}</p>
+<p><b>Nama Pelanggan:</b> {{$rp->nama_pelanggan}}</p>
 </div>
 <div class="project-info-box mt-0 mb-0">
 <p class="mb-0">
@@ -34,7 +34,7 @@
 </div>
 <div class="col-md-7">
 <div class="project-info-box">
-<a href="{{url('admin/pegawai')}}">
+<a href="{{url('admin/riwayat_pesanan')}}">
     <button class="btn btn-primary btn-lg"> Back </button>
 </a>
 </div>
