@@ -5,26 +5,26 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <br>
-<h1 align="center"> Form EditPelanggan </h2>
+<h1 align="center"> Form Edit Pelanggan </h2>
 <form method="POST" action="{{url('admin/pelanggan/update')}}" enctype="multipart/form-data">
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{ $p->id }}">
   <div class="form-group row">
     <label for="text" class="col-4 col-form-label">Nama</label> 
     <div class="col-8">
-      <input id="text" name="nama" type="text" class="form-control" placeholder="Masukkan Nama" value="{{ $p->nama }}">
+      <input id="text" name="nama" type="text" class="form-control" value="{{ $p->nama }}">
     </div>
   </div>
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Username</label> 
     <div class="col-8">
-      <input id="text1" name="username" type="text" class="form-control" placeholder="Masukkan Username" value="{{ $p->username }}">
+      <input id="text1" name="username" type="text" class="form-control" value="{{ $p->username }}">
     </div>
   </div>
   <div class="form-group row">
     <label for="text2" class="col-4 col-form-label">Password</label> 
     <div class="col-8">
-      <input id="text2" name="password" type="text" class="form-control" placeholder="Masukkan Password" value="{{ $p->password }}">
+      <input id="text2" name="password" type="text" class="form-control" value="{{ $p->password }}">
     </div>
   </div>
   <div class="form-group row">
@@ -49,7 +49,7 @@
   <div class="form-group row">
     <label for="text4" class="col-4 col-form-label">Telepon</label> 
     <div class="col-8">
-      <input id="text4" name="telepon" type="text" class="form-control" placeholder="ex : 082xxxxxxxxx" value="{{ $p->telepon }}">
+      <input id="text4" name="telepon" type="text" class="form-control" value="{{ $p->telepon }}">
     </div>
   </div>
   <div class="form-group row">
