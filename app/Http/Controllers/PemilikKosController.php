@@ -48,9 +48,10 @@ class PemilikKosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
         //
+        return view('admin.pemilik_kos.detail');
     }
 
     /**
@@ -87,5 +88,7 @@ class PemilikKosController extends Controller
     public function destroy(string $id)
     {
         //
+        DB::table('pemilik_kos')->where('id', $id)->delete();
+        return redirect('admin/pemilik_kos');
     }
 }

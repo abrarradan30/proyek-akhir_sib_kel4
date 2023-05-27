@@ -53,6 +53,8 @@ Route::get('/pemilik_kos/create',[PemilikKosController::class, 'create']);
 Route::post('/pemilik_kos/store',[PemilikKosController::class, 'store']);
 Route::get('/pemilik_kos/edit/{id}',[PemilikKosController::class, 'edit']);
 Route::post('/pemilik_kos/update',[PemilikKosController::class, 'update']);
+Route::get('/pemilik_kos/show/{id}', [PemilikKosController::class, 'show']);
+Route::get('/pemilik_kos/delete/{id}', [PemilikKosController::class, 'destroy']);
 //route riwayat pesanan
 Route::get('/riwayat_pesanan',[RiwayatPesananController::class, 'index']);
 Route::get('/riwayat_pesanan/create',[RiwayatPesananController::class, 'create']);
