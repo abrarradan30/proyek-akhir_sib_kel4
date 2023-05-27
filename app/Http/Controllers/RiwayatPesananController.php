@@ -70,6 +70,14 @@ class RiwayatPesananController extends Controller
     public function show(string $id)
     {
         //
+        $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
+        ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
+        ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
+        ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
+        ->where('riwayat_pesanan.id', $id)
+        ->get();
+
+        return view('admin.riwayat_pesanan.detail', compact('riwayat_pesanan'));
     }
 
     /**
@@ -85,7 +93,7 @@ class RiwayatPesananController extends Controller
         $pelanggan = DB::table('pelanggan')->get();
         $pembayaran = DB::table('pembayaran')->get();
         $riwayat_pesanan = DB::table('riwayat_pesanan')->where('id', $id)->get();
-        return view('admin.riwayat_pesanan.edit', compact('riwayat_pesanan'));
+        return view('admin.riwayat_pesanan.edit', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
     }
 
     /**
@@ -113,5 +121,7 @@ class RiwayatPesananController extends Controller
     public function destroy(string $id)
     {
         //
+        DB::table('riwayat_pesanan')->where('id', $id)->delete();
+        return redirect('admin/riwayat_pesanan');
     }
 }

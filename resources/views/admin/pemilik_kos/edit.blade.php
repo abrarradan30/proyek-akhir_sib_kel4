@@ -5,31 +5,33 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <br>
-<h1 align="center"> Form Tambah Pelanggan </h2>
-<form method="POST" action="{{url('admin/pelanggan/store')}}" enctype="multipart/form-data">
+<h1 align="center"> Form Edit Pemilik Kos </h2>
+@foreach($pemilik_kos as $pk)
+<form method="POST" action="{{url('admin/pemilik_kos/update')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
+  <input type="hidden" name="id" value="{{$pk->id}}"/><br>
     <label for="text" class="col-4 col-form-label">Nama</label> 
     <div class="col-8">
-      <input id="text" name="nama" type="text" class="form-control" placeholder="Masukkan Nama">
+      <input id="text" name="nama" type="text" class="form-control" value="{{$pk->nama}}">
     </div>
   </div>
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Username</label> 
     <div class="col-8">
-      <input id="text1" name="username" type="text" class="form-control" placeholder="Masukkan Username">
+      <input id="text1" name="username" type="text" class="form-control" value="{{$pk->username}}">
     </div>
   </div>
   <div class="form-group row">
     <label for="text2" class="col-4 col-form-label">Password</label> 
     <div class="col-8">
-      <input id="text2" name="password" type="text" class="form-control" placeholder="Masukkan Password">
+      <input id="text2" name="password" type="text" class="form-control" value="{{$pk->password}}">
     </div>
   </div>
   <div class="form-group row">
     <label for="text3" class="col-4 col-form-label">Email</label> 
     <div class="col-8">
-      <input id="text3" name="email" type="email" class="form-control">
+      <input id="text3" name="email" type="email" class="form-control" value="{{$pk->email}}">
     </div>
   </div>
   <div class="form-group row">
@@ -46,22 +48,22 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="text4" class="col-4 col-form-label">Telepon</label> 
+    <label for="textarea" class="col-4 col-form-label">Alamat</label> 
     <div class="col-8">
-      <input id="text4" name="telepon" type="text" class="form-control" placeholder="ex : 082xxxxxxxxx">
+      <textarea id="textarea" name="alamat" cols="40" rows="5" class="form-control">{{$pk->alamat}}</textarea>
     </div>
   </div>
   <div class="form-group row">
-    <label for="textarea" class="col-4 col-form-label">Alamat</label> 
+    <label for="text4" class="col-4 col-form-label">Telepon</label> 
     <div class="col-8">
-      <textarea id="textarea" name="alamat" cols="40" rows="5" class="form-control"></textarea>
+      <input id="text4" name="telepon" type="text" class="form-control" value="{{$pk->telepon}}">
     </div>
-  </div> 
+  </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+      <button name="submit" type="submit" class="btn btn-primary">Update</button>
     </div>
   </div>
 </form>
-
+@endforeach
 @endsection

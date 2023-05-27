@@ -60,7 +60,7 @@
                                 <form action="#" method="POST">
                                     <a class="btn btn-info btn-sm" href="{{url('admin/pembayaran/show/'.$py->id)}}">Detail</a>
 
-                                    <a href="#" class="btn btn-warning btn-sm">Ubah</a>
+                                    <a href="{{url('admin/pembayaran/edit/'.$py->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                                     <!-- <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                         onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button> -->

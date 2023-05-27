@@ -68,7 +68,7 @@
                                 <form action="#" method="POST">
                                     <a href="#" class="btn btn-info btn-sm">Detail</a>
 
-                                    <a href="#" class="btn btn-warning btn-sm">Ubah</a>
+                                    <a href="{{url('admin/pemilik_kos/edit/'.$pk->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                                     <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                         onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>

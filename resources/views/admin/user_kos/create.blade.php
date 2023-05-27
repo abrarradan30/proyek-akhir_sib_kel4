@@ -13,7 +13,6 @@
     <div class="col-8">
         <input id="text" name="nama" type="text" class="form-control" placeholder="Masukkan Nama">
       </div>
-    </div>
   </div>
   <div class="form-group row">
     <label for="text2" class="col-4 col-form-label">Username</label> 
@@ -30,7 +29,7 @@
   <div class="form-group row">
     <label for="text3" class="col-4 col-form-label">Email</label> 
     <div class="col-8">
-      <input id="text3" name="email" type="text" class="form-control">
+      <input id="text3" name="email" type="email" class="form-control">
     </div>
   </div>
   <div class="form-group row">

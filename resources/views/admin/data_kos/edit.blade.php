@@ -14,15 +14,13 @@
                     <input type="hidden" name="id" value="{{ $dk->id }}">
                     <label for="text" class="col-4 col-form-label">Nama Kos</label>
                     <div class="col-8">
-                        <input id="text" name="nama_kos" type="text" class="form-control"
-                            value="{{ $dk->nama_kos }}" placeholder="Masukkan Nama Kos">
+                        <input id="text" name="nama_kos" type="text" class="form-control" value="{{ $dk->nama_kos }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="text1" class="col-4 col-form-label">Nomor Kamar</label>
                     <div class="col-8">
-                        <input id="text1" name="no_kamar" type="text" class="form-control"
-                            value="{{ $dk->no_kamar }}" placeholder="Masukkan Nomor Kamar">
+                        <input id="text1" name="no_kamar" type="text" class="form-control" value="{{ $dk->no_kamar }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -48,15 +46,13 @@
                 <div class="form-group row">
                     <label for="textarea" class="col-4 col-form-label">Fasilitas</label>
                     <div class="col-8">
-                        <textarea id="textarea" name="fasilitas" cols="40" rows="5" class="form-control"
-                            value="{{ $dk->fasilitas }}" placeholder="Tambahkan Fasilitas Yang Ada di Kos"></textarea>
+                        <textarea id="textarea" name="fasilitas" cols="40" rows="5" class="form-control">{{ $dk->fasilitas }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="text2" class="col-4 col-form-label">Luas Ruang</label>
                     <div class="col-8">
-                        <input id="text2" name="luas_ruang" type="text" class="form-control"
-                            value="{{ $dk->luas_ruang }}" placeholder="ex: 3x3m">
+                        <input id="text2" name="luas_ruang" type="text" class="form-control" value="{{ $dk->luas_ruang }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -75,50 +71,43 @@
                 <div class="form-group row">
                     <label for="text4" class="col-4 col-form-label">Harga</label>
                     <div class="col-8">
-                        <input id="text4" name="harga" type="text" class="form-control"
-                            value="{{ $dk->harga }}" placeholder="Masukkan Harga Kos">
+                        <input id="text4" name="harga" type="text" class="form-control" value="{{ $dk->harga }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="textarea1" class="col-4 col-form-label">Deskripsi</label>
                     <div class="col-8">
-                        <textarea id="textarea1" name="deskripsi" cols="40" rows="5" class="form-control"
-                            value="{{ $dk->deskripsi }}" placeholder="Tambahkan Deskripsi Kos"></textarea>
+                        <textarea id="textarea1" name="deskripsi" cols="40" rows="5" class="form-control">{{ $dk->deskripsi }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="text5" class="col-4 col-form-label">Kabupaten/Kota</label>
                     <div class="col-8">
-                        <input id="text5" name="kabupaten_kota" type="text" class="form-control"
-                            value="{{ $dk->kabupaten_kota }}" placeholder="ex: Kota Malang">
+                        <input id="text5" name="kabupaten_kota" type="text" class="form-control" value="{{ $dk->kabupaten_kota }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="text6" class="col-4 col-form-label">Kecamatan</label>
                     <div class="col-8">
-                        <input id="text6" name="kecamatan" type="text" class="form-control"
-                            value="{{ $dk->kecamatan }}" placeholder="ex: Sukun">
+                        <input id="text6" name="kecamatan" type="text" class="form-control" value="{{ $dk->kecamatan }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="textarea2" class="col-4 col-form-label">Jalan</label>
                     <div class="col-8">
-                        <textarea id="textarea2" name="jalan" cols="40" rows="5" class="form-control"
-                            value="{{ $dk->jalan }}" placeholder="Masukkan Nama Jalan Dengan Lengkap"></textarea>
+                        <textarea id="textarea2" name="jalan" cols="40" rows="5" class="form-control">{{ $dk->jalan }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="text7" class="col-4 col-form-label">Kode Pos</label>
                     <div class="col-8">
-                        <input id="text7" name="kode_pos" type="text" class="form-control"
-                            value="{{ $dk->kode_pos }}" placeholder="Masukkan Kode Pos">
+                        <input id="text7" name="kode_pos" type="text" class="form-control" value="{{ $dk->kode_pos }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="text8" class="col-4 col-form-label">Telepon</label>
                     <div class="col-8">
-                        <input id="text8" name="telepon" type="text" class="form-control"
-                            value="{{ $dk->telepon }}" placeholder="Masukkan Nomor Telepon Aktif">
+                        <input id="text8" name="telepon" type="text" class="form-control" value="{{ $dk->telepon }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -133,7 +122,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="offset-4 col-8">
-                        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                        <button name="submit" type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </div>
             </form>
