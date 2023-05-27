@@ -41,10 +41,12 @@ Route::post('/pelanggan/update',[PelangganController::class, 'update']);
 Route::post('/pelanggan/delete/{id}',[PelangganController::class, 'destroy']);
 // route pembayaran
 Route::get('/pembayaran',[PembayaranController::class, 'index']);
-Route::get('/pembayaran/create',[PembayaranController::class, 'create']);
-Route::post('/pembayaran/store',[PembayaranController::class, 'store']);
-Route::get('/pembayaran/edit/{id}',[PembayaranController::class, 'edit']);
-Route::post('/pembayaran/update',[PembayaranController::class, 'update']);
+Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
+Route::post('/pembayaran/store', [PembayaranController::class, 'store']);
+Route::get('/pembayaran/edit/{id}', [PembayaranController::class, 'edit']);
+Route::post('/pembayaran/update/', [PembayaranController::class, 'update']);
+Route::get('/pembayaran/show/{id}', [PembayaranController::class, 'show']);
+Route::get('/pembayaran/delete/{id}', [PembayaranController::class, 'destroy']);
 //route pemilik kos
 Route::get('/pemilik_kos',[PemilikKosController::class, 'index']);
 Route::get('/pemilik_kos/create',[PemilikKosController::class, 'create']);
