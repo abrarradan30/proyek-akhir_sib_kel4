@@ -8,15 +8,15 @@
     </ol>
     <div class="card mb-4">
         <!-- <div class="card-body">
-                        DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                        <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                        .
-                    </div> -->
+                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                .
+                            </div> -->
     </div>
     <div class="card mb-4">
         <div class="card-header">
             <!-- <i class="fas fa-table me-1"></i>
-                    DataTable Example -->
+                            DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
 
             <a href="{{ url('admin/data_kos/create') }}" class="btn btn-primary  btn-sm">Tambah</a>
@@ -93,16 +93,42 @@
                             <td>{{ $dk->nama_pemilik_kos }}</td>
                             <td>
                                 <form action="#" method="POST">
-                                    <a href="#" class="btn btn-info btn-sm">Detail</a>
-
-                                    <a href="{{url('admin/data_kos/edit/'.$dk->id)}}"
+                                    {{-- Detail --}}
+                                    <a href="{{ url('admin/data_kos/show/' . $dk->id) }}"
+                                        class="btn btn-info btn-sm">Detail</a>
+                                    {{-- Ubah --}}
+                                    <a href="{{ url('admin/data_kos/edit/' . $dk->id) }}"
                                         class="btn btn-warning btn-sm">Ubah</a>
+                                    {{-- Hapus --}}
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal{{ $dk->id }}">
+                                        Hapus
+                                    </button>
 
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal{{ $dk->id }}" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah anda yakin akan menghapus data?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <a href="{{ url('admin/data_kos/delete/' . $dk->id) }}"
+                                                        class="btn btn-danger">Hapus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
-                                        onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>
-
-                                    <input type="hidden" name="idx" value="">
                                 </form>
                             </td>
                         </tr>

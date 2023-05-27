@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataKos;
 use App\Models\PemilikKos;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 
 class DataKosController extends Controller
 {
@@ -73,9 +74,16 @@ class DataKosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         //
+        $data_kos = DB::table('data_kos')
+        ->join('pemilik_kos', 'data_kos.pemilik_kos_id', '=', 'pemilik_kos.id')
+        ->select('data_kos.*', 'pemilik_kos.nama as nama_pemilik_kos')
+        ->where('data_kos.id', $id)
+        ->get(); 
+
+        return view('admin.data_kos.detail', compact('data_kos'));
     }
 
     /**
@@ -119,6 +127,7 @@ class DataKosController extends Controller
             'telepon'        => $request->telepon,
             'pemilik_kos_id' => $request->pemilik_kos_id,
         ]);
+        
         return redirect('admin/data_kos');
     }
 
@@ -128,5 +137,8 @@ class DataKosController extends Controller
     public function destroy(string $id)
     {
         //
+        DB::table('data_kos')->where('id', $id)->delete();
+
+        return redirect('admin/data_kos');
     }
 }
