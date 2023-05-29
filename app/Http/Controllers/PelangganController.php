@@ -48,9 +48,11 @@ class PelangganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $pelanggan = DB::table('pelanggan')->where('id', $id)->get();
+        // dd($pelanggan);
+        return view('admin.pelanggan.detail', compact('pelanggan'));
     }
 
     /**
