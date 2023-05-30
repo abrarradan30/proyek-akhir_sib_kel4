@@ -77,6 +77,15 @@
                                     <div class="card-body"><canvas id="pieChartRole" width="100%" height="50"></canvas></div>
                                 </div>
                             </div>
+                            <div class="col-xl-6">
+                              <div class="card mb-4">
+                                <div class="card-header">
+                                  <i class="fas fa-chart-bar me-1"></i>
+                                     Harga Kos
+                                  </div>
+                                  <div class="card-body"><canvas id="barChartHarga" widtHargah="100%" height="40"></canvas></div>
+                              </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-6">
@@ -90,6 +99,53 @@
                                 </div>
                             </div>
                         </div>
+<script>
+var lbl_harga = [@foreach($ar_harga as $hrg) '{{$hrg->nama_kos}}',@endforeach ];
+var hrg = [@foreach($ar_harga as $hrg) {{$hrg->harga}}, @endforeach ];
+document.addEventListener("DOMContentLoaded", () => {
+     new Chart (document.querySelector('#barChartHarga'), {
+type: 'bar',
+data: {
+labels: lbl_harga,
+datasets: [{
+    label: "Revenue",
+    backgroundColor: "rgba(2,117,216,1)",
+    borderColor: "rgba(2,117,216,1)",
+    data: hrg,
+}],
+},
+options: {
+    scales: {
+        xAxes: [{
+        time: {
+        unit: 'month'
+    },
+    gridLines: {
+        display: false
+    },
+    ticks: {
+        maxTicksLimit: 6
+    }
+    }],
+    yAxes: [{
+        ticks: {
+            min: 0,
+            max: 3000000,
+            maxTicksLimit: 5
+        },
+        gridLines: {
+            display: true
+        }
+        }],
+    },
+    legend: {
+        display: false
+    }
+}
+});
+});
+</script>
+
 <script>
 var lbl_role = [@foreach ($ar_role as $role) '{{$role->role}}', @endforeach];
 var jml_role = [@foreach ($ar_role as $role) {{$role->jumlah}}, @endforeach];
@@ -106,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 });
 </script>
+
 <script>
     var lbl_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) '{{$kab->kabupaten_kota}}', @endforeach];
     var jml_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) {{$kab->jumlah}}, @endforeach];
@@ -122,6 +179,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     });
     </script>
-
 
 @endsection
