@@ -24,15 +24,15 @@ class DashboardController extends Controller
         $pembayaran = Pembayaran::count();
         $pemilik_kos = PemilikKos::count();
         $riwayat_pesanan = RiwayatPesanan::count();
-        $user = UserKos::count
-        $harga = DB::table('data_kos')->select('nama_kos', 'harga')->get();
+        $user = UserKos::count();
+        $ar_harga = DB::table('data_kos')->select('nama_kos', 'harga')->get();
         $ar_role = DB::table('user')
         ->selectRaw('role, count(role) as jumlah')
         ->groupBy('role')
         ->get();
 
         return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
-        'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_role', 'harga'));
+        'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_role', 'ar_harga'));
     }
 
     /**
