@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataKos;
+use App\Models\Pelanggan;
+use App\Models\Pembayaran;
+use App\Models\PemilikKos;
+use App\Models\RiwayatPesanan;
 use App\Models\User;
 use DB;
 
@@ -14,7 +18,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        // diarahkan ke view dashboard
+        $data_kos = DataKos::count();
+        $pelanggan = Pelanggan::count();
+        $pembayaran = Pembayaran::count();
+        $pemilik_kos = PemilikKos::count();
+        $riwayat_pesanan = RiwayatPesanan::count();
+        $user = User::count();
     }
 
     /**
