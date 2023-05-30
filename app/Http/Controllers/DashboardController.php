@@ -8,7 +8,7 @@ use App\Models\Pelanggan;
 use App\Models\Pembayaran;
 use App\Models\PemilikKos;
 use App\Models\RiwayatPesanan;
-use App\Models\User;
+use App\Models\UserKos;
 use DB;
 
 class DashboardController extends Controller
@@ -24,7 +24,7 @@ class DashboardController extends Controller
         $pembayaran = Pembayaran::count();
         $pemilik_kos = PemilikKos::count();
         $riwayat_pesanan = RiwayatPesanan::count();
-        $user = User::count();
+        $user = UserKos::count();
 
         return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
         'pemilik_kos', 'riwayat_pesanan', 'user'));
