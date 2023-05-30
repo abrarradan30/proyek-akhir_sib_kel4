@@ -36,15 +36,15 @@
     <label class="col-4">Role</label> 
     <div class="col-8">
       <div class="custom-control custom-radio custom-control-inline">
-        <input name="role" id="radio_0" type="radio" class="custom-control-input" value="admin"> 
+        <input name="role" id="radio_0" type="radio" class="custom-control-input" value="Admin"> 
         <label for="radio_0" class="custom-control-label">Admin</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
-        <input name="role" id="radio_1" type="radio" class="custom-control-input" value="pemilik_kos"> 
+        <input name="role" id="radio_1" type="radio" class="custom-control-input" value="Pemilik Kos"> 
         <label for="radio_1" class="custom-control-label">Pemilik Kos</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
-        <input name="role" id="radio_2" type="radio" class="custom-control-input" value="pelanggan"> 
+        <input name="role" id="radio_2" type="radio" class="custom-control-input" value="Pelanggan"> 
         <label for="radio_2" class="custom-control-label">Pelanggan</label>
       </div>
     </div>

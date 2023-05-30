@@ -7,6 +7,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PemilikKosController;
 use App\Http\Controllers\RiwayatPesananController;
 use App\Http\Controllers\UserKosController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
