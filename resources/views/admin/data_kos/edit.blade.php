@@ -88,14 +88,14 @@
                     <label class="col-4">Kabupaten/Kota</label>
                     <div class="col-8">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input name="kabupaten_kota" id="radio_0" type="radio" class="custom-control-input"
+                            <input name="kabupaten_kota" id="radio1_0" type="radio" class="custom-control-input"
                                 value="Kabupaten Malang">
-                            <label for="radio_0" class="custom-control-label">Kabupaten Malang</label>
+                            <label for="radio1_0" class="custom-control-label">Kabupaten Malang</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input name="kabupaten_kota" id="radio_1" type="radio" class="custom-control-input"
+                            <input name="kabupaten_kota" id="radio1_1" type="radio" class="custom-control-input"
                                 value="Kota Malang">
-                            <label for="radio_1" class="custom-control-label">Kota Malang</label>
+                            <label for="radio1_1" class="custom-control-label">Kota Malang</label>
                         </div>
                     </div>
                 </div>
