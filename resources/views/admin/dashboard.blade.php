@@ -81,13 +81,12 @@
                               <div class="card mb-4">
                                 <div class="card-header">
                                   <i class="fas fa-chart-bar me-1"></i>
-                                     Harga Kos
+                                     Bar Chart Harga Kos
                                   </div>
                                   <div class="card-body"><canvas id="barChartHarga" widtHargah="100%" height="40"></canvas></div>
                               </div>
                             </div>
-                        </div>
-                        <div class="row">
+                            <br>
                             <div class="col-xl-6">
                                 <div class="card mb-4">
                                 <div class="card-header">
@@ -97,7 +96,6 @@
                                     <div class="card-body"><canvas id="pieChart" width="100%" height="50"></canvas></div>
                                 </div>
                             </div>
-                        </div>
                         <div class="col-xl-6">
                                 <div class="card mb-4">
                                 <div class="card-header">
@@ -107,7 +105,6 @@
                                     <div class="card-body"><canvas id="pieChartKabupatenKota" width="100%" height="50"></canvas></div>
                                 </div>
                             </div>
-                        </div>
 
 <script>
 var lbl_harga = [@foreach($ar_harga as $hrg) '{{$hrg->nama_kos}}',@endforeach ];
