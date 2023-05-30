@@ -90,12 +90,21 @@
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                <!-- paste pie    -->
                                 <div class="card-header">
                                         <i class="fas fa-chart-pie me-1"></i>
                                         Pie Chart Jenis Kos
                                     </div>
                                     <div class="card-body"><canvas id="pieChart" width="100%" height="50"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                                <div class="card mb-4">
+                                <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Pie Chart Kabupaten/Kota
+                                    </div>
+                                    <div class="card-body"><canvas id="pieChartKabupatenKota" width="100%" height="50"></canvas></div>
                                 </div>
                             </div>
                         </div>
@@ -163,6 +172,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
+    var lbl_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) '{{$kab->kabupaten_kota}}', @endforeach];
+    var jml_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) {{$kab->jumlah}}, @endforeach];
+    document.addEventListener("DOMContentLoaded", () => {
+        new Chart(document.querySelector('#pieChartKabupatenKota'), {
+        type: 'pie',
+      data: {
+        labels: lbl_kabupaten_kota,
+        datasets: [{
+          data: jml_kabupaten_kota,
+          backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
+        }],
+      },
+    });
+    });
+</script>
+<script>
 var lbl_role = [@foreach ($ar_role as $role) '{{$role->role}}', @endforeach];
 var jml_role = [@foreach ($ar_role as $role) {{$role->jumlah}}, @endforeach];
 document.addEventListener("DOMContentLoaded", () => {
@@ -178,4 +203,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 });
 </script>
+
 @endsection
