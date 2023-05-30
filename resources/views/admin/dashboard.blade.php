@@ -69,12 +69,11 @@
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                <!-- paste pie    -->
                                 <div class="card-header">
                                         <i class="fas fa-chart-pie me-1"></i>
-                                        Pie Chart Role User
+                                        Pie Chart Jenis Kos
                                     </div>
-                                    <div class="card-body"><canvas id="pieChartRole" width="100%" height="50"></canvas></div>
+                                    <div class="card-body"><canvas id="pieChart" width="100%" height="50"></canvas></div>
                                 </div>
                             </div>
                             <div class="col-xl-6">
@@ -91,20 +90,22 @@
                                 <div class="card mb-4">
                                 <div class="card-header">
                                         <i class="fas fa-chart-pie me-1"></i>
-                                        Pie Chart Jenis Kos
-                                    </div>
-                                    <div class="card-body"><canvas id="pieChart" width="100%" height="50"></canvas></div>
-                                </div>
-                            </div>
-                        <div class="col-xl-6">
-                                <div class="card mb-4">
-                                <div class="card-header">
-                                        <i class="fas fa-chart-pie me-1"></i>
                                         Pie Chart Kabupaten/Kota
                                     </div>
                                     <div class="card-body"><canvas id="pieChartKabupatenKota" width="100%" height="50"></canvas></div>
                                 </div>
                             </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                <!-- paste pie    -->
+                                <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Pie Chart Role User
+                                    </div>
+                                    <div class="card-body"><canvas id="pieChartRole" width="100%" height="50"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
 
 <script>
 var lbl_harga = [@foreach($ar_harga as $hrg) '{{$hrg->nama_kos}}',@endforeach ];
