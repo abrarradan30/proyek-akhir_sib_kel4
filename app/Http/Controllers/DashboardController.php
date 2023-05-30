@@ -9,7 +9,8 @@ use App\Models\Pembayaran;
 use App\Models\PemilikKos;
 use App\Models\RiwayatPesanan;
 use App\Models\UserKos;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -25,13 +26,19 @@ class DashboardController extends Controller
         $pemilik_kos = PemilikKos::count();
         $riwayat_pesanan = RiwayatPesanan::count();
         $user = UserKos::count();
+        //role
         $ar_role = DB::table('user')
         ->selectRaw('role, count(role) as jumlah')
         ->groupBy('role')
         ->get();
+        //kabupaten/kota
+        $ar_kabupaten_kota = DB::table('data_kos')
+        ->selectRaw('kabupaten_kota, count(kabupaten_kota) as jumlah')
+        ->groupBy('kabupaten_kota')
+        ->get();
 
         return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
-        'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_role'));
+        'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_role', 'ar_kabupaten_kota'));
     }
 
     /**
