@@ -25,9 +25,17 @@ class DashboardController extends Controller
         $pemilik_kos = PemilikKos::count();
         $riwayat_pesanan = RiwayatPesanan::count();
         $user = UserKos::count();
+        $harga = DB::table('data_kos')->select('nama_kos', 'harga')->get();
 
-        return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
-        'pemilik_kos', 'riwayat_pesanan', 'user'));
+        return view('admin.dashboard', compact(
+            'data_kos',
+            'pelanggan',
+            'pembayaran',
+            'pemilik_kos',
+            'riwayat_pesanan',
+            'user',
+            'harga'
+        ));
     }
 
     /**
