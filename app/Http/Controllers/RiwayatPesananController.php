@@ -62,6 +62,8 @@ class RiwayatPesananController extends Controller
             'pembayaran_id' => $request->pembayaran_id,
             'pelanggan_id' => $request->pelanggan_id,
         ]);
+
+        Alert::success('Riwayat Pesanan', 'Berhasil menambahkan riwayat pesanan');
         return redirect('admin/riwayat_pesanan');
     }
 
@@ -113,6 +115,8 @@ class RiwayatPesananController extends Controller
             'pembayaran_id' => $request->pembayaran_id,
             'pelanggan_id' => $request->pelanggan_id,
         ]);
+
+        Alert::info('Riwayat pesanan', 'Berhasil mengedit riwayat pesanan');
         return redirect('admin/riwayat_pesanan');
     }
 

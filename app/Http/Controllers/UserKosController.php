@@ -41,6 +41,8 @@ class UserKosController extends Controller
             'email' => $request->email,
             'role' => $request->role,
         ]);
+
+        Alert::success('User', 'Berhasil menambahkan user');
         return redirect('admin/user');
     }
 
@@ -77,6 +79,8 @@ class UserKosController extends Controller
             'email' => $request->email,
             'role' => $request->role,
         ]);
+
+        Alert::info('User', 'Berhasil mengedit user');
         return redirect('admin/user');
     }
 
