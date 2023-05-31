@@ -1,4 +1,3 @@
-@include('sweetalert::alert')
 @include('admin.layout.top')
 @include('admin.layout.menu')
 
