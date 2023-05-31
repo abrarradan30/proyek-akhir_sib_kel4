@@ -69,6 +69,8 @@ class DataKosController extends Controller
             'telepon'        => $request->telepon,
             'pemilik_kos_id' => $request->pemilik_kos_id,
         ]);
+
+        Alert::success('Data Kos', 'Berhasil menambahkan data kos');
         return redirect('admin/data_kos');
     }
 
@@ -129,6 +131,7 @@ class DataKosController extends Controller
             'pemilik_kos_id' => $request->pemilik_kos_id,
         ]);
         
+        Alert::info('Data Kos', 'Berhasil mengedit data kos');
         return redirect('admin/data_kos');
     }
 
