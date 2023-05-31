@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataKos;
 use App\Models\PemilikKos;
+use RealRashid\SweetAlert\Facades\Alert;
 // use DB;
 use Illuminate\Support\Facades\DB;
 

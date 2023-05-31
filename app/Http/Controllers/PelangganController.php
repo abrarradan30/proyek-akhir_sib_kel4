@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pelanggan;
+use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 
 class PelangganController extends Controller

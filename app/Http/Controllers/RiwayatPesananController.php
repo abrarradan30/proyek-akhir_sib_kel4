@@ -7,6 +7,7 @@ use App\Models\RiwayatPesanan;
 use App\Models\DataKos;
 use App\Models\Pelanggan;
 use App\Models\Pembayaran;
+use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 
 class RiwayatPesananController extends Controller
