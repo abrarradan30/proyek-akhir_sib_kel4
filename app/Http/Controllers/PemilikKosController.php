@@ -43,7 +43,7 @@ class PemilikKosController extends Controller
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
         ]);
-        Alert::success('Pemilik Kos', 'Berhasil menambahkan Pemilik Kos');
+        Alert::success('Pemilik Kos', 'Berhasil menambahkan pemilik kos');
         return redirect('admin/pemilik_kos');
     }
 

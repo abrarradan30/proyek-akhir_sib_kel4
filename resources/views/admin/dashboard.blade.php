@@ -106,21 +106,6 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                <!-- paste pie    -->
-                                <div class="card-header">
-                                        <i class="fas fa-chart-pie me-1"></i>
-                                        Pie Chart Jenis Kos
-                                    </div>
-                                    <div class="card-body"><canvas id="pieChart" width="100%" height="50"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
-=======
 
 <script>
 var lbl_harga = [@foreach($ar_harga as $hrg) '{{$hrg->nama_kos}}',@endforeach ];
@@ -168,6 +153,7 @@ options: {
 });
 });
 </script>
+
 <script>
 var lbl_jenis_kos = [@foreach ($ar_jenis_kos as $jenis_kos) '{{$jenis_kos->jenis_kos}}', @endforeach];
 var jml_jenis_kos = [@foreach ($ar_jenis_kos as $jenis_kos) {{$jenis_kos->jumlah}}, @endforeach];
@@ -200,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     });
 </script>
->>>>>>> cb5531249aa326a4f42a3b98d4a2384ee78f2e21
+
 <script>
 var lbl_role = [@foreach ($ar_role as $role) '{{$role->role}}', @endforeach];
 var jml_role = [@foreach ($ar_role as $role) {{$role->jumlah}}, @endforeach];
