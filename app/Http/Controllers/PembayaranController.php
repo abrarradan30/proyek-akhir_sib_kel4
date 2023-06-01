@@ -40,6 +40,8 @@ class PembayaranController extends Controller
             'jumlah'=> $request->jumlah,
             'status'=> $request->status,
         ]);
+
+        Alert::success('Pembayaran', 'Berhasil Menambahkan Pembayaran');
         return redirect('admin/pembayaran');
     }
 
@@ -78,6 +80,7 @@ class PembayaranController extends Controller
             'jumlah'=> $request->jumlah,
             'status'=> $request->status,
         ]);
+        Alert::info('Pembayaran', 'Berhasil Mengedit Pembayaran');
         return redirect('admin/pembayaran');
     }
 

@@ -4302,6 +4302,7 @@
 #45 E:\\app\\xampp8.2\\data-xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('E:\\\\app\\\\xampp8.2...')
 #46 {main}
 "} 
+
 [2023-05-31 13:54:27] local.ERROR: Class "RealRashid\SweetAlert\SweetAlertServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"RealRashid\\SweetAlert\\SweetAlertServiceProvider\" not found at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:827)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(761): Illuminate\\Foundation\\Application->resolveProvider('RealRashid\\\\Swee...')
