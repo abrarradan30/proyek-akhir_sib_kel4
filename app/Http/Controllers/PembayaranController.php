@@ -39,6 +39,7 @@ class PembayaranController extends Controller
             'jumlah'=> $request->jumlah,
             'status'=> $request->status,
         ]);
+
         return redirect('admin/pembayaran');
     }
 
