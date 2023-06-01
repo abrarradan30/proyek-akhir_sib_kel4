@@ -9,8 +9,13 @@ use App\Models\Pembayaran;
 use App\Models\PemilikKos;
 use App\Models\RiwayatPesanan;
 use App\Models\UserKos;
+<<<<<<< HEAD
 
 use DB;
+=======
+// use DB;
+use Illuminate\Support\Facades\DB;
+>>>>>>> cb5531249aa326a4f42a3b98d4a2384ee78f2e21
 
 class DashboardController extends Controller
 {
@@ -26,10 +31,20 @@ class DashboardController extends Controller
         $pemilik_kos = PemilikKos::count();
         $riwayat_pesanan = RiwayatPesanan::count();
         $user = UserKos::count();
+        $ar_harga = DB::table('data_kos')->select('nama_kos', 'harga')->get();
+        $ar_jenis_kos = DB::table('data_kos')
+        ->selectRaw('jenis_kos, count(jenis_kos) as jumlah')
+        ->groupBy('jenis_kos')
+        ->get();
+        $ar_kabupaten_kota = DB::table('data_kos')
+        ->selectRaw('kabupaten_kota, count(kabupaten_kota) as jumlah')
+        ->groupBy('kabupaten_kota')
+        ->get();
         $ar_role = DB::table('user')
         ->selectRaw('role, count(role) as jumlah')
         ->groupBy('role')
         ->get();
+<<<<<<< HEAD
         $ar_jenis_kos = DB::table('data_kos')
         ->selectRaw('jenis_kos, count(jenis_kos) as jumlah')
         ->groupBy('jenis_kos')
@@ -37,6 +52,13 @@ class DashboardController extends Controller
 
         return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
         'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_role', 'ar_jenis_kos'));
+=======
+        //kabupaten/kota
+        
+
+        return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
+        'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_harga', 'ar_jenis_kos', 'ar_kabupaten_kota', 'ar_role'));
+>>>>>>> cb5531249aa326a4f42a3b98d4a2384ee78f2e21
     }
 
     /**

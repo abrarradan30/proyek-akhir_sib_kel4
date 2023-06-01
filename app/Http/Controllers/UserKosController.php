@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserKos;
+use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 
 class UserKosController extends Controller
@@ -40,6 +41,8 @@ class UserKosController extends Controller
             'email' => $request->email,
             'role' => $request->role,
         ]);
+
+        Alert::success('User', 'Berhasil menambahkan user');
         return redirect('admin/user');
     }
 
@@ -76,6 +79,8 @@ class UserKosController extends Controller
             'email' => $request->email,
             'role' => $request->role,
         ]);
+
+        Alert::info('User', 'Berhasil mengedit user');
         return redirect('admin/user');
     }
 

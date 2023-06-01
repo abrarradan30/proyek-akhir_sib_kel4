@@ -21,6 +21,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
+    Alert::success('Success Title', 'Success Message');
     return view('welcome');
 });
 

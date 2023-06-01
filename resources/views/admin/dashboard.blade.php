@@ -69,6 +69,34 @@
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
+                                <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Pie Chart Jenis Kos
+                                    </div>
+                                    <div class="card-body"><canvas id="pieChart" width="100%" height="50"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                              <div class="card mb-4">
+                                <div class="card-header">
+                                  <i class="fas fa-chart-bar me-1"></i>
+                                     Bar Chart Harga Kos
+                                  </div>
+                                  <div class="card-body"><canvas id="barChartHarga" widtHargah="100%" height="40"></canvas></div>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Pie Chart Kabupaten/Kota
+                                    </div>
+                                    <div class="card-body"><canvas id="pieChartKabupatenKota" width="100%" height="50"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
                                 <!-- paste pie    -->
                                 <div class="card-header">
                                         <i class="fas fa-chart-pie me-1"></i>
@@ -78,6 +106,7 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                         </div>
                         <div class="row">
                             <div class="col-xl-6">
@@ -91,6 +120,87 @@
                                 </div>
                             </div>
                         </div>
+=======
+
+<script>
+var lbl_harga = [@foreach($ar_harga as $hrg) '{{$hrg->nama_kos}}',@endforeach ];
+var hrg = [@foreach($ar_harga as $hrg) {{$hrg->harga}}, @endforeach ];
+document.addEventListener("DOMContentLoaded", () => {
+     new Chart (document.querySelector('#barChartHarga'), {
+type: 'bar',
+data: {
+labels: lbl_harga,
+datasets: [{
+    label: "Revenue",
+    backgroundColor: "rgba(2,117,216,1)",
+    borderColor: "rgba(2,117,216,1)",
+    data: hrg,
+}],
+},
+options: {
+    scales: {
+        xAxes: [{
+        time: {
+        unit: 'month'
+    },
+    gridLines: {
+        display: false
+    },
+    ticks: {
+        maxTicksLimit: 6
+    }
+    }],
+    yAxes: [{
+        ticks: {
+            min: 0,
+            max: 3000000,
+            maxTicksLimit: 5
+        },
+        gridLines: {
+            display: true
+        }
+        }],
+    },
+    legend: {
+        display: false
+    }
+}
+});
+});
+</script>
+<script>
+var lbl_jenis_kos = [@foreach ($ar_jenis_kos as $jenis_kos) '{{$jenis_kos->jenis_kos}}', @endforeach];
+var jml_jenis_kos = [@foreach ($ar_jenis_kos as $jenis_kos) {{$jenis_kos->jumlah}}, @endforeach];
+document.addEventListener("DOMContentLoaded", () => {
+    new Chart(document.querySelector('#pieChart'), {
+    type: 'pie',
+  data: {
+    labels: lbl_jenis_kos,
+    datasets: [{
+      data: jml_jenis_kos,
+      backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
+    }],
+  },
+});
+});
+</script>
+<script>
+    var lbl_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) '{{$kab->kabupaten_kota}}', @endforeach];
+    var jml_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) {{$kab->jumlah}}, @endforeach];
+    document.addEventListener("DOMContentLoaded", () => {
+        new Chart(document.querySelector('#pieChartKabupatenKota'), {
+        type: 'pie',
+      data: {
+        labels: lbl_kabupaten_kota,
+        datasets: [{
+          data: jml_kabupaten_kota,
+          backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
+        }],
+      },
+    });
+    });
+</script>
+>>>>>>> cb5531249aa326a4f42a3b98d4a2384ee78f2e21
 <script>
 var lbl_role = [@foreach ($ar_role as $role) '{{$role->role}}', @endforeach];
 var jml_role = [@foreach ($ar_role as $role) {{$role->jumlah}}, @endforeach];

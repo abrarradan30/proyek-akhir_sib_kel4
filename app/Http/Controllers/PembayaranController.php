@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
+use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 
 class PembayaranController extends Controller
@@ -40,6 +41,7 @@ class PembayaranController extends Controller
             'status'=> $request->status,
         ]);
 
+        Alert::success('Pembayaran', 'Berhasil Menambahkan Pembayaran');
         return redirect('admin/pembayaran');
     }
 
@@ -78,6 +80,7 @@ class PembayaranController extends Controller
             'jumlah'=> $request->jumlah,
             'status'=> $request->status,
         ]);
+        Alert::info('Pembayaran', 'Berhasil Mengedit Pembayaran');
         return redirect('admin/pembayaran');
     }
 
