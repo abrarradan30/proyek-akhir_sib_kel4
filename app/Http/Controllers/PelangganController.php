@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pelanggan;
+use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 
 class PelangganController extends Controller
@@ -42,6 +43,7 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
+        Alert::success('Pelanggan', 'Berhasil menambah Pelanggan');
         return redirect('admin/pelanggan');
     }
 
@@ -62,7 +64,7 @@ class PelangganController extends Controller
     {
         //
         $p = DB::table('pelanggan')->where('id', $id)->first();
-        return view('admin.pelanggan.update', compact('p'));
+        return view('admin.pelanggan.edit', compact('p'));
     }
 
     /**
@@ -82,6 +84,7 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
         ]);
 
+        Alert::info('Pelanggan', 'Berhasil modifikasi data Pelanggan');
         return redirect('admin/pelanggan');
     }
 

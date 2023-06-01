@@ -7,6 +7,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PemilikKosController;
 use App\Http\Controllers\RiwayatPesananController;
 use App\Http\Controllers\UserKosController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,12 @@ use App\Http\Controllers\UserKosController;
 */
 
 Route::get('/', function () {
+    Alert::success('Success Title', 'Success Message');
     return view('welcome');
 });
 
 Route::prefix('admin')->group(function(){
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
 // route data kos
 Route::get('/data_kos',[DataKosController::class, 'index']);
 Route::get('/data_kos/create',[DataKosController::class, 'create']);

@@ -42,7 +42,7 @@
         <label for="radio_0" class="custom-control-label">Admin</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
-        <input name="role" id="radio_1" type="radio" class="custom-control-input" value="pemilik_kos"> 
+        <input name="role" id="radio_1" type="radio" class="custom-control-input" value="pemilik kos"> 
         <label for="radio_1" class="custom-control-label">Pemilik Kos</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
