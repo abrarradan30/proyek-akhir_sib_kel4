@@ -43,7 +43,7 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
-        Alert::success('Pelanggan', 'Berhasil menambah Pelanggan');
+        Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
         return redirect('admin/pelanggan');
     }
 
@@ -84,7 +84,7 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
         ]);
 
-        Alert::info('Pelanggan', 'Berhasil modifikasi data Pelanggan');
+        Alert::info('Pelanggan', 'Berhasil mengedit pelanggan');
         return redirect('admin/pelanggan');
     }
 
