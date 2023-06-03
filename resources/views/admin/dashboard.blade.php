@@ -153,6 +153,7 @@ options: {
 });
 });
 </script>
+
 <script>
 var lbl_jenis_kos = [@foreach ($ar_jenis_kos as $jenis_kos) '{{$jenis_kos->jenis_kos}}', @endforeach];
 var jml_jenis_kos = [@foreach ($ar_jenis_kos as $jenis_kos) {{$jenis_kos->jumlah}}, @endforeach];
@@ -185,6 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     });
 </script>
+
 <script>
 var lbl_role = [@foreach ($ar_role as $role) '{{$role->role}}', @endforeach];
 var jml_role = [@foreach ($ar_role as $role) {{$role->jumlah}}, @endforeach];
@@ -195,6 +197,22 @@ document.addEventListener("DOMContentLoaded", () => {
     labels: lbl_role,
     datasets: [{
       data: jml_role,
+      backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
+    }],
+  },
+});
+});
+</script>
+
+var lbl = [@foreach ($ar_jenis_kos as $jenis_kos) '{{$jenis_kos->jenis_kos}}', @endforeach];
+var jml = [@foreach ($ar_jenis_kos as $jenis_kos) {{$jenis_kos->jumlah}}, @endforeach];
+document.addEventListener("DOMContentLoaded", () => {
+    new Chart(document.querySelector('#pieChart'), {
+    type: 'pie',
+  data: {
+    labels: lbl,
+    datasets: [{
+      data: jml,
       backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
     }],
   },

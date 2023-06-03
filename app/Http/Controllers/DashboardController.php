@@ -9,8 +9,7 @@ use App\Models\Pembayaran;
 use App\Models\PemilikKos;
 use App\Models\RiwayatPesanan;
 use App\Models\UserKos;
-// use DB;
-use Illuminate\Support\Facades\DB;
+use DB;
 
 class DashboardController extends Controller
 {
@@ -39,8 +38,6 @@ class DashboardController extends Controller
         ->selectRaw('role, count(role) as jumlah')
         ->groupBy('role')
         ->get();
-        //kabupaten/kota
-        
 
         return view('admin.dashboard', compact('data_kos', 'pelanggan', 'pembayaran', 
         'pemilik_kos', 'riwayat_pesanan', 'user', 'ar_harga', 'ar_jenis_kos', 'ar_kabupaten_kota', 'ar_role'));
