@@ -170,6 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 });
 </script>
+
 <script>
     var lbl_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) '{{$kab->kabupaten_kota}}', @endforeach];
     var jml_kabupaten_kota = [@foreach ($ar_kabupaten_kota as $kab) {{$kab->jumlah}}, @endforeach];
@@ -197,22 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
     labels: lbl_role,
     datasets: [{
       data: jml_role,
-      backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
-    }],
-  },
-});
-});
-</script>
-
-var lbl = [@foreach ($ar_jenis_kos as $jenis_kos) '{{$jenis_kos->jenis_kos}}', @endforeach];
-var jml = [@foreach ($ar_jenis_kos as $jenis_kos) {{$jenis_kos->jumlah}}, @endforeach];
-document.addEventListener("DOMContentLoaded", () => {
-    new Chart(document.querySelector('#pieChart'), {
-    type: 'pie',
-  data: {
-    labels: lbl,
-    datasets: [{
-      data: jml,
       backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
     }],
   },
