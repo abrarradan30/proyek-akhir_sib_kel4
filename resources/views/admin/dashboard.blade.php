@@ -204,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<script>
 var lbl = [@foreach ($ar_jenis_kos as $jenis_kos) '{{$jenis_kos->jenis_kos}}', @endforeach];
 var jml = [@foreach ($ar_jenis_kos as $jenis_kos) {{$jenis_kos->jumlah}}, @endforeach];
 document.addEventListener("DOMContentLoaded", () => {
