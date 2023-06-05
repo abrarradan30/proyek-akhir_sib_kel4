@@ -5,12 +5,13 @@
 <h2> Details Pembayaran</h2>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-<div class="container">
-<div class="row">
-<div class="col-md-5">
-<div class="project-info-box mt-0">
-    @foreach ($pelanggan as $p)
-<p class="mb-0">Berikut adalah detail Pelanggan Kost:</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="project-info-box mt-0">
+                @foreach ($pelanggan as $p)
+                    <h5>Deskripsi Pelanggan</h5>
+                    <p class="mb-0">Berikut adalah detail Pelanggan Kost:</p>
 </div>
 <input type="hidden" value="{{$p->id}}" />
 <div class="project-info-box">

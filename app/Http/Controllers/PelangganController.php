@@ -43,6 +43,7 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
+        
         Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
         return redirect('admin/pelanggan');
     }
