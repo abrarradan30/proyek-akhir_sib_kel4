@@ -5040,3 +5040,593 @@
 #61 E:\\app\\xampp8.2\\data-xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('E:\\\\app\\\\xampp8.2...')
 #62 {main}
 "} 
+[2023-06-06 14:11:17] local.ERROR: Undefined constant "sel" {"view":{"view":"C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-799753313 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#328</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-799753313\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","data_kos":"<pre class=sf-dump id=sf-dump-1047516185 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\Collection</span> {<a class=sf-dump-ref>#344</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => {<a class=sf-dump-ref>#352</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>7</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama_kos</span>\": \"<span class=sf-dump-str title=\"15 characters\">Kos Putri Mawar</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">no_kamar</span>\": \"<span class=sf-dump-str title=\"4 characters\">pm01</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jenis_kos</span>\": \"<span class=sf-dump-str title=\"9 characters\">perempuan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">fasilitas</span>\": \"<span class=sf-dump-str title=\"73 characters\">Tempat tidur, kamar mandi dalam, lemari, AC, wifi, listrik dan air bersih</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">luas_ruang</span>\": \"<span class=sf-dump-str title=\"4 characters\">3x3m</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">gambar</span>\": \"<span class=sf-dump-str title=\"8 characters\">pm01.jpg</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">harga</span>\": <span class=sf-dump-num>1500000.0</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">deskripsi</span>\": \"<span class=sf-dump-str title=\"100 characters\">Terdapat layanan pembersihan AC secara rutin setiap 3 bulan sekali. Apabila Anda membutuhkan bantuan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kabupaten_kota</span>\": \"<span class=sf-dump-str title=\"11 characters\">Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kecamatan</span>\": \"<span class=sf-dump-str title=\"6 characters\">Klojen</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jalan</span>\": \"<span class=sf-dump-str title=\"15 characters\">Jl.Patimura, 51</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kode_pos</span>\": <span class=sf-dump-num>65122</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">081234567890</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">pemilik_kos_id</span>\": <span class=sf-dump-num>1</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1047516185\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","pemilik_kos":"<pre class=sf-dump id=sf-dump-847525224 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\Collection</span> {<a class=sf-dump-ref>#343</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => {<a class=sf-dump-ref>#345</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>1</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"11 characters\">Ana Wahyuni</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"3 characters\">ana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"3 characters\">ana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"13 characters\">ana@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>p</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"28 characters\">Jl.Patimura, 51, Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">081234567890</span>\"
+    </samp>}
+    <span class=sf-dump-index>1</span> => {<a class=sf-dump-ref>#347</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>2</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"12 characters\">Diana Astuti</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"5 characters\">diana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"5 characters\">diana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"15 characters\">diana@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>p</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"32 characters\">Jl. S Supriyadi, 30, Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">082256789012</span>\"
+    </samp>}
+    <span class=sf-dump-index>2</span> => {<a class=sf-dump-ref>#348</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>3</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"5 characters\">Radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"5 characters\">radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"5 characters\">radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"15 characters\">radan@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>l</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"13 characters\">Jl. mekarsari</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"6 characters\">085111</span>\"
+    </samp>}
+    <span class=sf-dump-index>3</span> => {<a class=sf-dump-ref>#349</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>4</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"6 characters\">Andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"6 characters\">andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"6 characters\">andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"16 characters\">andani@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": <span class=sf-dump-const>null</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"19 characters\">Jl. Jenggala Blok A</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"9 characters\">085777111</span>\"
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-847525224\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ar_jenis_kos":"<pre class=sf-dump id=sf-dump-583835377 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"9 characters\">laki-laki</span>\"
+  <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"9 characters\">perempuan</span>\"
+  <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"6 characters\">campur</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-583835377\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ar_kabupaten_kota":"<pre class=sf-dump id=sf-dump-870450814 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"16 characters\">Kabupaten Malang</span>\"
+  <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"11 characters\">Kota Malang</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-870450814\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined constant \"sel\" at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php:143)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): require()
+#1 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(125): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#3 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#4 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#5 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#6 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#7 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#8 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
+#52 {main}
+
+[previous exception] [object] (Error(code: 0): Undefined constant \"sel\" at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\storage\\framework\\views\\3ae83e8313b45c34824677cf0af13114.php:142)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): require()
+#1 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(125): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#3 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#4 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#5 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#6 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#7 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#8 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
+#52 {main}
+"} 
+[2023-06-06 14:16:11] local.ERROR: syntax error, unexpected end of file {"view":{"view":"C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-417637124 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#328</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-417637124\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","data_kos":"<pre class=sf-dump id=sf-dump-372764134 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\Collection</span> {<a class=sf-dump-ref>#344</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => {<a class=sf-dump-ref>#352</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>7</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama_kos</span>\": \"<span class=sf-dump-str title=\"15 characters\">Kos Putri Mawar</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">no_kamar</span>\": \"<span class=sf-dump-str title=\"4 characters\">pm01</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jenis_kos</span>\": \"<span class=sf-dump-str title=\"9 characters\">perempuan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">fasilitas</span>\": \"<span class=sf-dump-str title=\"73 characters\">Tempat tidur, kamar mandi dalam, lemari, AC, wifi, listrik dan air bersih</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">luas_ruang</span>\": \"<span class=sf-dump-str title=\"4 characters\">3x3m</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">gambar</span>\": \"<span class=sf-dump-str title=\"8 characters\">pm01.jpg</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">harga</span>\": <span class=sf-dump-num>1500000.0</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">deskripsi</span>\": \"<span class=sf-dump-str title=\"100 characters\">Terdapat layanan pembersihan AC secara rutin setiap 3 bulan sekali. Apabila Anda membutuhkan bantuan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kabupaten_kota</span>\": \"<span class=sf-dump-str title=\"11 characters\">Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kecamatan</span>\": \"<span class=sf-dump-str title=\"6 characters\">Klojen</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jalan</span>\": \"<span class=sf-dump-str title=\"15 characters\">Jl.Patimura, 51</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kode_pos</span>\": <span class=sf-dump-num>65122</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">081234567890</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">pemilik_kos_id</span>\": <span class=sf-dump-num>1</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-372764134\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","pemilik_kos":"<pre class=sf-dump id=sf-dump-1170340592 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\Collection</span> {<a class=sf-dump-ref>#343</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => {<a class=sf-dump-ref>#345</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>1</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"11 characters\">Ana Wahyuni</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"3 characters\">ana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"3 characters\">ana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"13 characters\">ana@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>p</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"28 characters\">Jl.Patimura, 51, Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">081234567890</span>\"
+    </samp>}
+    <span class=sf-dump-index>1</span> => {<a class=sf-dump-ref>#347</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>2</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"12 characters\">Diana Astuti</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"5 characters\">diana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"5 characters\">diana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"15 characters\">diana@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>p</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"32 characters\">Jl. S Supriyadi, 30, Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">082256789012</span>\"
+    </samp>}
+    <span class=sf-dump-index>2</span> => {<a class=sf-dump-ref>#348</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>3</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"5 characters\">Radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"5 characters\">radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"5 characters\">radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"15 characters\">radan@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>l</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"13 characters\">Jl. mekarsari</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"6 characters\">085111</span>\"
+    </samp>}
+    <span class=sf-dump-index>3</span> => {<a class=sf-dump-ref>#349</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>4</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"6 characters\">Andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"6 characters\">andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"6 characters\">andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"16 characters\">andani@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": <span class=sf-dump-const>null</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"19 characters\">Jl. Jenggala Blok A</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"9 characters\">085777111</span>\"
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1170340592\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ar_jenis_kos":"<pre class=sf-dump id=sf-dump-1087242838 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"9 characters\">laki-laki</span>\"
+  <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"9 characters\">perempuan</span>\"
+  <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"6 characters\">campur</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1087242838\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ar_kabupaten_kota":"<pre class=sf-dump id=sf-dump-1671577209 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"16 characters\">Kabupaten Malang</span>\"
+  <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"11 characters\">Kota Malang</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1671577209\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): syntax error, unexpected end of file at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php:157)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(125): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#1 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#2 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#3 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#4 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#5 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#6 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#7 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#8 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#9 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#10 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#20 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#27 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#29 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#48 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
+#51 {main}
+
+[previous exception] [object] (ParseError(code: 0): syntax error, unexpected end of file at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\storage\\framework\\views\\3ae83e8313b45c34824677cf0af13114.php:154)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(125): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#1 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#2 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#3 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#4 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#5 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#6 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#7 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#8 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#9 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#10 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#20 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#27 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#29 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#48 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
+#51 {main}
+"} 
+[2023-06-06 14:24:25] local.ERROR: Undefined variable $p {"view":{"view":"C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-510970250 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#328</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-510970250\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","data_kos":"<pre class=sf-dump id=sf-dump-1301034495 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\Collection</span> {<a class=sf-dump-ref>#344</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => {<a class=sf-dump-ref>#352</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>7</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama_kos</span>\": \"<span class=sf-dump-str title=\"15 characters\">Kos Putri Mawar</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">no_kamar</span>\": \"<span class=sf-dump-str title=\"4 characters\">pm01</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jenis_kos</span>\": \"<span class=sf-dump-str title=\"9 characters\">perempuan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">fasilitas</span>\": \"<span class=sf-dump-str title=\"73 characters\">Tempat tidur, kamar mandi dalam, lemari, AC, wifi, listrik dan air bersih</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">luas_ruang</span>\": \"<span class=sf-dump-str title=\"4 characters\">3x3m</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">gambar</span>\": \"<span class=sf-dump-str title=\"8 characters\">pm01.jpg</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">harga</span>\": <span class=sf-dump-num>1500000.0</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">deskripsi</span>\": \"<span class=sf-dump-str title=\"100 characters\">Terdapat layanan pembersihan AC secara rutin setiap 3 bulan sekali. Apabila Anda membutuhkan bantuan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kabupaten_kota</span>\": \"<span class=sf-dump-str title=\"11 characters\">Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kecamatan</span>\": \"<span class=sf-dump-str title=\"6 characters\">Klojen</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jalan</span>\": \"<span class=sf-dump-str title=\"15 characters\">Jl.Patimura, 51</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">kode_pos</span>\": <span class=sf-dump-num>65122</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">081234567890</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">pemilik_kos_id</span>\": <span class=sf-dump-num>1</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1301034495\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","pemilik_kos":"<pre class=sf-dump id=sf-dump-1836210184 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\Collection</span> {<a class=sf-dump-ref>#343</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => {<a class=sf-dump-ref>#345</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>1</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"11 characters\">Ana Wahyuni</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"3 characters\">ana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"3 characters\">ana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"13 characters\">ana@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>p</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"28 characters\">Jl.Patimura, 51, Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">081234567890</span>\"
+    </samp>}
+    <span class=sf-dump-index>1</span> => {<a class=sf-dump-ref>#347</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>2</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"12 characters\">Diana Astuti</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"5 characters\">diana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"5 characters\">diana</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"15 characters\">diana@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>p</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"32 characters\">Jl. S Supriyadi, 30, Kota Malang</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"12 characters\">082256789012</span>\"
+    </samp>}
+    <span class=sf-dump-index>2</span> => {<a class=sf-dump-ref>#348</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>3</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"5 characters\">Radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"5 characters\">radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"5 characters\">radan</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"15 characters\">radan@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": \"<span class=sf-dump-str>l</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"13 characters\">Jl. mekarsari</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"6 characters\">085111</span>\"
+    </samp>}
+    <span class=sf-dump-index>3</span> => {<a class=sf-dump-ref>#349</a><samp data-depth=3 class=sf-dump-compact>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">id</span>\": <span class=sf-dump-num>4</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">nama</span>\": \"<span class=sf-dump-str title=\"6 characters\">Andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">username</span>\": \"<span class=sf-dump-str title=\"6 characters\">andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">password</span>\": \"<span class=sf-dump-str title=\"6 characters\">andani</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">email</span>\": \"<span class=sf-dump-str title=\"16 characters\">andani@gmail.com</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">jk</span>\": <span class=sf-dump-const>null</span>
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">alamat</span>\": \"<span class=sf-dump-str title=\"19 characters\">Jl. Jenggala Blok A</span>\"
+      +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">telepon</span>\": \"<span class=sf-dump-str title=\"9 characters\">085777111</span>\"
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1836210184\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ar_jenis_kos":"<pre class=sf-dump id=sf-dump-1329458742 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"9 characters\">laki-laki</span>\"
+  <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"9 characters\">perempuan</span>\"
+  <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"6 characters\">campur</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1329458742\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ar_kabupaten_kota":"<pre class=sf-dump id=sf-dump-156635071 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"16 characters\">Kabupaten Malang</span>\"
+  <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"11 characters\">Kota Malang</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-156635071\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $p at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php:40)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(254): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 39)
+#1 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\resources\\views\\admin\\data_kos\\edit.blade.php(40): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 39)
+#2 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): require('C:\\\\xampp\\\\htdocs...')
+#3 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(125): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#5 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#6 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#7 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#23 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#51 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#52 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
+#54 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $p at C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\storage\\framework\\views\\3ae83e8313b45c34824677cf0af13114.php:39)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(254): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 39)
+#1 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\storage\\framework\\views\\3ae83e8313b45c34824677cf0af13114.php(39): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 39)
+#2 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): require('C:\\\\xampp\\\\htdocs...')
+#3 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(125): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp\\\\htdocs...', Array)
+#5 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
+#6 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp\\\\htdocs...', Array)
+#7 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#23 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#51 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#52 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\proyek-akhir_sib_kel4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
+#54 {main}
+"} 

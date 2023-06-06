@@ -46,6 +46,41 @@ class DataKosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+        [
+            'nama_kos'       => 'required|max:50',
+            'no_kamar'       => 'required|unique:data_kos|max:10',
+            'jenis_kos'      => 'required',
+            'fasilitas'      => 'required|max:100',
+            'luas_ruang'     => 'required',
+            'gambar'         => 'required|image|mimes:jpg,jpeg,png,svg|max:2048',
+            'harga'          => 'required|numeric',
+            'deskripsi'      => 'required|max:100',
+            'kabupaten_kota' => 'required',
+            'kecamatan'      => 'required|max:50',
+            'jalan'          => 'required|max:50',
+            'kode_pos'       => 'required|numeric',
+            'telepon'        => 'required|min:12',
+            'pemilik_kos_id' => 'required',
+        ],
+        [
+            'nama_kos.required'       => 'Nama Kos Wajib Diisi !!!',
+            'no_kamar.required'       => 'Nomor Kamar Wajib Diisi !!!',
+            'no_kamar.unique'         => 'Nomor Kamar Sudah Ada, Masukkan Nomor Kamar yang Lain !!!',
+            'jenis_kos.required'      => 'Jenis Kos Wajib Diisi !!!',
+            'fasilitas.required'      => 'Fasilitas Kos Wajib Diisi !!!',
+            'luas_ruang.required'     => 'Luas Ruang Wajib Diisi !!!',
+            'gambar.required'         => 'Gambar Kos Wajib Diisi !!!',
+            'gambar.image'            => 'File Gambar Harus jpg, jpeg, png, svg !!!',
+            'harga.required'          => 'Harga Wajib Diisi !!!',
+            'deskripsi.required'      => 'Deskripsi Kos Wajib Diisi !!!',
+            'kabupaten_kota.required' => 'Kabupaten/Kota Wajib Diisi !!!',
+            'kecamatan.required'      => 'Kecamatan Wajib Diisi !!!',
+            'jalan.required'          => 'Jalan Wajib Diisi !!!',
+            'kode_pos.required'       => 'Kode Pos Wajib Diisi !!!',
+            'telepon.required'        => 'Nomor Telepon Pemilik Kos Wajib Diisi !!!',
+            'pemilik_kos_id.required' => 'Nama Pemilik Kos Wajib Diisi !!!',
+        ]);
         //
         if(!empty($request->gambar)){
             $fileName = 'gambar-'.$request->id.'.'.$request->gambar->extension();
@@ -97,8 +132,10 @@ class DataKosController extends Controller
         //Query builder
         $pemilik_kos = DB::table('pemilik_kos')->get();
         $data_kos = DB::table('data_kos')->where('id', $id)->get();
+        $ar_jenis_kos = ['laki-laki', 'perempuan', 'campur'];
+        $ar_kabupaten_kota = ['Kabupaten Malang', 'Kota Malang'];
 
-        return view('admin.data_kos.edit', compact('data_kos', 'pemilik_kos'));
+        return view('admin.data_kos.edit', compact('data_kos', 'pemilik_kos', 'ar_jenis_kos', 'ar_kabupaten_kota'));
 
     }
 
@@ -107,8 +144,33 @@ class DataKosController extends Controller
      */
     public function update(Request $request)
     {
-        //
-        if(!empty($request->gambar)){
+        $request->validate(
+            [
+                'nama_kos'       => 'required|max:50',
+                'jenis_kos'      => 'required',
+                'fasilitas'      => 'required|max:100',
+                'luas_ruang'     => 'required',
+                'gambar'         => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+                'harga'          => 'required|numeric',
+                'deskripsi'      => 'required|max:100',
+                'kabupaten_kota' => 'required',
+                'kecamatan'      => 'required|max:50',
+                'jalan'          => 'required|max:50',
+                'kode_pos'       => 'required|numeric',
+                'telepon'        => 'required|min:12',
+                'pemilik_kos_id' => 'required',
+            ]
+        );
+        // foto lama apabila mengganti fotonya
+        $gambar = DB::table('data_kos')->select('gambar')->where('id', $request->id)->get();
+        foreach ($gambar as $g) {
+            $namaFileGambarLama = $g->gambar;
+        }
+        //apakah user ingin mengganti foto lama
+        if (!empty($request->gambar)) {
+            //jika ada foto lama maka hapus dulu fotonya
+            if (!empty($dk->gambar)) unlink('admin/image/' . $dk->gambar);
+            //proses ganti foto
             $fileName = 'gambar-'.$request->id.'.'.$request->gambar->extension();
             $request->gambar->move(public_path('admin/image'), $fileName);
         }else{
