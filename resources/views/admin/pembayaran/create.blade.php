@@ -6,24 +6,49 @@
 
 <br>
 <h1 align="center"> Form Tambah Pembayaran </h2>
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li> {{$error}} </li>
+    @endforeach
+  </ul>
+</div>
+@endif
+
 <form method="POST" action="{{url('admin/pembayaran/store')}}" enctype="multipart/form-data">
 {{csrf_field()}}
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Nomor Kwitansi</label> 
     <div class="col-8">
-      <input id="text1" name="no_kwitansi" type="text" class="form-control">
+      <input id="text1" name="no_kwitansi" type="text" class="form-control @error('no_kwitansi') is-invalid @enderror" placeholder="Masukkan Nomor Kwitansi">
+      @error('no_kwitansi')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
     </div>
   </div>
   <div class="form-group row">
     <label for="text" class="col-4 col-form-label">Tanggal</label> 
     <div class="col-8">
-      <input id="text" name="tanggal" type="date" class="form-control">
+      <input id="text" name="tanggal" type="date" class="form-control @error('tanggal') is-invalid @enderror">
+      @error('tanggal')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
     </div>
   </div>
   <div class="form-group row">
     <label for="text2" class="col-4 col-form-label">Jumlah</label> 
     <div class="col-8">
-      <input id="text2" name="jumlah" type="text" class="form-control">
+      <input id="text2" name="jumlah" type="text" class="form-control @error('jumlah') is-invalid @enderror" placeholder="ex : 1000000">
+      @error('jumlah')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
     </div>
   </div>
   <div class="form-group row">
