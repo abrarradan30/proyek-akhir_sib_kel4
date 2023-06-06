@@ -34,6 +34,27 @@ class PemilikKosController extends Controller
     public function store(Request $request)
     {
         // fungsi untuk mengisi data pada form
+        $request->validate([
+            'nama' => 'required|max:45',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required',
+            'jk' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+        ]);
+        [
+            'nama.required' => 'Nama wajib diisi',
+            'nama.max' => 'Nama maksimal 45 karakter',
+            'username.required' => 'Username wajib diisi',
+            'password.required' => 'Password wajib diisi',
+            'email.required' => 'Email wajib diisi',
+            'jk.required' => 'Jenis kelamin wajib diisi',
+            'alamat.required' => 'Alamat wajib diisi',
+            'telepon.required' => 'Telepon wajib diisi',
+
+        ];
+        //fungsi untuk menambahkan pemilik kos
         DB::table('pemilik_kos')->insert([
             'nama' => $request->nama,
             'username' => $request->username,
@@ -43,8 +64,7 @@ class PemilikKosController extends Controller
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
         ]);
-        
-        Alert::success('Pemilik Kos', 'Berhasil menambahkan pemilik kos');
+
         return redirect('admin/pemilik_kos');
     }
 
@@ -65,7 +85,9 @@ class PemilikKosController extends Controller
     {
         //arahkan ke file edit yang ada di pemilikmkos view
         $pemilik_kos = DB::table('pemilik_kos')->where('id', $id)->get();
-        return view('admin.pemilik_kos.edit', compact('pemilik_kos'));
+        $ar_jk = ['L', 'P'];
+
+        return view('admin.pemilik_kos.edit', compact('pemilik_kos', 'ar_jk'));
     }
 
     /**
@@ -73,7 +95,18 @@ class PemilikKosController extends Controller
      */
     public function update(Request $request)
     {
-        //Buat prose edit form
+        $request->validate([
+
+            'nama' => 'required|max:45',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required',
+            'jk' => 'required',
+            'alamat' => 'nullable|string|min:10',
+            'telepon' => 'telepon',
+
+        ]);
+        //fungsi untuk menambahkan pemilik kos
         DB::table('pemilik_kos')->where('id', $request->id)->update([
             'nama' => $request->nama,
             'username' => $request->username,
@@ -84,7 +117,6 @@ class PemilikKosController extends Controller
             'telepon' => $request->telepon,
         ]);
 
-        Alert::info('Pemilik Kos', 'Berhasil mengedit pemilik kos');
         return redirect('admin/pemilik_kos');
     }
 
