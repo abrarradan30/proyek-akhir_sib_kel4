@@ -7,6 +7,15 @@
 <br>
 <h1 align="center"> Form Edit Riwayat Pesanan </h2>
 @foreach($riwayat_pesanan as $rp)
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li> {{$error}} </li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form method="POST" action="{{url('admin/riwayat_pesanan/update')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
@@ -39,7 +48,8 @@
     <div class="col-8">
       <select id="select" name="data_kos_id" class="custom-select">
         @foreach($data_kos as $dk)
-        <option value="{{$dk->id}}">{{$dk->nama_kos}}</option>
+        @php $sel = ($dk->id == $rp->data_kos_id) ? 'selected' : ''; @endphp
+        <option value="{{$dk->id}}" {{$sel}}>{{$dk->nama_kos}}</option>
         @endforeach
       </select>
     </div>
@@ -48,8 +58,9 @@
     <label for="select" class="col-4 col-form-label">Status Pembayaran</label> 
     <div class="col-8">
       <select id="select" name="pembayaran_id" class="custom-select">
-        @foreach($pembayaran as $p)
-        <option value="{{$p->id}}">{{$p->status}}</option>
+        @foreach($pembayaran as $py)
+        @php $sel = ($py->id == $rp->pembayaran_id) ? 'selected' : ''; @endphp
+        <option value="{{$py->id}}" {{$sel}}>{{$py->status}}</option>
         @endforeach
       </select>
     </div>
@@ -59,7 +70,8 @@
     <div class="col-8">
       <select id="select2" name="pelanggan_id" class="custom-select">
         @foreach($pelanggan as $p)
-        <option value="{{$p->id}}">{{$p->nama}}</option>
+        @php $sel = ($p->id == $rp->pelanggan_id) ? 'selected' : ''; @endphp
+        <option value="{{$p->id}}" {{$sel}}>{{$p->nama}}</option>
         @endforeach 
       </select>
     </div>

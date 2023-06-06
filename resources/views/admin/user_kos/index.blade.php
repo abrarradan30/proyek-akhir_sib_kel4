@@ -63,9 +63,9 @@
                             <td>{{$u->role}}</td>
                             <td>
                                 @empty($u->foto)
-                                    <img src="{{url('admin/image/nofoto.png')}}" width="10%">
+                                    <img src="{{url('admin/image/nofoto.png')}}" width="20%">
                                 @else
-                                    <img src="{{url('admin/image') }}/{{$u->foto}}" width="10%">
+                                    <img src="{{url('admin/image') }}/{{$u->foto}}" width="20%">
                                 @endempty
                             </td>
                             <td>

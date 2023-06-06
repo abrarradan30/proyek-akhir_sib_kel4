@@ -33,6 +33,25 @@ class UserKosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama' => 'required|max:50',
+            'username' => 'required|unique:user|max:50',
+            'password' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048', 
+        ],
+        [
+            'nama.required' => 'Nama wajib diisi',
+            'nama.max' => 'Nama maksimal 50 karakter',
+            'username.required' => 'Username wajib diisi',
+            'username.unique' => 'Username sudah ada, masukkan Username yang lain',
+            'username.max' => 'Username maksimal 50 karakter',
+            'password.required' => 'Password wajib diisi',
+            'email.required' => 'Email wajib diisi',
+            'role.required' => 'Role wajib diisi',
+        ]
+        );
         // fungsi untuk mengisi data pada form
         if(!empty($request->foto)){
             $fileName = 'foto-'.$request->id.'.'.$request->foto->extension();
@@ -70,7 +89,8 @@ class UserKosController extends Controller
     {
         //
         $user = DB::table('user')->where('id', $id)->get();
-        return view('admin.user_kos.edit', compact('user'));
+        $ar_role = ['admin', 'pemilik kos', 'pelanggan'];
+        return view('admin.user_kos.edit', compact('user', 'ar_role'));
     }
 
     /**
@@ -78,12 +98,28 @@ class UserKosController extends Controller
      */
     public function update(Request $request)
     {
-        // proses edit form
+        $request->validate([
+            'nama' => 'required|max:50',
+            'username' => 'required|max:50',
+            'password' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048', 
+        ]);
+        // foto lama apabila mengganti fotonya
+        $foto = DB::table('user')->select('foto')->where('id', $request->id)->get();
+        foreach($foto as $f){
+            $namaFileFotoLama = $f->foto;
+        }
+        // apakah user ingin ganti foto lama
         if(!empty($request->foto)){
+        // jika ada foto lama maka hapus dulu fotonya
+        if(!empty($p->foto)) unlink('admin/image/'.$p->foto);
+        // proses ganti foto
             $fileName = 'foto-'.$request->id.'.'.$request->foto->extension();
             $request->foto->move(public_path('admin/image'), $fileName);
-        }else{
-            $fileName= '';
+        } else {
+            $fileName = $namaFileFotoLama;
         }
         DB::table('user')->where('id', $request->id)->update([
             'nama' => $request->nama,
