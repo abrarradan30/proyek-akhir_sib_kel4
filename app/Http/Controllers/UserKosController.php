@@ -34,12 +34,19 @@ class UserKosController extends Controller
     public function store(Request $request)
     {
         // fungsi untuk mengisi data pada form
+        if(!empty($request->foto)){
+            $fileName = 'foto-'.$request->id.'.'.$request->foto->extension();
+            $request->foto->move(public_path('admin/image'), $fileName);
+        } else {
+            $fileName = '';
+        }
         DB::table('user')->insert([
             'nama' => $request->nama,
             'username' => $request->username,
             'password' => $request->password,
             'email' => $request->email,
             'role' => $request->role,
+            'foto' => $fileName,
         ]);
 
         Alert::success('User', 'Berhasil menambahkan user');
@@ -72,12 +79,19 @@ class UserKosController extends Controller
     public function update(Request $request)
     {
         // proses edit form
+        if(!empty($request->foto)){
+            $fileName = 'foto-'.$request->id.'.'.$request->foto->extension();
+            $request->foto->move(public_path('admin/image'), $fileName);
+        }else{
+            $fileName= '';
+        }
         DB::table('user')->where('id', $request->id)->update([
             'nama' => $request->nama,
             'username' => $request->username,
             'password' => $request->password,
             'email' => $request->email,
             'role' => $request->role,
+            'foto' => $fileName,
         ]);
 
         Alert::info('User', 'Berhasil mengedit user');

@@ -52,6 +52,19 @@
     </div>
   </div> 
   <div class="form-group row">
+    <label for="text3" class="col-4 col-form-label">Foto</label>
+      <div class="col-8">
+        <input id="text3" name="foto" type="file" class="form-control">
+          <div>
+            @empty($u->foto)
+              <img src="{{url('admin/image/nofoto.png')}}" width="10%">
+            @else
+              <img src="{{url('admin/image')}}/{{$u->foto}}" width="10%">
+            @endempty
+          </div>
+      </div>
+  </div>
+  <div class="form-group row">
     <div class="offset-4 col-8">
       <button name="submit" type="submit" class="btn btn-primary">Update</button>
     </div>

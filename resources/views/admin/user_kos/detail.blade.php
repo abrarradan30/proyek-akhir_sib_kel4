@@ -30,6 +30,12 @@
                     </p>
                 </div>
             </div>
+            <div class="col-md-7">
+            @empty($u->foto)
+                <img src="{{ url('admin/image/nofoto.png') }}" width="10%">
+            @else
+                <img src="{{ url('admin/image') }}/{{ $u->foto }}" width="10%">
+            @endempty
             <a href="{{url('admin/user')}}">
                 <button class="btn btn-primary btn-lg"> Back </button>
             </a>
