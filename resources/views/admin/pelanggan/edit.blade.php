@@ -1,68 +1,87 @@
 @extends('admin.layout.appadmin')
 
 @section('content')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <br>
-<h1 align="center"> Form Edit Pelanggan </h2>
+@foreach ($pelanggan as $pk)
+<h1 align="center">Form Edit Pelanggan</h1>
+
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li> {{$error}}</li>
+    @endforeach
+  </ul>
+
+</div>
+@endif
 <form method="POST" action="{{url('admin/pelanggan/update')}}" enctype="multipart/form-data">
-    {{csrf_field()}}
-    <input type="hidden" name="id" required value="{{ $p->id }}">
+  {{csrf_field()}}
   <div class="form-group row">
-    <label for="text" class="col-4 col-form-label">Nama</label> 
+    <input type="hidden" name="id" value="{{$pk->id}}" /><br>
+    <label for="text" class="col-4 col-form-label">Nama</label>
     <div class="col-8">
-      <input id="text" name="nama" type="text" class="form-control" required value="{{ $p->nama }}">
+      <input id="text" name="nama" type="text" class="form-control" value="{{$pk->nama}}">
     </div>
   </div>
   <div class="form-group row">
-    <label for="text1" class="col-4 col-form-label">Username</label> 
+    <label for="text1" class="col-4 col-form-label">Username</label>
     <div class="col-8">
-      <input id="text1" name="username" type="text" class="form-control" required value="{{ $p->username }}">
+      <input id="text1" name="username" type="text" class="form-control" value="{{$pk->username}}">
     </div>
   </div>
   <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Password</label> 
+    <label for="text2" class="col-4 col-form-label">Password</label>
     <div class="col-8">
-      <input id="text2" name="password" type="text" class="form-control" required value="{{ $p->password }}">
+      <input id="text2" name="password" type="text" class="form-control" value="{{$pk->password}}">
     </div>
   </div>
   <div class="form-group row">
-    <label for="text3" class="col-4 col-form-label">Email</label> 
+    <label for="text3" class="col-4 col-form-label">Email</label>
     <div class="col-8">
-      <input id="text3" name="email" type="email" class="form-control" required value="{{ $p->email }}">
+      <input id="text3" name="email" type="email" class="form-control" value="{{$pk->email}}">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-4">Jenis Kelamin</label> 
+    <label class="col-4">Jenis Kelamin</label>
     <div class="col-8">
+      @foreach($ar_jk as $jk)
+      @php $cek = ($jk == $pk->jk) ? 'checked' : ''; @endphp
       <div class="custom-control custom-radio custom-control-inline">
-        <input name="jk" id="radio_0" type="radio" class="custom-control-input" required value="l"> 
+        <input name="jk" id="radio_0" type="radio" class="custome-control-input" value="{{$jk}}" {{$cek}}>
+        <label for="radio_0" class="form-check-label">{{$jk}}</label>
+      </div>
+      <!-- <div class="custom-control custom-radio custom-control-inline">
+        <input name="jk" id="radio_0" type="radio" class="custom-control-input" value="l"> 
         <label for="radio_0" class="custom-control-label">Laki-Laki</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
         <input name="jk" id="radio_1" type="radio" class="custom-control-input" value="p"> 
         <label for="radio_1" class="custom-control-label">Perempuan</label>
-      </div>
+      </div>-->
+      @endforeach
     </div>
   </div>
   <div class="form-group row">
-    <label for="text4" class="col-4 col-form-label">Telepon</label> 
+    <label for="textarea" class="col-4 col-form-label">Alamat</label>
     <div class="col-8">
-      <input id="text4" name="telepon" type="text" class="form-control" required value="{{ $p->telepon }}">
+      <textarea id="textarea" name="alamat" cols="40" rows="5" class="form-control">{{$pk->alamat}}</textarea>
     </div>
   </div>
   <div class="form-group row">
-    <label for="textarea" class="col-4 col-form-label">Alamat</label> 
+    <label for="text4" class="col-4 col-form-label">Telepon</label>
     <div class="col-8">
-      <textarea id="textarea" name="alamat" cols="40" rows="5" required class="form-control">{{ $p->alamat }}</textarea>
+      <input id="text4" name="telepon" type="text" class="form-control" value="{{$pk->telepon}}">
     </div>
-  </div> 
+  </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+      <button name="submit" type="submit" class="btn btn-primary">Update</button>
     </div>
   </div>
 </form>
-
+@endforeach
 @endsection

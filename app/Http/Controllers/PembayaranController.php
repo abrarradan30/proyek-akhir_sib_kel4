@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class PembayaranController extends Controller
 {
@@ -118,4 +119,11 @@ class PembayaranController extends Controller
         return redirect('admin/pembayaran');
         
     }
+
+    public function pembayaranPDF(){
+        $pembayaran = Pembayaran::all();
+        $pdf = PDF::loadview('admin.pembayaran.pembayaranPDF', ['pembayaran' => $pembayaran])->setPaper('a4','landscape');
+        return $pdf->stream();
+    }
+
 }
