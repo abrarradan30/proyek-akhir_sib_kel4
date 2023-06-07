@@ -85,8 +85,9 @@ class PelangganController extends Controller
     public function edit(string $id)
     {
         //
-        $p = DB::table('pelanggan')->where('id', $id)->first();
-        return view('admin.pelanggan.edit', compact('p'));
+        $pelanggan = DB::table('pelanggan')->where('id', $id)->get();
+        $ar_jk = ['l', 'p'];
+        return view('admin.pelanggan.edit', compact('pelanggan', 'ar_jk'));
     }
 
     /**
@@ -138,7 +139,7 @@ class PelangganController extends Controller
         DB::table('pelanggan')->where('id', $request->id)->delete();
         return redirect('admin/pelanggan');
     }
-    public function PDF()
+    public function pelangganPDF()
     {
         $pelanggan = Pelanggan::all();
         $pdf = PDF::loadView('admin.pelanggan.pelangganPDF', ['pelanggan' => $pelanggan])->setPaper('a4', 'landscape');

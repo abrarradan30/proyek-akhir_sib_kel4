@@ -43,7 +43,7 @@ Route::get('/pelanggan/edit/{id}',[PelangganController::class, 'edit']);
 Route::post('/pelanggan/update',[PelangganController::class, 'update']);
 Route::get('/pelanggan/show/{id}', [PelangganController::class, 'show']);
 Route::get('/pelanggan/delete/{id}',[PelangganController::class, 'destroy']);
-Route::get('/pelanggan/PDF', [PelangganController::class, 'PDF']);
+Route::get('/pelanggan/pelangganPDF', [PelangganController::class, 'pelangganPDF']);
 // route pembayaran
 Route::get('/pembayaran',[PembayaranController::class, 'index']);
 Route::get('/pembayaran/create', [PembayaranController::class, 'create']);

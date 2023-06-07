@@ -40,7 +40,7 @@ class UserKosController extends Controller
             'password' => 'required',
             'email' => 'required',
             'role' => 'required',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048', 
+            'foto' => 'required|image|mimes:jpg,jpeg,gif,svg|max:2048', 
         ],
         [
             'nama.required' => 'Nama wajib diisi',

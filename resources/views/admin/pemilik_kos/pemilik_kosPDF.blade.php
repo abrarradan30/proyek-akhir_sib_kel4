@@ -14,6 +14,7 @@
     <table border="1" cellpadding="10" align="center">
         <thead>
             <tr>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Username</th>
                 <th>Password</th>
@@ -24,19 +25,17 @@
             </tr>
         </thead>
         <tbody>
-            @php
-            @endphp
+            @php $no = 1; @endphp
             @foreach ($pemilik_kos as $pk)
             <tr>
-
-                <td>{{$nama}}</td>
+                <td>{{$no++}}</td>
+                <td>{{$pk->nama}}</td>
                 <td>{{$pk->username}}</td>
                 <td>{{$pk->password}}</td>
                 <td>{{$pk->email}}</td>
                 <td>{{$pk->jk}}</td>
                 <td>{{$pk->alamat}}</td>
                 <td>{{$pk->telepon}}</td>
-
             </tr>
             @endforeach
         </tbody>
