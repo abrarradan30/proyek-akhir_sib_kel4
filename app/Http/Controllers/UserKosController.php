@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\UserKos;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class UserKosController extends Controller
 {
@@ -142,5 +143,13 @@ class UserKosController extends Controller
         //
         DB::table('user')->where('id', $id)->delete();
         return redirect('admin/user');
+    }
+    // fungsi export PDF
+    public function userPDF()
+    {
+        $user = User::all();
+        $pdf = PDF::loadView('admin.user.userPDF', ['user' => $user])->setPaper('a4', 'landscape');
+        //return $pdf->download('data_user.pdf'); 
+        return $pdf->stream('data_user.pdf');
     }
 }

@@ -9,6 +9,7 @@ use App\Models\Pelanggan;
 use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class RiwayatPesananController extends Controller
 {
@@ -157,5 +158,13 @@ class RiwayatPesananController extends Controller
         //
         DB::table('riwayat_pesanan')->where('id', $id)->delete();
         return redirect('admin/riwayat_pesanan');
+    }
+    // fungsi export PDF
+    public function riwayat_pesananPDF()
+    {
+        $riwayat_pesanan = RiwayatPesanan::all();
+        $pdf = PDF::loadView('admin.riwayat_pesanan.riwayat_pesananPDF', ['riwayat_pesanan' => $riwayat_pesanan])->setPaper('a4', 'landscape');
+        //return $pdf->download('data_riwayat_pesanan.pdf'); 
+        return $pdf->stream('data_riwayat_pesanan.pdf');
     }
 }

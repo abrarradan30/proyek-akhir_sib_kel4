@@ -67,6 +67,7 @@ Route::get('/riwayat_pesanan/edit/{id}',[RiwayatPesananController::class, 'edit'
 Route::post('/riwayat_pesanan/update',[RiwayatPesananController::class, 'update']);
 Route::get('/riwayat_pesanan/show/{id}',[RiwayatPesananController::class, 'show']);
 Route::get('/riwayat_pesanan/delete/{id}',[RiwayatPesananController::class, 'destroy']);
+Route::get('/riwayat_pesanan/riwayat_pesananPDF', [RiwayatPesananController::class, 'riwayat_pesananPDF']);
 //route user
 Route::get('/user',[UserKosController::class, 'index']);
 Route::get('/user/create',[UserKosController::class, 'create']);
@@ -75,4 +76,5 @@ Route::get('/user/edit/{id}',[UserKosController::class, 'edit']);
 Route::post('/user/update',[UserKosController::class, 'update']);
 Route::get('/user/show/{id}',[UserKosController::class, 'show']);
 Route::get('/user/delete/{id}',[UserKosController::class, 'destroy']);
+Route::get('/user/userPDF', [UserController::class, 'userPDF']);
 });
