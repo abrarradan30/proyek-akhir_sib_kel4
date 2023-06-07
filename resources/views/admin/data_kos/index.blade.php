@@ -1,27 +1,28 @@
 @extends('admin.layout.appadmin')
 
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
     <h1 class="mt-4">Tables Data Kos</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Tables</li>
     </ol>
     <div class="card mb-4">
-        <!-- <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
-                            </div> -->
+        {{-- <div class="card-body">
+                                    DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                                    <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                    .
+                                </div> --}}
     </div>
     <div class="card mb-4">
         <div class="card-header">
             <!-- <i class="fas fa-table me-1"></i>
-                            DataTable Example -->
+                                        DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
-
             <a href="{{ url('admin/data_kos/create') }}" class="btn btn-primary  btn-sm">Tambah</a>
-
+        </div>
+        <div class="card-header">
+            <a href="{{ url('admin/data_kos/data_kosPDF') }}" class="btn btn-success btn-sm" target="_blank"> Export To PDF</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -106,7 +107,6 @@
                                         data-bs-target="#exampleModal{{ $dk->id }}">
                                         Hapus
                                     </button>
-
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal{{ $dk->id }}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -129,7 +129,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </form>
                             </td>
                         </tr>
