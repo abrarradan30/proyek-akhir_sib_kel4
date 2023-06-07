@@ -9,6 +9,7 @@ use App\Models\Pelanggan;
 use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class RiwayatPesananController extends Controller
 {
@@ -52,6 +53,26 @@ class RiwayatPesananController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'durasi_sewa' => 'required|max:10',
+            'tanggal' => 'required',
+            'jumlah_kamar' => 'required|integer',
+            'total' => 'required',
+            'data_kos_id' => 'required|integer',
+            'pembayaran_id' => 'required|integer',
+            'pelanggan_id' => 'required|integer',
+        ],
+        [
+            'durasi_sewa.required' => 'Durasi sewa wajib diisi',
+            'durasi_sewa.max' => 'Durasi sewa maksimal 10 karakter',
+            'tanggal.required' => 'Tanggal wajib diisi',
+            'jumlah_kamar.required' => 'Jumlah kamar wajib diisi',
+            'total.required' => 'Total jumlah bayar wajib diisi',
+            'data_kos_id.required' => 'Nama kos wajib diisi',
+            'pembayaran_id.required' => 'Status pembayaran wajib diisi',
+            'pelanggan_id.required' => 'Nama pelanggan wajib diisi',
+        ]
+        );
         //
         DB::table('riwayat_pesanan')->insert([
             'durasi_sewa' => $request->durasi_sewa,
@@ -105,6 +126,15 @@ class RiwayatPesananController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'durasi_sewa' => 'required|max:10',
+            'tanggal' => 'required',
+            'jumlah_kamar' => 'required|integer',
+            'total' => 'required',
+            'data_kos_id' => 'required|integer',
+            'pembayaran_id' => 'required|integer',
+            'pelanggan_id' => 'required|integer',
+        ]);
         //
         DB::table('riwayat_pesanan')->where('id', $request->id)->update([
             'durasi_sewa' => $request->durasi_sewa,
@@ -128,5 +158,13 @@ class RiwayatPesananController extends Controller
         //
         DB::table('riwayat_pesanan')->where('id', $id)->delete();
         return redirect('admin/riwayat_pesanan');
+    }
+    // fungsi export PDF
+    public function riwayat_pesananPDF()
+    {
+        $riwayat_pesanan = RiwayatPesanan::all();
+        $pdf = PDF::loadView('admin.riwayat_pesanan.riwayat_pesananPDF', ['riwayat_pesanan' => $riwayat_pesanan])->setPaper('a4', 'landscape');
+        //return $pdf->download('data_riwayat_pesanan.pdf'); 
+        return $pdf->stream('data_riwayat_pesanan.pdf');
     }
 }

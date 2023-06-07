@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class PembayaranController extends Controller
 {
@@ -33,7 +34,21 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([  
+            'no_kwitansi' => 'required|max:45',
+            'tanggal' => 'required',
+            'jumlah' => 'required',
+            'status' => 'required',
+        ],
+        [
+            'no_kwitansi.required' => 'Nomor Kwitansi Wajib Diisi ',
+            'no_kwitansi.max' => 'Nomor Kwitansi Maksimal 45 karakter ',
+            'tanggal.required'=> 'Tanggal Wajib Diisi',
+            'jumlah.required'=> 'Jumlah Wajib Diisi',
+
+        ]
+        );
+
         DB::table('pembayaran')->insert([
             'no_kwitansi' => $request->no_kwitansi,
             'tanggal'=> $request->tanggal,
@@ -64,7 +79,9 @@ class PembayaranController extends Controller
     {
         //arahkan ke file edit yang ada di pembayaran view
         $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
-        return view('admin.pembayaran.edit', compact('pembayaran'));
+        $ar_status = ['lunas', 'belum lunas'];
+
+        return view('admin.pembayaran.edit', compact('pembayaran','ar_status'));
     }
 
     /**
@@ -73,6 +90,12 @@ class PembayaranController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'no_kwitansi' => 'required|max:45',
+            'tanggal'=> 'required',
+            'jumlah'=> 'required',
+            'status'=> 'required',
+        ]);
         //Buat prose edit form
         DB::table('pembayaran')->where('id', $request->id)->update([
             'no_kwitansi'=> $request->no_kwitansi,
@@ -96,4 +119,11 @@ class PembayaranController extends Controller
         return redirect('admin/pembayaran');
         
     }
+
+    public function pembayaranPDF(){
+        $pembayaran = Pembayaran::all();
+        $pdf = PDF::loadview('admin.pembayaran.pembayaranPDF', ['pembayaran' => $pembayaran])->setPaper('a4','landscape');
+        return $pdf->stream();
+    }
+
 }

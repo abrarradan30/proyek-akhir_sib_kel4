@@ -6,30 +6,59 @@
 
 <br>
 <h1 align="center"> Form Tambah User </h2>
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li> {{$error}} </li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form method="POST" action="{{url('admin/user/store')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
     <label for="text" class="col-4 col-form-label">Nama</label> 
     <div class="col-8">
-        <input id="text" name="nama" type="text" class="form-control" placeholder="Masukkan Nama">
+        <input id="text" name="nama" type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
+        @error('nama')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
       </div>
   </div>
   <div class="form-group row">
     <label for="text2" class="col-4 col-form-label">Username</label> 
     <div class="col-8">
-      <input id="text2" name="username" type="text" class="form-control" placeholder="Masukkan Username">
+      <input id="text2" name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Masukkan Username">
+      @error('username')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
     </div>
   </div>
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Password</label> 
     <div class="col-8">
-      <input id="text1" name="password" type="text" class="form-control" placeholder="Masukkan Password">
+      <input id="text1" name="password" type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan Password">
+      @error('password')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
     </div>
   </div>
   <div class="form-group row">
     <label for="text3" class="col-4 col-form-label">Email</label> 
     <div class="col-8">
-      <input id="text3" name="email" type="email" class="form-control">
+      <input id="text3" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Email">
+      @error('email')
+        <div class="invalid-feedback">
+          {{$message}}
+        </div>
+      @enderror
     </div>
   </div>
   <div class="form-group row">
@@ -49,6 +78,12 @@
       </div>
     </div>
   </div> 
+  <div class="form-group row">
+    <label for="text3" class="col-4 col-form-label">Foto</label>
+      <div class="col-8">
+        <input id="text3" name="foto" type="file" class="form-control">
+      </div>
+  </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
       <button name="submit" type="submit" class="btn btn-primary">Submit</button>

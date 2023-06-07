@@ -23,6 +23,9 @@
             <a href="{{url('admin/riwayat_pesanan/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
+        <div class="card-header">
+            <a href="{{url('admin/riwayat_pesanan/riwayat_pesananPDF')}}" class="btn btn-success btn-sm" target="_blank"> Export To PDF </a>   
+        </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
@@ -55,30 +58,30 @@
                     @php
                         $no = 1;
                     @endphp
-                    @foreach ($riwayat_pesanan as $rs)
+                    @foreach ($riwayat_pesanan as $rp)
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{$rs->durasi_sewa}}</td>
-                            <td>{{$rs->tanggal}}</td>
-                            <td>{{$rs->jumlah_kamar}}</td>
-                            <td>{{$rs->total}}</td>
-                            <td>{{$rs->nama_kos}}</td>
-                            <td>{{$rs->status_pembayaran}}</td>
-                            <td>{{$rs->nama_pelanggan}}</td>
+                            <td>{{$rp->durasi_sewa}}</td>
+                            <td>{{$rp->tanggal}}</td>
+                            <td>{{$rp->jumlah_kamar}}</td>
+                            <td>{{$rp->total}}</td>
+                            <td>{{$rp->nama_kos}}</td>
+                            <td>{{$rp->status_pembayaran}}</td>
+                            <td>{{$rp->nama_pelanggan}}</td>
                             <td>
                                 <form action="#" method="POST">
-                                    <a href="{{url('admin/riwayat_pesanan/show/'.$rs->id)}}" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="{{url('admin/riwayat_pesanan/show/'.$rp->id)}}" class="btn btn-info btn-sm">Detail</a>
 
-                                    <a href="{{url('admin/riwayat_pesanan/edit/'.$rs->id)}}" class="btn btn-warning btn-sm">Ubah</a>
+                                    <a href="{{url('admin/riwayat_pesanan/edit/'.$rp->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                                     <!-- Modal -->
                                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$rs->id}}">
+<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$rp->id}}">
   Hapus
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal{{$rs->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{$rp->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -90,7 +93,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a class="btn btn-danger" href="{{url('admin/riwayat_pesanan/delete/'.$rs->id)}}">Hapus</a>
+        <a class="btn btn-danger" href="{{url('admin/riwayat_pesanan/delete/'.$rp->id)}}">Hapus</a>
       </div>
     </div>
   </div>

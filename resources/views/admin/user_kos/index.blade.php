@@ -23,6 +23,9 @@
             <a href="{{url('admin/user/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
+        <div class="card-header">
+            <a href="{{url('admin/user/userPDF')}}" class="btn btn-success btn-sm" target="_blank"> Export To PDF </a>   
+        </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
@@ -33,6 +36,7 @@
                         <th>Password</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Foto</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -44,6 +48,7 @@
                         <th>Password</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Foto</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
@@ -59,6 +64,13 @@
                             <td>{{$u->password}}</td>
                             <td>{{$u->email}}</td>
                             <td>{{$u->role}}</td>
+                            <td>
+                                @empty($u->foto)
+                                    <img src="{{url('admin/image/nofoto.png')}}" width="20%">
+                                @else
+                                    <img src="{{url('admin/image') }}/{{$u->foto}}" width="20%">
+                                @endempty
+                            </td>
                             <td>
                                 <form action="#" method="POST">
                                     <a href="{{url('admin/user/show/'.$u->id)}}" class="btn btn-info btn-sm">Detail</a>

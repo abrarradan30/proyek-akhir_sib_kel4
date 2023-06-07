@@ -7,6 +7,18 @@
 <br>
 @foreach ($pembayaran as $py)
 <h1 align="center"> Form Edit Pembayaran </h1>
+
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+  <li> {{$error}}</li>
+    @endforeach
+</ul>
+
+</div>
+@endif
+
 <form method="POST" action="{{url('admin/pembayaran/update/')}}" enctype="multipart/form-data">
 {{csrf_field()}}
   <div class="form-group row">
@@ -31,14 +43,21 @@
   <div class="form-group row">
     <label class="col-4">Status Pembayaran</label> 
     <div class="col-8">
+    @foreach($ar_status as $status)
+      @php $cek = ($status == $py->status) ? 'checked' : ''; @endphp
       <div class="custom-control custom-radio custom-control-inline">
+        <input name="status" id="radio_0" type="radio" class="custome-control-input" value="{{$status}}" {{$cek}}> 
+        <label for="radio_0" class="form-check-label">{{$status}}</label>
+      </div>
+      <!-- <div class="custom-control custom-radio custom-control-inline">
         <input name="status" id="radio_0" type="radio" class="custom-control-input" value="lunas"> 
         <label for="radio_0" class="custom-control-label">Lunas</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
         <input name="status" id="radio_1" type="radio" class="custom-control-input" value="belum lunas"> 
         <label for="radio_1" class="custom-control-label">Belum Lunas</label>
-      </div>
+      </div> -->
+      @endforeach  
     </div>
   </div> 
   <div class="form-group row">

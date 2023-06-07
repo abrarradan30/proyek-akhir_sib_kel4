@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pelanggan;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class PelangganController extends Controller
 {
@@ -34,6 +35,26 @@ class PelangganController extends Controller
     public function store(Request $request)
     {
         // fungsi untuk mengisi data pada form
+        $request->validate([
+            'nama' => 'required|max:45',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required',
+            'jk' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+        ]);
+        [
+            'nama.required' => 'Nama wajib diisi',
+            'nama.max' => 'Nama maksimal 45 karakter',
+            'username.required' => 'Username wajib diisi',
+            'password.required' => 'Password wajib diisi',
+            'email.required' => 'Email wajib diisi',
+            'jk.required' => 'Jenis kelamin wajib diisi',
+            'alamat.required' => 'Alamat wajib diisi',
+            'telepon.required' => 'Telepon wajib diisi',
+
+        ];
         DB::table('pelanggan')->insert([
             'nama' => $request->nama,
             'username' => $request->username,
@@ -43,7 +64,8 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
-        Alert::success('Pelanggan', 'Berhasil menambah Pelanggan');
+        
+        Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
         return redirect('admin/pelanggan');
     }
 
@@ -74,6 +96,26 @@ class PelangganController extends Controller
     public function update(Request $request)
     {
         //
+        $request->validate([
+            'nama' => 'required|max:45',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required',
+            'jk' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+        ]);
+        [
+            'nama.required' => 'Nama wajib diisi',
+            'nama.max' => 'Nama maksimal 45 karakter',
+            'username.required' => 'Username wajib diisi',
+            'password.required' => 'Password wajib diisi',
+            'email.required' => 'Email wajib diisi',
+            'jk.required' => 'Jenis kelamin wajib diisi',
+            'alamat.required' => 'Alamat wajib diisi',
+            'telepon.required' => 'Telepon wajib diisi',
+
+        ];
         DB::table('pelanggan')->where('id', $request->id)->update([
             'nama' => $request->nama,
             'username' => $request->username,
@@ -84,7 +126,7 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
         ]);
 
-        Alert::info('Pelanggan', 'Berhasil modifikasi data Pelanggan');
+        Alert::info('Pelanggan', 'Berhasil mengedit pelanggan');
         return redirect('admin/pelanggan');
     }
 
@@ -95,5 +137,12 @@ class PelangganController extends Controller
     {
         DB::table('pelanggan')->where('id', $request->id)->delete();
         return redirect('admin/pelanggan');
+    }
+    public function PDF()
+    {
+        $pelanggan = Pelanggan::all();
+        $pdf = PDF::loadView('admin.pelanggan.pelangganPDF', ['pelanggan' => $pelanggan])->setPaper('a4', 'landscape');
+        //return $pdf->download('data_user.pdf'); 
+        return $pdf->stream('data_pelanggan.pdf');
     }
 }

@@ -23,6 +23,10 @@
             <a href="{{url('admin/pembayaran/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
+
+        <div class="card-header">
+                            <a href="{{url('admin/pembayaran/pembayaranPDF')}}" class="btn btn-primary btn-sm" target="_blank"> Export To PDF </a>
+                            </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
