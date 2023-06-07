@@ -76,5 +76,5 @@ Route::get('/user/edit/{id}',[UserKosController::class, 'edit']);
 Route::post('/user/update',[UserKosController::class, 'update']);
 Route::get('/user/show/{id}',[UserKosController::class, 'show']);
 Route::get('/user/delete/{id}',[UserKosController::class, 'destroy']);
-Route::get('/user/userPDF', [UserController::class, 'userPDF']);
+Route::get('/user/userPDF', [UserKosController::class, 'userPDF']);
 });
