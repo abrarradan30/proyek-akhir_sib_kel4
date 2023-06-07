@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PemilikKos;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
+use PDF;
 
 class PemilikKosController extends Controller
 {
@@ -128,5 +129,25 @@ class PemilikKosController extends Controller
         //
         DB::table('pemilik_kos')->where('id', $id)->delete();
         return redirect('admin/pemilik_kos');
+    }
+    //ini adalah fungsi percontohan untuk export pdf
+    public function generatePDF()
+    {
+        $data = [
+            'title' => 'Welcome to ItSolutionStuff.com',
+            'date' => date('m/d/Y')
+        ];
+
+        $pdf = PDF::loadView('admin.pemilik_kos.myPDF', $data);
+
+        return $pdf->download('testdownload.pdf');
+    }
+    public function pemilik_kosPDF()
+    {
+        $pegawai = PemilikKos::all();
+
+        $pdf = PDF::loadView('admin.pemilik_kos.pemilik_kosPDF', ['pemilik_kos' => $pemilik_kos])->setPaper('a4', 'landscape');
+        // return $pdf->download('data_pemilik_kos.pdf');
+        return $pdf->stream();
     }
 }
