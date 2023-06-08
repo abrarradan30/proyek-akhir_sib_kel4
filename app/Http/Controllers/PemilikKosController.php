@@ -7,6 +7,9 @@ use App\Models\PemilikKos;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 use PDF;
+use App\Exports\PemilikKosExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PemilikKosImport;
 
 class PemilikKosController extends Controller
 {
@@ -35,26 +38,28 @@ class PemilikKosController extends Controller
     public function store(Request $request)
     {
         // fungsi untuk mengisi data pada form
-        $request->validate([
-            'nama' => 'required|max:45',
-            'username' => 'required',
-            'password' => 'required',
-            'email' => 'required',
-            'jk' => 'required',
-            'alamat' => 'required',
-            'telepon' => 'required',
-        ],
-        [
-            'nama.required' => 'Nama wajib diisi',
-            'nama.max' => 'Nama maksimal 45 karakter',
-            'username.required' => 'Username wajib diisi',
-            'password.required' => 'Password wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'jk.required' => 'Jenis kelamin wajib diisi',
-            'alamat.required' => 'Alamat wajib diisi',
-            'telepon.required' => 'Telepon wajib diisi',
+        $request->validate(
+            [
+                'nama' => 'required|max:45',
+                'username' => 'required',
+                'password' => 'required',
+                'email' => 'required',
+                'jk' => 'required',
+                'alamat' => 'required',
+                'telepon' => 'required',
+            ],
+            [
+                'nama.required' => 'Nama wajib diisi',
+                'nama.max' => 'Nama maksimal 45 karakter',
+                'username.required' => 'Username wajib diisi',
+                'password.required' => 'Password wajib diisi',
+                'email.required' => 'Email wajib diisi',
+                'jk.required' => 'Jenis kelamin wajib diisi',
+                'alamat.required' => 'Alamat wajib diisi',
+                'telepon.required' => 'Telepon wajib diisi',
 
-        ]);
+            ]
+        );
         //fungsi untuk menambahkan pemilik kos
         DB::table('pemilik_kos')->insert([
             'nama' => $request->nama,
@@ -135,5 +140,17 @@ class PemilikKosController extends Controller
         $pdf = PDF::loadView('admin.pemilik_kos.pemilik_kosPDF', ['pemilik_kos' => $pemilik_kos])->setPaper('a4', 'landscape');
         // return $pdf->download('data_pemilik_kos.pdf');
         return $pdf->stream();
+    }
+    public function exportExcel()
+    {
+        return Excel::download(new PemilikKosExport, 'pemilik_kos.xlsx');
+    }
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        $nama_file = rand() . $file->getClientOriginalName();
+        $file->move('file_excel', $nama_file);
+        Excel::import(new PemilikKosImport, public_path('/file_excel/' . $nama_file));
+        return redirect('admin/pemilik_kos');
     }
 }
