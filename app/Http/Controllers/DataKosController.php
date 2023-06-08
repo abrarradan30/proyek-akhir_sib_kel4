@@ -8,6 +8,10 @@ use App\Models\PemilikKos;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 use PDF;
+use App\Exports\DataKosExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\DataKosImport;
+
 
 class DataKosController extends Controller
 {
@@ -59,7 +63,7 @@ class DataKosController extends Controller
                 'kecamatan'      => 'required|max:50',
                 'jalan'          => 'required|max:50',
                 'kode_pos'       => 'required|numeric',
-                'telepon'        => 'required|min:12',
+                'telepon'        => 'required|max:20',
                 'pemilik_kos_id' => 'required',
             ],
             [
@@ -156,7 +160,7 @@ class DataKosController extends Controller
                 'kecamatan'      => 'required|max:50',
                 'jalan'          => 'required|max:50',
                 'kode_pos'       => 'required|numeric',
-                'telepon'        => 'required|min:12',
+                'telepon'        => 'required|max:20',
                 'pemilik_kos_id' => 'required',
             ]
         );
@@ -214,5 +218,20 @@ class DataKosController extends Controller
         $pdf = PDF::loadView('admin.data_kos.data_kosPDF', ['data_kos' => $data_kos])->setPaper('a4', 'landscape');
         //return $pdf->download('data_kos.pdf'); 
         return $pdf->stream('data_kos.pdf');
+    }
+    
+    //fungsi export excel
+    public function exportExcel()
+    {
+        return Excel::download(new DataKosExport, 'data_kos.xlsx');
+    }
+
+    //fungsi import excel
+    public function importExcel(Request $request){
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_excel', $nama_file);
+        Excel::import(new DataKosImport, public_path('/file_excel/'.$nama_file));
+        return redirect('admin/data_kos');
     }
 }
