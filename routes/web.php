@@ -36,6 +36,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/data_kos/show/{id}', [DataKosController::class, 'show']);
     Route::get('/data_kos/delete/{id}', [DataKosController::class, 'destroy']);
     Route::get('/data_kos/data_kosPDF', [DataKosController::class, 'data_kosPDF']);
+    Route::get('/data_kos/exportexcel/', [DataKosController::class, 'exportExcel']);
+    Route::post('/data_kos/importexcel/', [DataKosController::class, 'importExcel']);
     //route pelanggan
     Route::get('/pelanggan', [PelangganController::class, 'index']);
     Route::get('/pelanggan/create', [PelangganController::class, 'create']);

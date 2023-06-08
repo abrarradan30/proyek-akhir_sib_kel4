@@ -2,6 +2,33 @@
 
 @section('content')
     @include('sweetalert::alert')
+    {{-- Modal --}}
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ url('admin/data_kos/importexcel') }}" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            {{ csrf_field() }}
+                            <input type="file" name="file">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    {{-- end Modal --}}
     <h1 class="mt-4">Tables Data Kos</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -23,6 +50,11 @@
         </div>
         <div class="card-header">
             <a href="{{ url('admin/data_kos/data_kosPDF') }}" class="btn btn-success btn-sm" target="_blank"> Export To PDF</a>
+            <a href="{{ url('admin/data_kos/exportexcel') }}" class="btn btn-success btn-sm"> Export To EXCEL</a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal">
+                Import To EXCEL
+            </button>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
