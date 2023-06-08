@@ -10,6 +10,9 @@ use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 use PDF;
+use App\Exports\RiwayatPesananExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\RiwayatPesananImport;
 
 class RiwayatPesananController extends Controller
 {
@@ -166,5 +169,18 @@ class RiwayatPesananController extends Controller
         $pdf = PDF::loadView('admin.riwayat_pesanan.riwayat_pesananPDF', ['riwayat_pesanan' => $riwayat_pesanan])->setPaper('a4', 'landscape');
         //return $pdf->download('data_riwayat_pesanan.pdf'); 
         return $pdf->stream('data_riwayat_pesanan.pdf');
+    }
+    //fungsi export-importExcel
+    public function exportExcel()
+    {
+        return Excel::download(new RiwayatPesananExport, 'riwayat_pesanan.xlsx');
+    }
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_excel', $nama_file);
+        Excel::import(new RiwayatPesananImport, public_path('/file_excel/'.$nama_file));
+        return redirect('admin/riwayat_pesanan');
     }
 }
