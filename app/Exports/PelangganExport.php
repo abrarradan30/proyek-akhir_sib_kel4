@@ -6,7 +6,7 @@ use App\Models\Pelanggan;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class PegawaiExport implements FromCollection, WithHeadings
+class PelangganExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

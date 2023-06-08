@@ -6,7 +6,7 @@ use App\Models\PemilikKos;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class PegawaiExport implements FromCollection, WithHeadings
+class PemilikKosExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
