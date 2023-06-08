@@ -46,7 +46,7 @@
             <!-- <i class="fas fa-table me-1"></i>
                                         DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
-            <a href="{{ url('admin/data_kos/create') }}" class="btn btn-primary  btn-sm">Tambah</a>
+            <a href="{{ url('admin/data_kos/create') }}" class="btn btn-primary btn-sm">Tambah</a>
         </div>
         <div class="card-header">
             <a href="{{ url('admin/data_kos/data_kosPDF') }}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF</a>
