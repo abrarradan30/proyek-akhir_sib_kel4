@@ -72,6 +72,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/riwayat_pesanan/show/{id}', [RiwayatPesananController::class, 'show']);
     Route::get('/riwayat_pesanan/delete/{id}', [RiwayatPesananController::class, 'destroy']);
     Route::get('/riwayat_pesanan/riwayat_pesananPDF', [RiwayatPesananController::class, 'riwayat_pesananPDF']);
+    Route::get('riwayat_pesanan/exportexcel', [RiwayatPesananController::class, 'exportExcel']);
+    Route::post('/riwayat_pesanan/importexcel', [RiwayatPesananController::class, 'importExcel']);
     //route user
     Route::get('/user', [UserKosController::class, 'index']);
     Route::get('/user/create', [UserKosController::class, 'create']);
@@ -81,4 +83,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/user/show/{id}', [UserKosController::class, 'show']);
     Route::get('/user/delete/{id}', [UserKosController::class, 'destroy']);
     Route::get('/user/userPDF', [UserKosController::class, 'userPDF']);
+    Route::get('user/exportexcel', [UserKosController::class, 'exportExcel']);
+    Route::post('/user/importexcel', [UserKosController::class, 'importExcel']);
 });

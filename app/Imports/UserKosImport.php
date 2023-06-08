@@ -16,6 +16,12 @@ class UserKosImport implements ToModel
     {
         return new UserKos([
             //
+            'nama' => $row[1],
+            'username' => $row[2], 
+            'password' => $row[3],
+            'email' => $row[4],
+            'role' =>$row[5],
+            //'foto' => $row[6],
         ]);
     }
 }
