@@ -21,7 +21,7 @@ class DataKosImport implements ToModel
             'jenis_kos'      => $row[3],
             'fasilitas'      => $row[4],
             'luas_ruang'     => $row[5],
-            // 'gambar' => $row['6'],
+            // 'gambar' => $row[6],
             'harga'          => $row[7],
             'deskripsi'      => $row[8],
             'kabupaten_kota' => $row[9],
