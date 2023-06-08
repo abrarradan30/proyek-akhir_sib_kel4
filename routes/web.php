@@ -52,6 +52,8 @@ Route::post('/pembayaran/update/', [PembayaranController::class, 'update']);
 Route::get('/pembayaran/show/{id}', [PembayaranController::class, 'show']);
 Route::get('/pembayaran/delete/{id}', [PembayaranController::class, 'destroy']);
 Route::get('/pembayaran/pembayaranPDF', [PembayaranController::class, 'pembayaranPDF']);
+Route::get('/pembayaran/exportexcel/', [PembayaranController::class, 'exportExcel']);
+Route::post('/pembayaran/importexcel', [PembayaranController::class, 'importExcel']);
 
 //route pemilik kos
 Route::get('/pemilik_kos',[PemilikKosController::class, 'index']);

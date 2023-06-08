@@ -7,6 +7,9 @@ use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 use PDF;
+use App\Exports\PembayaranExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PembayaranImport;
 
 class PembayaranController extends Controller
 {
@@ -126,4 +129,15 @@ class PembayaranController extends Controller
         return $pdf->stream();
     }
 
+    public function exportExcel(){
+        return Excel::download(new PembayaranExport, 'pembayaran.xlsx');
+    }
+
+    public function importExcel(Request $request){
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_excel', $nama_file);
+        Excel::import(new PembayaranImport, public_path('/file_excel/'.$nama_file));
+        return redirect('admin/pembayaran');
+    }
 }
