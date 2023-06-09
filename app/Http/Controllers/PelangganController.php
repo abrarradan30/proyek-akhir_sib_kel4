@@ -8,6 +8,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 use PDF;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PelangganImport;
+use App\Exports\PelangganExport;
+
 class PelangganController extends Controller
 {
     /**
@@ -85,8 +89,9 @@ class PelangganController extends Controller
     public function edit(string $id)
     {
         //
-        $p = DB::table('pelanggan')->where('id', $id)->first();
-        return view('admin.pelanggan.edit', compact('p'));
+        $pelanggan = DB::table('pelanggan')->where('id', $id)->get();
+        $ar_jk = ['l', 'p'];
+        return view('admin.pelanggan.edit', compact('pelanggan', 'ar_jk'));
     }
 
     /**
@@ -138,11 +143,24 @@ class PelangganController extends Controller
         DB::table('pelanggan')->where('id', $request->id)->delete();
         return redirect('admin/pelanggan');
     }
-    public function PDF()
+    public function pelangganPDF()
     {
         $pelanggan = Pelanggan::all();
         $pdf = PDF::loadView('admin.pelanggan.pelangganPDF', ['pelanggan' => $pelanggan])->setPaper('a4', 'landscape');
         //return $pdf->download('data_user.pdf'); 
         return $pdf->stream('data_pelanggan.pdf');
+    }
+    public function pelangganEXCEL() 
+    {
+        return Excel::download(new PelangganExport, 'pelanggan.xlsx');    
+    }
+    public function pelangganIMPORT(Request $request)
+    {
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_excel', $nama_file);
+        Excel::import(new PelangganImport, public_path('/file_excel/'.$nama_file));
+        return redirect('admin/pelanggan');
+        
     }
 }

@@ -10,7 +10,8 @@ class Pelanggan extends Model
     use HasFactory;
     protected $table = 'pelanggan'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
-    protected $fillable = ['nama']; // pemanggilan kolom
+    protected $fillable = ['nama', 'username', 'password', 'email', 'jk', 'alamat', 'telepon']; // pemanggilan kolom
+
 
     public function riwayat_pesanan(){
         return $this->hasMany(RiwayatPesanan::class); // memanggil relasi antara tabel riwayat pesanan dan pelanggan
