@@ -20,7 +20,9 @@
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
 
             <a href="{{url('admin/pelanggan/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
-
+        </div>
+        <div class="card-header">
+            <a href="{{url('admin/pelanggan/pelangganPDF')}}" class="btn btn-success btn-sm" target="_blank"> Export To PDF </a>   
         </div>
         <div class="card-body">
             <table id="datatablesSimple">

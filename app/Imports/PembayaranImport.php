@@ -19,7 +19,6 @@ class PembayaranImport implements ToModel
             'tanggal' => $row[2],
             'jumlah' => $row[3],
             'status' => $row[4],
-            //
         ]);
     }
 }

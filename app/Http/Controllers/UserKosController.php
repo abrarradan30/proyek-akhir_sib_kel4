@@ -7,6 +7,9 @@ use App\Models\UserKos;
 use RealRashid\SweetAlert\Facades\Alert;
 use DB;
 use PDF;
+use App\Exports\UserKosExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UserKosImport;
 
 class UserKosController extends Controller
 {
@@ -40,7 +43,7 @@ class UserKosController extends Controller
             'password' => 'required',
             'email' => 'required',
             'role' => 'required',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048', 
+            'foto' => 'required|image|mimes:jpg,jpeg,gif,svg|max:2048', 
         ],
         [
             'nama.required' => 'Nama wajib diisi',
@@ -151,5 +154,18 @@ class UserKosController extends Controller
         $pdf = PDF::loadView('admin.user_kos.userPDF', ['user' => $user])->setPaper('a4', 'landscape');
         //return $pdf->download('data_user.pdf'); 
         return $pdf->stream('data_user.pdf');
+    }
+    //fungsi export-importExcel
+    public function exportExcel()
+    {
+        return Excel::download(new UserKosExport, 'user.xlsx');
+    }
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_excel', $nama_file);
+        Excel::import(new UserKosImport, public_path('/file_excel/'.$nama_file));
+        return redirect('admin/user');
     }
 }
