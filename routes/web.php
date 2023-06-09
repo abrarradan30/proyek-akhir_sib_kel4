@@ -92,3 +92,6 @@ Route::prefix('admin')->group(function () {
     Route::get('user/exportexcel', [UserKosController::class, 'exportExcel']);
     Route::post('/user/importexcel', [UserKosController::class, 'importExcel']);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
