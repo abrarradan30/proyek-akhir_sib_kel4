@@ -47,6 +47,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/pelanggan/show/{id}', [PelangganController::class, 'show']);
     Route::get('/pelanggan/delete/{id}', [PelangganController::class, 'destroy']);
     Route::get('/pelanggan/pelangganPDF', [PelangganController::class, 'pelangganPDF']);
+    Route::get('/pelanggan/pelangganEXCEL', [PelangganController::class, 'pelangganEXCEL']);
+    Route::post('/pelanggan/pelangganIMPORT', [PelangganController::class, 'pelangganIMPORT']);
     // route pembayaran
     Route::get('/pembayaran', [PembayaranController::class, 'index']);
     Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
