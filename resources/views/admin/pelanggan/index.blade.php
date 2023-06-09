@@ -22,12 +22,14 @@
             <a href="{{url('admin/pelanggan/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
         </div>
         <div class="card-header">
+
         <a href="{{url('admin/pelanggan/pelangganPDF')}}" class="btn btn-success btn-sm" target="_blank"> Export To PDF </a>   
         <a href="{{url('admin/pelanggan/pelangganEXCEL')}}" class="btn btn-info btn-sm" target="_blank"> Export To Excel </a>
         <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal">
                              Import To Excel
         </button>
         </div>
+        
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
