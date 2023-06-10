@@ -48,8 +48,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/pelanggan/show/{id}', [PelangganController::class, 'show']);
     Route::get('/pelanggan/delete/{id}', [PelangganController::class, 'destroy']);
     Route::get('/pelanggan/pelangganPDF', [PelangganController::class, 'pelangganPDF']);
-    Route::get('/pelanggan/pelangganEXCEL', [PelangganController::class, 'pelangganEXCEL']);
-    Route::post('/pelanggan/pelangganIMPORT', [PelangganController::class, 'pelangganIMPORT']);
+    Route::get('/pelanggan/exportexcel', [PelangganController::class, 'exportExcel']);
+    Route::post('/pelanggan/importexcel', [PelangganController::class, 'importExcel']);
     // route pembayaran
     Route::get('/pembayaran', [PembayaranController::class, 'index']);
     Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
@@ -70,6 +70,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/pemilik_kos/show/{id}', [PemilikKosController::class, 'show']);
     Route::get('/pemilik_kos/delete/{id}', [PemilikKosController::class, 'destroy']);
     Route::get('/pemilik_kos/pemilik_kosPDF', [PemilikKosController::class, 'pemilik_kosPDF']);
+    Route::get('/pemilik_kos/exportexcel/', [PemilikKosController::class, 'exportExcel']);
+    Route::post('/pemilik_kos/importexcel', [PemilikKosController::class, 'importExcel']);
     //route riwayat pesanan
     Route::get('/riwayat_pesanan', [RiwayatPesananController::class, 'index']);
     Route::get('/riwayat_pesanan/create', [RiwayatPesananController::class, 'create']);

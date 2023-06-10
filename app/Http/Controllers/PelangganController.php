@@ -150,11 +150,11 @@ class PelangganController extends Controller
         //return $pdf->download('data_user.pdf'); 
         return $pdf->stream('data_pelanggan.pdf');
     }
-    public function pelangganEXCEL() 
+    public function exportExcel() 
     {
         return Excel::download(new PelangganExport, 'pelanggan.xlsx');    
     }
-    public function pelangganIMPORT(Request $request)
+    public function importExcel(Request $request)
     {
         $file = $request->file('file');
         $nama_file = rand().$file->getClientOriginalName();
