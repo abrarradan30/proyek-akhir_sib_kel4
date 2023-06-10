@@ -51,7 +51,7 @@
 
         <a href="{{url('admin/pelanggan/pelangganPDF')}}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF </a>   
         <a href="{{url('admin/pelanggan/exportexcel')}}" class="btn btn-success btn-sm" target="_blank"> Export To Excel </a>
-        <button type="button" class="btn btn-sm btn-wwarning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>
+        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>
         </div>
         
         <div class="card-body">

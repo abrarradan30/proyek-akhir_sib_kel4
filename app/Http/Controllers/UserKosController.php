@@ -40,8 +40,8 @@ class UserKosController extends Controller
         $request->validate([
             'nama' => 'required|max:50',
             'username' => 'required|unique:user|max:50',
-            'password' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'role' => 'required',
             'foto' => 'required|image|mimes:jpg,jpeg,gif,svg|max:2048', 
         ],
@@ -51,8 +51,8 @@ class UserKosController extends Controller
             'username.required' => 'Username wajib diisi',
             'username.unique' => 'Username sudah ada, masukkan Username yang lain',
             'username.max' => 'Username maksimal 50 karakter',
-            'password.required' => 'Password wajib diisi',
             'email.required' => 'Email wajib diisi',
+            'password.required' => 'Password wajib diisi',
             'role.required' => 'Role wajib diisi',
         ]
         );
@@ -66,8 +66,8 @@ class UserKosController extends Controller
         DB::table('user')->insert([
             'nama' => $request->nama,
             'username' => $request->username,
-            'password' => $request->password,
             'email' => $request->email,
+            'password' => $request->password,
             'role' => $request->role,
             'foto' => $fileName,
         ]);
@@ -105,8 +105,8 @@ class UserKosController extends Controller
         $request->validate([
             'nama' => 'required|max:50',
             'username' => 'required|max:50',
-            'password' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'role' => 'required',
             'foto' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048', 
         ]);
@@ -128,8 +128,8 @@ class UserKosController extends Controller
         DB::table('user')->where('id', $request->id)->update([
             'nama' => $request->nama,
             'username' => $request->username,
-            'password' => $request->password,
             'email' => $request->email,
+            'password' => $request->password,
             'role' => $request->role,
             'foto' => $fileName,
         ]);

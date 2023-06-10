@@ -50,7 +50,7 @@
 
     </div>
     <div class="card-header">
-        <a href="{{url('admin/pemilik_kos/pemilik_kosPDF')}}" class="btn btn-success btn-sm" target="_blank"> Export To PDF </a>
+        <a href="{{url('admin/pemilik_kos/pemilik_kosPDF')}}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF </a>
         <a href="{{url('admin/pemilik_kos/exportexcel')}}" class="btn btn-success btn-sm"> Export To EXCEL</a>
         <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>
     </div>

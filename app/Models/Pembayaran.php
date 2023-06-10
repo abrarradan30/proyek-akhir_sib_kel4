@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pembayaran extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'pembayaran'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
     protected $fillable = ['no_kwitansi']; // pemanggilan kolom
