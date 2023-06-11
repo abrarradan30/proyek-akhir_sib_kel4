@@ -13,12 +13,12 @@ class PelangganExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        $pelanggan = Pelanggan::select('nama', 'username', 'password', 'email', 'jk', 'telepon','alamat')
+        $pelanggan = Pelanggan::select('nama','jk', 'telepon','alamat')
         ->get();
         return $pelanggan;
     }
     public function headings(): array
     {
-        return ["Nama", "Username", "Password", "Email", "Jenis Kelamin", "Telepon","Alamat"];
+        return ["Nama", "Jenis Kelamin", "Telepon", "Alamat"];
     }
 }

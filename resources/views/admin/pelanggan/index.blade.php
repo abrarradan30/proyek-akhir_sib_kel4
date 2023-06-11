@@ -60,9 +60,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
                         <th>Jenis Kelamin</th>
                         <th>Telepon</th>
                         <th>Alamat</th>
@@ -73,9 +70,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
                         <th>Jenis Kelamin</th>
                         <th>Telepon</th>
                         <th>Alamat</th>
@@ -90,9 +84,6 @@
                         <tr>
                             <td>{{ $no }}</td>
                             <td>{{$p->nama}}</td>
-                            <td>{{$p->username}}</td>
-                            <td>{{$p->password}}</td>
-                            <td>{{$p->email}}</td>
                             <td>{{$p->jk}}</td>
                             <td>{{$p->telepon}}</td>
                             <td>{{$p->alamat}}</td>

@@ -40,33 +40,24 @@ class PelangganController extends Controller
     {
         // fungsi untuk mengisi data pada form
         $request->validate([
-            'nama' => 'required|max:45',
-            'username' => 'required',
-            'password' => 'required',
-            'email' => 'required',
-            'jk' => 'required',
-            'alamat' => 'required',
+            'nama'    => 'required|max:45',
+            'jk'      => 'required',
             'telepon' => 'required',
+            'alamat'  => 'required',
         ]);
         [
-            'nama.required' => 'Nama wajib diisi',
-            'nama.max' => 'Nama maksimal 45 karakter',
-            'username.required' => 'Username wajib diisi',
-            'password.required' => 'Password wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'jk.required' => 'Jenis kelamin wajib diisi',
-            'alamat.required' => 'Alamat wajib diisi',
+            'nama.required'    => 'Nama wajib diisi',
+            'nama.max'         => 'Nama maksimal 45 karakter',
+            'jk.required'      => 'Jenis kelamin wajib diisi',
             'telepon.required' => 'Telepon wajib diisi',
+            'alamat.required'  => 'Alamat wajib diisi',
 
         ];
         DB::table('pelanggan')->insert([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
-            'email' => $request->email,
-            'jk' => $request->jk,
+            'nama'    => $request->nama,
+            'jk'      => $request->jk,
             'telepon' => $request->telepon,
-            'alamat' => $request->alamat,
+            'alamat'  => $request->alamat,
         ]);
         
         Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
@@ -102,33 +93,24 @@ class PelangganController extends Controller
     {
         //
         $request->validate([
-            'nama' => 'required|max:45',
-            'username' => 'required',
-            'password' => 'required',
-            'email' => 'required',
-            'jk' => 'required',
-            'alamat' => 'required',
+            'nama'    => 'required|max:45',
+            'jk'      => 'required',
             'telepon' => 'required',
+            'alamat'  => 'required',
         ]);
         [
-            'nama.required' => 'Nama wajib diisi',
-            'nama.max' => 'Nama maksimal 45 karakter',
-            'username.required' => 'Username wajib diisi',
-            'password.required' => 'Password wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'jk.required' => 'Jenis kelamin wajib diisi',
-            'alamat.required' => 'Alamat wajib diisi',
+            'nama.required'    => 'Nama wajib diisi',
+            'nama.max'         => 'Nama maksimal 45 karakter',
+            'jk.required'      => 'Jenis kelamin wajib diisi',
             'telepon.required' => 'Telepon wajib diisi',
+            'alamat.required'  => 'Alamat wajib diisi',
 
         ];
         DB::table('pelanggan')->where('id', $request->id)->update([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
-            'email' => $request->email,
-            'jk' => $request->jk,
-            'alamat' => $request->alamat,
+            'nama'    => $request->nama,
+            'jk'      => $request->jk,
             'telepon' => $request->telepon,
+            'alamat'  => $request->alamat,
         ]);
 
         Alert::info('Pelanggan', 'Berhasil mengedit pelanggan');

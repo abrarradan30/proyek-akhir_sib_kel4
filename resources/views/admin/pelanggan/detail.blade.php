@@ -1,7 +1,7 @@
 @extends('admin.layout.appadmin')
 @section('content')
 
-
+<br>
 <h2> Details Pembayaran</h2>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -16,11 +16,9 @@
                 <input type="hidden" value="{{$p->id}}" />
                 <div class="project-info-box">
                     <p><b>Nama:</b> {{$p->nama}}</p>
-                    <p><b>username:</b> {{$p->username}}</p>
-                    <p><b>password:</b> {{$p->password}}</p>
-                    <p><b>email:</b> {{$p->email}}</p>
-                    <p><b>telepon:</b> {{$p->telepon}}</p>
-                    <p><b>alamat:</b> {{$p->alamat}}</p>
+                    <p><b>Jenis Kelamin:</b> {{$p->jk}}</p>
+                    <p><b>Telepon:</b> {{$p->telepon}}</p>
+                    <p><b>Alamat:</b> {{$p->alamat}}</p>
                 </div>
                 <div class="project-info-box mt-0 mb-0">
                     <p class="mb-0">

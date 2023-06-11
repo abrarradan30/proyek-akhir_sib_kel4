@@ -30,39 +30,6 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="text1" class="col-4 col-form-label">Username</label>
-    <div class="col-8">
-      <input id="text1" name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Masukkan Username">
-      @error('username')
-      <div class="invalid-feedback">
-        {{$message}}
-      </div>
-      @enderror
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Password</label>
-    <div class="col-8">
-      <input id="text2" name="password" type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan Password">
-      @error('password')
-      <div class="invalid-feedback">
-        {{$message}}
-      </div>
-      @enderror
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="text3" class="col-4 col-form-label">Email</label>
-    <div class="col-8">
-      <input id="text3" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan email">
-      @error('email')
-      <div class="invalid-feedback">
-        {{$message}}
-      </div>
-      @enderror
-    </div>
-  </div>
-  <div class="form-group row">
     <label class="col-4">Jenis Kelamin</label>
     <div class="col-8">
       <div class="custom-control custom-radio custom-control-inline">
@@ -76,10 +43,10 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="textarea" class="col-4 col-form-label">Alamat</label>
+    <label for="text4" class="col-4 col-form-label">Telepon</label>
     <div class="col-8">
-      <textarea id="textarea" name="alamat" cols="40" rows="5" class="form-control @error('alamat') is-invalid @enderror"></textarea>
-      @error('alamat')
+      <input id="text4" name="telepon" type="text" class="form-control @error('telepon') is-invalid @enderror" placeholder="ex : 082xxxxxxxxx">
+      @error('telepon')
       <div class="invalid-feedback">
         {{$message}}
       </div>
@@ -87,10 +54,10 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="text4" class="col-4 col-form-label">Telepon</label>
+    <label for="textarea" class="col-4 col-form-label">Alamat</label>
     <div class="col-8">
-      <input id="text4" name="telepon" type="text" class="form-control @error('telepon') is-invalid @enderror" placeholder="ex : 082xxxxxxxxx">
-      @error('telepon')
+      <textarea id="textarea" name="alamat" cols="40" rows="5" class="form-control @error('alamat') is-invalid @enderror"></textarea>
+      @error('alamat')
       <div class="invalid-feedback">
         {{$message}}
       </div>
