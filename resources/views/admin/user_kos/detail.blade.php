@@ -15,9 +15,8 @@
                 <input type="hidden" value="{{$u->id}}"/>
                 <div class="project-info-box">
                     <p><b>Nama:</b> {{$u->nama}}</p>
-                    <p><b>Username:</b> {{$u->username}}</p>
-                    <p><b>Password:</b> {{$u->password}}</p>
                     <p><b>Email:</b> {{$u->email}}</p>
+                    <p><b>Password:</b> {{$u->password}}</p>
                     <p><b>Role:</b> {{$u->role}}</p>
                 </div>
                 <div class="project-info-box mt-0 mb-0">

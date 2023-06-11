@@ -25,9 +25,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::group(['middleware' => ['auth']], function(){
-Route::prefix('admin')->name('admin.')->group(function(){ */
-Route::prefix('admin')->group(function () {
+Route::group(['middleware' => ['auth']], function(){
+Route::prefix('admin')->name('admin.')->group(function(){ 
+//Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
     // route data kos
     Route::get('/data_kos', [DataKosController::class, 'index']);
@@ -96,7 +96,7 @@ Route::prefix('admin')->group(function () {
     Route::get('user/exportexcel', [UserKosController::class, 'exportExcel']);
     Route::post('/user/importexcel', [UserKosController::class, 'importExcel']);
 });
-//});
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

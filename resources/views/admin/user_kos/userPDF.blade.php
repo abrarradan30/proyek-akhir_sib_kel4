@@ -14,9 +14,8 @@
         <tr>
         <th>No</th>
         <th>Nama</th>
-        <th>Username</th>
-        <th>Password</th>
         <th>Email</th>
+        <th>Password</th>
         <th>Role</th>
         <!-- <th>Foto</th> -->
         </tr>
@@ -27,9 +26,8 @@
         <tr>
         <td>{{$no++}}</td>
         <td>{{$u->nama}}</td>
-        <td>{{$u->username}}</td>
-        <td>{{$u->password}}</td>
         <td>{{$u->email}}</td>
+        <td>{{$u->password}}</td>
         <td>{{$u->role}}</td>
             <!-- <td>
                 @empty($u->foto)

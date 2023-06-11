@@ -29,17 +29,6 @@
       </div>
   </div>
   <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Username</label> 
-    <div class="col-8">
-      <input id="text2" name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Masukkan Username">
-      @error('username')
-        <div class="invalid-feedback">
-          {{$message}}
-        </div>
-      @enderror
-    </div>
-  </div>
-  <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Password</label> 
     <div class="col-8">
       <input id="text1" name="password" type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan Password">

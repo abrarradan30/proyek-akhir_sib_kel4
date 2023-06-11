@@ -26,21 +26,15 @@
       </div>
   </div>
   <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Username</label> 
+    <label for="text3" class="col-4 col-form-label">Email</label> 
     <div class="col-8">
-      <input id="text2" name="username" type="text" class="form-control" value="{{$u->username}}">
+      <input id="text3" name="email" type="email" class="form-control" value="{{$u->email}}">
     </div>
   </div>
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Password</label> 
     <div class="col-8">
       <input id="text1" name="password" type="text" class="form-control" value="{{$u->password}}">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="text3" class="col-4 col-form-label">Email</label> 
-    <div class="col-8">
-      <input id="text3" name="email" type="email" class="form-control" value="{{$u->email}}">
     </div>
   </div>
   <div class="form-group row">

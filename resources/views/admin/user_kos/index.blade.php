@@ -60,9 +60,8 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
                         <th>Email</th>
+                        <th>Password</th>
                         <th>Role</th>
                         <th>Foto</th>
                         <th>Action</th>
@@ -72,9 +71,8 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
                         <th>Email</th>
+                        <th>Password</th>
                         <th>Role</th>
                         <th>Foto</th>
                         <th>Action</th>
@@ -88,9 +86,8 @@
                         <tr>
                             <td>{{ $no }}</td>
                             <td>{{$u->nama}}</td>
-                            <td>{{$u->username}}</td>
-                            <td>{{$u->password}}</td>
                             <td>{{$u->email}}</td>
+                            <td>{{$u->password}}</td>
                             <td>{{$u->role}}</td>
                             <td>
                                 @empty($u->foto)
@@ -120,7 +117,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Apakah anda yakin menghapus data ?
+        Apakah anda yakin menghapus data {{$u->nama}} ?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
