@@ -16,9 +16,7 @@ class PemilikKosExport implements FromCollection, WithHeadings
         //return PemilikKos::all();
         $ar_pemilik_kos = PemilikKos::select(
             'pemilik_kos.nama',
-            'pemilik_kos.username',
-            'pemilik_kos.password',
-            'pemilik_kos.email',
+            'pemilik_kos.jk',
             'pemilik_kos.alamat',
             'pemilik_kos.telepon'
         )
