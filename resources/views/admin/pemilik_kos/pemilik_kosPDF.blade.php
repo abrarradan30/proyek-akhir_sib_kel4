@@ -16,9 +16,6 @@
             <tr>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Email</th>
                 <th>Jenis Kelamin</th>
                 <th>Alamat</th>
                 <th>Telepon</th>
@@ -30,9 +27,6 @@
             <tr>
                 <td>{{$no++}}</td>
                 <td>{{$pk->nama}}</td>
-                <td>{{$pk->username}}</td>
-                <td>{{$pk->password}}</td>
-                <td>{{$pk->email}}</td>
                 <td>{{$pk->jk}}</td>
                 <td>{{$pk->alamat}}</td>
                 <td>{{$pk->telepon}}</td>
