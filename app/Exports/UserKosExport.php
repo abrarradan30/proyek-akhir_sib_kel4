@@ -14,13 +14,13 @@ class UserKosExport implements FromCollection, WithHeadings
     public function collection()
     {
         //return UserKos::all();
-        $ar_user = UserKos::select('user.nama', 'user.username', 'user.password', 'user.email', 'user.role', 'user.foto')
+        $ar_user = UserKos::select('user.nama', 'user.email', 'user.password',  'user.role', 'user.foto')
         ->get();
         return $ar_user;
     }
 
     public function headings(): array
     {
-        return ["Nama", "Username", "Password", "Email", "Role", "Foto"];
+        return ["Nama", "Email", "Password",  "Role", "Foto"];
     }
 }

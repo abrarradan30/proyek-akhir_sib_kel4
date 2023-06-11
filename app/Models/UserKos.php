@@ -39,9 +39,8 @@ class UserKos extends Authenticatable
     protected $primaryKey = 'id'; // pemanggilang id atau pk
     protected $fillable = [
         'nama', 
-        'username', 
+        'email',
         'password', 
-        'email', 
         'role', 
         'foto'
     ]; // pemanggilan kolom
