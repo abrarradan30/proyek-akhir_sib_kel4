@@ -16,12 +16,9 @@ class PelangganImport implements ToModel
     {
         return new Pelanggan([
             'nama' => $row[1],
-            'username' => $row[2],
-            'password' => $row[3],
-            'email' => $row[4],
-            'jk' => $row[5],
-            'alamat' => $row[6],
-            'telepon' => $row[7],
+            'jk' => $row[2],
+            'alamat' => $row[3],
+            'telepon' => $row[4],
         ]);
     }
 }
