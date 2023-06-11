@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RiwayatPesanan extends Model
 {
     use HasFactory;
-    public $timestamps = false;
     protected $table = 'riwayat_pesanan'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
     protected $fillable = [

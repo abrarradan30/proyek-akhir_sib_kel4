@@ -25,6 +25,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*Route::group(['middleware' => ['auth']], function(){
+Route::prefix('admin')->name('admin.')->group(function(){ */
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
     // route data kos
@@ -47,6 +49,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/pelanggan/show/{id}', [PelangganController::class, 'show']);
     Route::get('/pelanggan/delete/{id}', [PelangganController::class, 'destroy']);
     Route::get('/pelanggan/pelangganPDF', [PelangganController::class, 'pelangganPDF']);
+    Route::get('/pelanggan/exportexcel', [PelangganController::class, 'exportExcel']);
+    Route::post('/pelanggan/importexcel', [PelangganController::class, 'importExcel']);
     // route pembayaran
     Route::get('/pembayaran', [PembayaranController::class, 'index']);
     Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
@@ -56,6 +60,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/pembayaran/show/{id}', [PembayaranController::class, 'show']);
     Route::get('/pembayaran/delete/{id}', [PembayaranController::class, 'destroy']);
     Route::get('/pembayaran/pembayaranPDF', [PembayaranController::class, 'pembayaranPDF']);
+    Route::get('/pembayaran/exportexcel/', [PembayaranController::class, 'exportExcel']);
+    Route::post('/pembayaran/importexcel', [PembayaranController::class, 'importExcel']);
     //route pemilik kos
     Route::get('/pemilik_kos', [PemilikKosController::class, 'index']);
     Route::get('/pemilik_kos/create', [PemilikKosController::class, 'create']);
@@ -65,6 +71,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/pemilik_kos/show/{id}', [PemilikKosController::class, 'show']);
     Route::get('/pemilik_kos/delete/{id}', [PemilikKosController::class, 'destroy']);
     Route::get('/pemilik_kos/pemilik_kosPDF', [PemilikKosController::class, 'pemilik_kosPDF']);
+    Route::get('/pemilik_kos/exportexcel/', [PemilikKosController::class, 'exportExcel']);
+    Route::post('/pemilik_kos/importexcel', [PemilikKosController::class, 'importExcel']);
     //route riwayat pesanan
     Route::get('/riwayat_pesanan', [RiwayatPesananController::class, 'index']);
     Route::get('/riwayat_pesanan/create', [RiwayatPesananController::class, 'create']);
@@ -88,3 +96,7 @@ Route::prefix('admin')->group(function () {
     Route::get('user/exportexcel', [UserKosController::class, 'exportExcel']);
     Route::post('/user/importexcel', [UserKosController::class, 'importExcel']);
 });
+//});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

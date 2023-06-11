@@ -15,7 +15,10 @@ class PembayaranImport implements ToModel
     public function model(array $row)
     {
         return new Pembayaran([
-            //
+            'no_kwitansi' => $row[1],
+            'tanggal' => $row[2],
+            'jumlah' => $row[3],
+            'status' => $row[4],
         ]);
     }
 }
