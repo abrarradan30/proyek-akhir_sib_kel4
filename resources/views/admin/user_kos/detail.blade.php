@@ -35,7 +35,7 @@
             @else
                 <img src="{{url('admin/image')}}/{{$u->foto}}" alt="project-image" class="rounded">
             @endempty
-            <a href="{{url('admin/user')}}">
+            <a href="{{url('admin/user_kos')}}">
                 <button class="btn btn-primary btn-lg"> Back </button>
             </a>
             </div>

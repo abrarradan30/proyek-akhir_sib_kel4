@@ -68,7 +68,7 @@ class UserKosController extends Controller
         ]);
 
         Alert::success('User', 'Berhasil menambahkan user');
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
 
     /**
@@ -128,7 +128,7 @@ class UserKosController extends Controller
         ]);
 
         Alert::info('User', 'Berhasil mengedit user');
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
 
     /**
@@ -138,13 +138,13 @@ class UserKosController extends Controller
     {
         //
         DB::table('user')->where('id', $id)->delete();
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
     // fungsi export PDF
-    public function userPDF()
+    public function user_kosPDF()
     {
         $user = UserKos::all();
-        $pdf = PDF::loadView('admin.user_kos.userPDF', ['user' => $user])->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('admin.user_kos.user_kosPDF', ['user' => $user])->setPaper('a4', 'landscape');
         //return $pdf->download('data_user.pdf'); 
         return $pdf->stream('data_user.pdf');
     }
@@ -159,6 +159,6 @@ class UserKosController extends Controller
         $nama_file = rand().$file->getClientOriginalName();
         $file->move('file_excel', $nama_file);
         Excel::import(new UserKosImport, public_path('/file_excel/'.$nama_file));
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\PemilikKosController;
 use App\Http\Controllers\RiwayatPesananController;
 use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,17 +85,19 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/riwayat_pesanan/riwayat_pesananPDF', [RiwayatPesananController::class, 'riwayat_pesananPDF']);
     Route::get('riwayat_pesanan/exportexcel', [RiwayatPesananController::class, 'exportExcel']);
     Route::post('/riwayat_pesanan/importexcel', [RiwayatPesananController::class, 'importExcel']);
+    //route user kos
+    Route::get('/user_kos', [UserKosController::class, 'index']);
+    Route::get('/user_kos/create', [UserKosController::class, 'create']);
+    Route::post('/user_kos/store', [UserKosController::class, 'store']);
+    Route::get('/user_kos/edit/{id}', [UserKosController::class, 'edit']);
+    Route::post('/user_kos/update', [UserKosController::class, 'update']);
+    Route::get('/user_kos/show/{id}', [UserKosController::class, 'show']);
+    Route::get('/user_kos/delete/{id}', [UserKosController::class, 'destroy']);
+    Route::get('/user_kos/user_kosPDF', [UserKosController::class, 'user_kosPDF']);
+    Route::get('user_kos/exportexcel', [UserKosController::class, 'exportExcel']);
+    Route::post('/user_kos/importexcel', [UserKosController::class, 'importExcel']);
     //route user
-    Route::get('/user', [UserKosController::class, 'index']);
-    Route::get('/user/create', [UserKosController::class, 'create']);
-    Route::post('/user/store', [UserKosController::class, 'store']);
-    Route::get('/user/edit/{id}', [UserKosController::class, 'edit']);
-    Route::post('/user/update', [UserKosController::class, 'update']);
-    Route::get('/user/show/{id}', [UserKosController::class, 'show']);
-    Route::get('/user/delete/{id}', [UserKosController::class, 'destroy']);
-    Route::get('/user/userPDF', [UserKosController::class, 'userPDF']);
-    Route::get('user/exportexcel', [UserKosController::class, 'exportExcel']);
-    Route::post('/user/importexcel', [UserKosController::class, 'importExcel']);
+    Route::get('/user',[UserController::class, 'index']);
 });
 });
 Auth::routes();

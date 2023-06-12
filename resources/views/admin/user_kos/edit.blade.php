@@ -16,7 +16,7 @@
   </ul>
 </div>
 @endif
-<form method="POST" action="{{url('admin/user/update')}}" enctype="multipart/form-data">
+<form method="POST" action="{{url('admin/user_kos/update')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
   <input type="hidden" name="id" value="{{$u->id}}"/><br>
