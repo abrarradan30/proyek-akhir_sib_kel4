@@ -116,8 +116,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <input type="hidden" name="idx" value="">
                         </form>
                     </td>
                 </tr>

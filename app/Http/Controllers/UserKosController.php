@@ -146,7 +146,7 @@ class UserKosController extends Controller
         $user = UserKos::all();
         $pdf = PDF::loadView('admin.user_kos.user_kosPDF', ['user' => $user])->setPaper('a4', 'landscape');
         //return $pdf->download('data_user.pdf'); 
-        return $pdf->stream('data_user.pdf');
+        return $pdf->stream('data_user_kos.pdf');
     }
     //fungsi export-importExcel
     public function exportExcel()
