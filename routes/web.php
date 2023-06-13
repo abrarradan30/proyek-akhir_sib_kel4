@@ -26,7 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'peran:admin']], function(){
 Route::prefix('admin')->name('admin.')->group(function(){ 
 //Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
@@ -101,5 +101,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
 });
 });
 Auth::routes();
-
+Route::get('/after_register', function(){
+    return view('after_register');
+});
+Route::get('/acces_denied2', function(){
+    return view('admin/acces_denied');
+}); 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
