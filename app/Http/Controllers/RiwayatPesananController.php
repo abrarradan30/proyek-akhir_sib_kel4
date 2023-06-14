@@ -120,7 +120,8 @@ class RiwayatPesananController extends Controller
         $pelanggan = DB::table('pelanggan')->get();
         $pembayaran = DB::table('pembayaran')->get();
         $riwayat_pesanan = DB::table('riwayat_pesanan')->where('id', $id)->get();
-        return view('admin.riwayat_pesanan.edit', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
+        $ar_status = ['lunas', 'belum lunas'];
+        return view('admin.riwayat_pesanan.edit', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran','ar_status'));
     }
 
     /**

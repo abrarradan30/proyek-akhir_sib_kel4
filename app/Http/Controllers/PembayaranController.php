@@ -41,14 +41,14 @@ class PembayaranController extends Controller
             'no_kwitansi' => 'required|max:45',
             'tanggal' => 'required',
             'jumlah' => 'required',
-            'status' => 'required',
+            'bukti' => 'required',
         ],
         [
             'no_kwitansi.required' => 'Nomor Kwitansi Wajib Diisi ',
             'no_kwitansi.max' => 'Nomor Kwitansi Maksimal 45 karakter ',
             'tanggal.required'=> 'Tanggal Wajib Diisi',
             'jumlah.required'=> 'Jumlah Wajib Diisi',
-
+            'bukti.required'=> 'Bukti Pembayaran Wajib Diisi',
         ]
         );
 
@@ -56,7 +56,7 @@ class PembayaranController extends Controller
             'no_kwitansi' => $request->no_kwitansi,
             'tanggal'=> $request->tanggal,
             'jumlah'=> $request->jumlah,
-            'status'=> $request->status,
+            'bukti'=> $request->bukti,
         ]);
 
         Alert::success('Pembayaran', 'Berhasil menambahkan pembayaran');
@@ -97,14 +97,14 @@ class PembayaranController extends Controller
             'no_kwitansi' => 'required|max:45',
             'tanggal'=> 'required',
             'jumlah'=> 'required',
-            'status'=> 'required',
+            'bukti'=> 'required',
         ]);
         //Buat prose edit form
         DB::table('pembayaran')->where('id', $request->id)->update([
             'no_kwitansi'=> $request->no_kwitansi,
             'tanggal'=> $request->tanggal,
             'jumlah'=> $request->jumlah,
-            'status'=> $request->status,
+            'bukti'=> $request->bukti,
         ]);
 
         Alert::info('Pembayaran', 'Berhasil mengedit pembayaran');
