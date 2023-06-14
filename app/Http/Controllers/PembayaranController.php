@@ -51,12 +51,18 @@ class PembayaranController extends Controller
             'bukti.required'=> 'Bukti Pembayaran Wajib Diisi',
         ]
         );
-
+        //
+        if (!empty($request->bukti)) {
+            $fileName = 'bukti-' . $request->id . '.' . $request->bukti->extension();
+            $request->bukti->move(public_path('admin/image'), $fileName);
+        } else {
+            $fileName = '';
+        }
         DB::table('pembayaran')->insert([
             'no_kwitansi' => $request->no_kwitansi,
             'tanggal'=> $request->tanggal,
             'jumlah'=> $request->jumlah,
-            'bukti'=> $request->bukti,
+            'bukti'=> $fileName,
         ]);
 
         Alert::success('Pembayaran', 'Berhasil menambahkan pembayaran');
@@ -82,9 +88,8 @@ class PembayaranController extends Controller
     {
         //arahkan ke file edit yang ada di pembayaran view
         $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
-        $ar_status = ['lunas', 'belum lunas'];
 
-        return view('admin.pembayaran.edit', compact('pembayaran','ar_status'));
+        return view('admin.pembayaran.edit', compact('pembayaran'));
     }
 
     /**
@@ -99,12 +104,27 @@ class PembayaranController extends Controller
             'jumlah'=> 'required',
             'bukti'=> 'required',
         ]);
+        // foto lama apabila mengganti fotonya
+        $bukti = DB::table('pembayaran')->select('bukti')->where('id', $request->id)->get();
+        foreach ($bukti as $b) {
+            $namaFileBuktiLama = $b->bukti;
+        }
+        //apakah user ingin mengganti foto lama
+        if (!empty($request->bukti)) {
+            //jika ada foto lama maka hapus dulu fotonya
+            if (!empty($py->bukti)) unlink('admin/image/' . $py->bukti);
+            //proses ganti foto
+            $fileName = 'bukti-' . $request->id . '.' . $request->bukti->extension();
+            $request->bukti->move(public_path('admin/image'), $fileName);
+        } else {
+            $fileName = '';
+        }
         //Buat prose edit form
         DB::table('pembayaran')->where('id', $request->id)->update([
             'no_kwitansi'=> $request->no_kwitansi,
             'tanggal'=> $request->tanggal,
             'jumlah'=> $request->jumlah,
-            'bukti'=> $request->bukti,
+            'bukti'=> $fileName,
         ]);
 
         Alert::info('Pembayaran', 'Berhasil mengedit pembayaran');
