@@ -68,7 +68,7 @@
                         <th>Nomor Kwitansi</th>
                         <th>Tanggal</th>
                         <th>Jumlah</th>
-                        <th>Status</th>
+                        <th>Bukti</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -78,7 +78,7 @@
                         <th>Nomor Kwitansi</th>
                         <th>Tanggal</th>
                         <th>Jumlah</th>
-                        <th>Status</th>
+                        <th>Bukti</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
@@ -92,7 +92,13 @@
                             <td>{{$py->no_kwitansi}}</td>
                             <td>{{$py->tanggal}}</td>
                             <td>{{$py->jumlah}}</td>
-                            <td>{{$py->status}}</td>
+                            <td>
+                                @empty($dk->bukti)
+                                    <img src="{{ url('admin/image/nofoto.png') }}" width="50%">
+                                @else
+                                    <img src="{{ url('admin/image') }}/{{ $dk->bukti }}" width="50%">
+                                @endempty
+                            </td>
                             <td>
                                 <form action="#" method="POST">
                                     <a href="{{url('admin/pembayaran/show/'.$py->id)}}" class="btn btn-info btn-sm">Detail</a>
