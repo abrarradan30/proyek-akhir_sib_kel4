@@ -18,7 +18,7 @@ class PembayaranImport implements ToModel
             'no_kwitansi' => $row[1],
             'tanggal' => $row[2],
             'jumlah' => $row[3],
-            'status' => $row[4],
+            //'bukti' => $row[4],
         ]);
     }
 }

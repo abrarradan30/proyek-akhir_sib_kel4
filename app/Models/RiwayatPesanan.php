@@ -11,8 +11,8 @@ class RiwayatPesanan extends Model
     protected $table = 'riwayat_pesanan'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
     protected $fillable = [
-        'durasi_sewa','tanggal','jumlah_kamar','total','data_kos_id',
-        'pembayaran_id','pelanggan_id'
+        'durasi_sewa','tanggal','jumlah_kamar','total','status',
+        'data_kos_id','pembayaran_id','pelanggan_id'
     ]; // pemanggilan kolom
 
     public function data_kos(){

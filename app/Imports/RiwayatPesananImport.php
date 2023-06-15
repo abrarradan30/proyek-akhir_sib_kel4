@@ -20,9 +20,10 @@ class RiwayatPesananImport implements ToModel
             'tanggal' => $row[2], 
             'jumlah_kamar' => $row[3],
             'total' => $row[4],
-            'data_kos_id' =>$row[5],
-            'pembayaran_id' => $row[6],
-            'pelanggan_id' => $row[7],
+            'status' => $row[5],
+            'data_kos_id' =>$row[6],
+            'pembayaran_id' => $row[7],
+            'pelanggan_id' => $row[8],
         ]);
     }
 }
