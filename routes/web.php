@@ -9,6 +9,7 @@ use App\Http\Controllers\RiwayatPesananController;
 use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,3 +109,9 @@ Route::get('/acces_denied2', function(){
     return view('admin/acces_denied');
 }); 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//APIpelanggan
+Route::get('/pelangganapi', [PelangganController::class, 'apiPelanggan']);
+Route::get('/pelangganapi/{id}', [PelangganController::class, 'apiPelangganDetail']);
+//APIpembayaran
+Route::get('/pembayaranapi', [PembayaranController::class, 'apiPembayaran']);
+Route::get('/pembayaranapi/{id}', [PembayaranController::class, 'apiPembayaranDetail']);

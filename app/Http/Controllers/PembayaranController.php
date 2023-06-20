@@ -165,4 +165,35 @@ class PembayaranController extends Controller
         Excel::import(new PembayaranImport, public_path('/file_excel/'.$nama_file));
         return redirect('admin/pembayaran');
     }
+
+    public function apiPembayaran(){
+        $pembayaran = Pembayaran::all();
+        return response()->json(
+            [
+                'succes'=>true,
+                'massage'=> 'Data Pembayaran',
+                'data'=>$pembayaran
+            ], 200
+        );
+    }
+
+    public function apiPembayaranDetail($id){
+        $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
+
+        if($pembayaran){
+            return response()->json([
+                'succes'=>true,
+                'massage'=> 'Data Pembayaran',
+                'data'=>$pembayaran,
+            ], 200);
+        }
+        else {
+            return response()->json([
+                'succes'=>false,
+                'massage'=> 'Data Pembayaran tidak dikenal',
+                
+            ], 404);
+        }
+    }
+    
 }
