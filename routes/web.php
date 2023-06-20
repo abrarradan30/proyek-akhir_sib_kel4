@@ -108,3 +108,11 @@ Route::get('/acces_denied2', function(){
     return view('admin/acces_denied');
 }); 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route REST API
+// Data Kos
+Route::get('/data_kos_api', [DataKosController::class, 'apiDataKos']);
+Route::get('/data_kos_api/{id}', [DataKosController::class, 'apiDataKosDetail']);
+//Pemilik Kos
+Route::get('/pemilik_kos_api', [PemilikKosController::class, 'apiPemilikKos']);
+Route::get('/pemilik_kos_api/{id}', [PemilikKosController::class, 'apiPemilikKosDetail']);
