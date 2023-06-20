@@ -13,11 +13,12 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nomor Kwitansi</th>
+                <th>Durasi sewa</th>
+                <th>Jumlah Kamar</th>
                 <th>Tanggal</th>
-                <th>Jumlah</th>
-                <th>Status</th>
-</tr>
+                <th>Nominal Dibayarkan</th>
+                <th>Bukti</th>
+            </tr>
 </thead>
 <tbody>
     @php $no = 1; @endphp
@@ -25,11 +26,17 @@
     <tr>
 
         <td>{{$no++}}</td>
-        <td>{{$py->no_kwitansi}}</td>
+        <td>{{$py->durasi_sewa}}</td>
+        <td>{{$py->jumlah_kamar}}</td>
         <td>{{$py->tanggal}}</td>
-        <td>{{$py->jumlah}}</td>
-        <td>{{$py->status}}</td>
-
+        <td>{{$py->total}}</td>
+        <!-- <td>
+                @empty($py->bukti)
+                <img src="{{url('admin/image/nofoto.png')}}" width="50%">
+                @else
+                <img src="{{url('admin/image')}}/{{$u->bukti}}" width="50%">
+                @endempty
+            </td> -->
 </tr>
 @endforeach
 </tbody>

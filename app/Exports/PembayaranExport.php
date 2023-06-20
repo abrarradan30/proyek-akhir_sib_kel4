@@ -13,12 +13,12 @@ class PembayaranExport implements FromCollection, WithHeadings
      */
     public function collection()
     {
-        $ar_pembayaran = Pembayaran::select('pembayaran.no_kwitansi', 'pembayaran.tanggal', 'pembayaran.jumlah', 'pembayaran.bukti')
+        $ar_pembayaran = Pembayaran::select('pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal', 'pembayaran.total', 'pembayaran.bukti')
         ->get();
         return Pembayaran::all();
     }
     public function headings(): array
     {
-        return ["Nomor Kwitansi", "Tanggal Pembayaran", "Jumlah Pembayaran", "Bukti Pembayaran"];
+        return ["Durasi Sewa", "Jumlah Kamar", "Tanggal Bayar", "Total", "Bukti"];
     }
 }

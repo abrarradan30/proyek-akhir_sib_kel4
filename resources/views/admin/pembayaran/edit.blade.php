@@ -7,7 +7,6 @@
 <br>
 @foreach ($pembayaran as $py)
 <h1 align="center"> Form Edit Pembayaran </h1>
-
 @if ($errors->any())
 <div class="alert alert-danger">
   <ul>
@@ -15,17 +14,28 @@
   <li> {{$error}}</li>
     @endforeach
 </ul>
-
 </div>
 @endif
-
-<form method="POST" action="{{url('admin/pembayaran/update/')}}" enctype="multipart/form-data">
+<form method="POST" action="{{url('admin/pembayaran/update')}}" enctype="multipart/form-data">
 {{csrf_field()}}
   <div class="form-group row">
-  <input type="hidden" name="id" value="{{$py->id}}"/><br>
-    <label for="text1" class="col-4 col-form-label">No Kwitansi</label> 
+  <input type="hidden" name="id" value="{{$py->id}}"/>
+  <label class="col-4">Durasi Sewa</label>
+  <div class="col-8">
+      @foreach ($ar_durasi_sewa as $durasi_sewa)
+          @php $cek = ($durasi_sewa == $py->durasi_sewa) ? "checked" : ""; @endphp
+          <div class="custom-control custom-radio custom-control-inline">
+              <input name="durasi_sewa" id="radio_0" type="radio" class="custome-control-input"
+                value="{{ $durasi_sewa }}" {{ $cek }}>
+              <label for="radio_0" class="custom-check-label">{{ $durasi_sewa }}</label>
+          </div>
+      @endforeach
+  </div>
+  </div>
+  <div class="form-group row">
+    <label for="text2" class="col-4 col-form-label">Jumlah Kamar</label> 
     <div class="col-8">
-      <input id="text1" name="no_kwitansi" type="text" class="form-control" value="{{$py->no_kwitansi}}">
+      <input id="text2" name="jumlah_kamar" type="text" class="form-control" value="{{$py->jumlah_kamar}}">
     </div>
   </div>
   <div class="form-group row">
@@ -35,31 +45,21 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Jumlah</label> 
+    <label for="text2" class="col-4 col-form-label">Total</label> 
     <div class="col-8">
-      <input id="text2" name="jumlah" type="text" class="form-control" value="{{$py->jumlah}}">
+      <input id="text2" name="total" type="text" class="form-control" value="{{$py->total}}">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-4">Status Pembayaran</label> 
-    <div class="col-8">
-    @foreach($ar_status as $status)
-      @php $cek = ($status == $py->status) ? 'checked' : ''; @endphp
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="status" id="radio_0" type="radio" class="custome-control-input" value="{{$status}}" {{$cek}}> 
-        <label for="radio_0" class="form-check-label">{{$status}}</label>
-      </div>
-      <!-- <div class="custom-control custom-radio custom-control-inline">
-        <input name="status" id="radio_0" type="radio" class="custom-control-input" value="lunas"> 
-        <label for="radio_0" class="custom-control-label">Lunas</label>
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="status" id="radio_1" type="radio" class="custom-control-input" value="belum lunas"> 
-        <label for="radio_1" class="custom-control-label">Belum Lunas</label>
-      </div> -->
-      @endforeach  
+    <label for="text3" class="col-4 col-form-label">Bukti</label>
+      <div class="col-8">
+       <input id="text3" name="bukti" type="file" class="form-control">
+          @if (!empty($py->bukti))
+            <img src="{{ url('admin/image') }}/{{ $py->bukti }}" width="50%">
+            <br>{{ $py->bukti }}
+        @endempty
     </div>
-  </div> 
+  </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
       <button name="submit" type="submit" class="btn btn-primary">Update</button>

@@ -14,13 +14,15 @@
             </div>
                 <input type="hidden" value="{{$rp->id}}"/>
                 <div class="project-info-box">
-                    <p><b>Durasi Sewa:</b> {{$rp->durasi_sewa}}</p>
+                    <p><b>No Kwitansi:</b> {{$rp->no_kwitansi}}</p>
                     <p><b>Tanggal:</b> {{$rp->tanggal}}</p>
-                    <p><b>Jumlah Kamar:</b> {{$rp->jumlah_kamar}}</p>
-                    <p><b>Total:</b> {{$rp->total}}</p>
-                    <p><b>Nama Kos:</b> {{$rp->nama_kos}}</p>
                     <p><b>Status Pembayaran:</b> {{$rp->status_pembayaran}}</p>
                     <p><b>Nama Pelanggan:</b> {{$rp->nama_pelanggan}}</p>
+                    <p><b>Nama Kos:</b> {{$rp->nama_kos}}</p>
+                    <p><b>Durasi Sewa:</b> {{$rp->durasi_sewa}}</p>
+                    <p><b>Jumlah Kamar:</b> {{$rp->jumlah_kamar}}</p>
+                    <p><b>Tanggal Pembayaran:</b> {{$rp->tanggal_pembayaran}}</p>
+                    <p><b>Total Pembayaran:</b> {{$rp->total_bayar}}</p>
                 </div>
                 <div class="project-info-box mt-0 mb-0">
                     <p class="mb-0">

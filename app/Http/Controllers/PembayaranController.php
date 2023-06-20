@@ -38,16 +38,17 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         $request->validate([  
-            'no_kwitansi' => 'required|max:45',
+            'durasi_sewa' => 'required',
+            'jumlah_kamar' => 'required|integer',
             'tanggal' => 'required',
-            'jumlah' => 'required',
-            'bukti' => 'required',
+            'total' => 'required',
+            'bukti' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048',
         ],
         [
-            'no_kwitansi.required' => 'Nomor Kwitansi Wajib Diisi ',
-            'no_kwitansi.max' => 'Nomor Kwitansi Maksimal 45 karakter ',
+            'durasi_sewa.required' => 'Durasi sewa wajib diisi',
+            'jumlah_kamar.required' => 'Jumlah kamar wajib diisi',
             'tanggal.required'=> 'Tanggal Wajib Diisi',
-            'jumlah.required'=> 'Jumlah Wajib Diisi',
+            'total.required'=> 'Total Bayar Wajib Diisi',
             'bukti.required'=> 'Bukti Pembayaran Wajib Diisi',
         ]
         );
@@ -59,9 +60,10 @@ class PembayaranController extends Controller
             $fileName = '';
         }
         DB::table('pembayaran')->insert([
-            'no_kwitansi' => $request->no_kwitansi,
+            'durasi_sewa' => $request->durasi_sewa,
+            'jumlah_kamar' => $request->jumlah_kamar,
             'tanggal'=> $request->tanggal,
-            'jumlah'=> $request->jumlah,
+            'total'=> $request->total,
             'bukti'=> $fileName,
         ]);
 
@@ -88,8 +90,9 @@ class PembayaranController extends Controller
     {
         //arahkan ke file edit yang ada di pembayaran view
         $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
+        $ar_durasi_sewa = ['per bulan', 'per 3 bulan', 'per 6 bulan', 'per tahun'];
 
-        return view('admin.pembayaran.edit', compact('pembayaran'));
+        return view('admin.pembayaran.edit', compact('pembayaran', 'ar_durasi_sewa'));
     }
 
     /**
@@ -99,10 +102,11 @@ class PembayaranController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'no_kwitansi' => 'required|max:45',
-            'tanggal'=> 'required',
-            'jumlah'=> 'required',
-            'bukti'=> 'required',
+            'durasi_sewa' => 'required',
+            'jumlah_kamar' => 'required|integer',
+            'tanggal' => 'required',
+            'total' => 'required',
+            'bukti' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048',
         ]);
         // foto lama apabila mengganti fotonya
         $bukti = DB::table('pembayaran')->select('bukti')->where('id', $request->id)->get();
@@ -111,19 +115,20 @@ class PembayaranController extends Controller
         }
         //apakah user ingin mengganti foto lama
         if (!empty($request->bukti)) {
-            //jika ada foto lama maka hapus dulu fotonya
-            if (!empty($py->bukti)) unlink('admin/image/' . $py->bukti);
-            //proses ganti foto
-            $fileName = 'bukti-' . $request->id . '.' . $request->bukti->extension();
+        //jika ada foto lama maka hapus dulu fotonya
+        if (!empty($py->bukti)) unlink('admin/image/'.$py->bukti);
+        //proses ganti foto
+            $fileName = 'bukti-'.$request->id.'.'.$request->bukti->extension();
             $request->bukti->move(public_path('admin/image'), $fileName);
         } else {
-            $fileName = '';
+            $fileName = $namaFileBuktiLama;
         }
-        //Buat prose edit form
+        //Buat proses edit form
         DB::table('pembayaran')->where('id', $request->id)->update([
-            'no_kwitansi'=> $request->no_kwitansi,
+            'durasi_sewa' => $request->durasi_sewa,
+            'jumlah_kamar' => $request->jumlah_kamar,
             'tanggal'=> $request->tanggal,
-            'jumlah'=> $request->jumlah,
+            'total'=> $request->total,
             'bukti'=> $fileName,
         ]);
 

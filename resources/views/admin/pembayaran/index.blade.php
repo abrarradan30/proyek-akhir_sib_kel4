@@ -65,9 +65,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomor Kwitansi</th>
+                        <th>Durasi sewa</th>
+                        <th>Jumlah Kamar</th>
                         <th>Tanggal</th>
-                        <th>Jumlah</th>
+                        <th>Nominal Dibayarkan</th>
                         <th>Bukti</th>
                         <th>Action</th>
                     </tr>
@@ -75,9 +76,10 @@
                 <tfoot>
                     <tr>
                         <th>No</th>
-                        <th>Nomor Kwitansi</th>
+                        <th>Durasi sewa</th>
+                        <th>Jumlah Kamar</th>
                         <th>Tanggal</th>
-                        <th>Jumlah</th>
+                        <th>Nominal Dibayarkan</th>
                         <th>Bukti</th>
                         <th>Action</th>
                     </tr>
@@ -89,14 +91,15 @@
                     @foreach ($pembayaran as $py)
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{$py->no_kwitansi}}</td>
+                            <td>{{$py->durasi_sewa}}</td>
+                            <td>{{$py->jumlah_kamar}}</td>
                             <td>{{$py->tanggal}}</td>
-                            <td>{{$py->jumlah}}</td>
+                            <td>{{$py->total}}</td>
                             <td>
-                                @empty($dk->bukti)
+                                @empty($py->bukti)
                                     <img src="{{ url('admin/image/nofoto.png') }}" width="50%">
                                 @else
-                                    <img src="{{ url('admin/image') }}/{{ $dk->bukti }}" width="50%">
+                                    <img src="{{ url('admin/image') }}/{{ $py->bukti }}" width="50%">
                                 @endempty
                             </td>
                             <td>
