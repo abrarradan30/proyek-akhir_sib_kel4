@@ -219,7 +219,7 @@ class DataKosController extends Controller
         //return $pdf->download('data_kos.pdf'); 
         return $pdf->stream('data_kos.pdf');
     }
-    
+
     //fungsi export excel
     public function exportExcel()
     {
@@ -227,11 +227,53 @@ class DataKosController extends Controller
     }
 
     //fungsi import excel
-    public function importExcel(Request $request){
+    public function importExcel(Request $request)
+    {
         $file = $request->file('file');
-        $nama_file = rand().$file->getClientOriginalName();
+        $nama_file = rand() . $file->getClientOriginalName();
         $file->move('file_excel', $nama_file);
-        Excel::import(new DataKosImport, public_path('/file_excel/'.$nama_file));
+        Excel::import(new DataKosImport, public_path('/file_excel/' . $nama_file));
         return redirect('admin/data_kos');
+    }
+
+    //API
+    public function apiDataKos()
+    {
+        $data_kos = DataKos::all();
+        return response()->json(
+            [
+                'success' => true,
+                'message' => 'Data Kos',
+                'data' => $data_kos
+            ],
+            200
+        );
+    }
+
+    public function apiDataKosDetail($id)
+    {
+        $data_kos = DB::table('data_kos')
+            ->join('pemilik_kos', 'data_kos.pemilik_kos_id', '=', 'pemilik_kos.id')
+            ->select('data_kos.*', 'pemilik_kos.nama as nama_pemilik_kos')
+            ->where('data_kos.id', $id)
+            ->get();
+        if ($data_kos) {
+            return response()->json(
+                [
+                    'success' => true,
+                    'message' => 'Detail Data Kos',
+                    'data' => $data_kos,
+                ],
+                200
+            );
+        } else {
+            return response()->json(
+                [
+                    'success' => false,
+                    'message' => 'Detail Data Kos Tidak Dikenali'
+                ],
+                404
+            );
+        }
     }
 }
