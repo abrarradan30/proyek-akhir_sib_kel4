@@ -59,27 +59,31 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Durasi Sewa</th>
+                        <th>No Kwitansi</th>
                         <th>Tanggal</th>
+                        <th>Status Pembayaran</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Nama Kos</th>
+                        <th>Durasi Sewa</th>
                         <th>Jumlah Kamar</th>
-                        <th>Total</th>
-                        <th>Data Kos</th>
-                        <th>Pembayaran</th>
-                        <th>Pelanggan</th>
+                        <th>Tanggal Pembayaran</th>
+                        <th>Total Pembayaran</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                    <th>No</th>
-                        <th>Durasi Sewa</th>
-                        <th>Tanggal</th>
-                        <th>Jumlah Kamar</th>
-                        <th>Total</th>
-                        <th>Data Kos</th>
-                        <th>Pembayaran</th>
-                        <th>Pelanggan</th>
-                        <th>Action</th>
+                      <th>No</th>
+                      <th>No Kwitansi</th>
+                      <th>Tanggal</th>
+                      <th>Status Pembayaran</th>
+                      <th>Nama Pelanggan</th>
+                      <th>Nama Kos</th>
+                      <th>Durasi Sewa</th>
+                      <th>Jumlah Kamar</th>
+                      <th>Tanggal Pembayaran</th>
+                      <th>Total Pembayaran</th>
+                      <th>Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -89,13 +93,15 @@
                     @foreach ($riwayat_pesanan as $rp)
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{$rp->durasi_sewa}}</td>
+                            <td>{{$rp->no_kwitansi}}</td>
                             <td>{{$rp->tanggal}}</td>
-                            <td>{{$rp->jumlah_kamar}}</td>
-                            <td>{{$rp->total}}</td>
-                            <td>{{$rp->nama_kos}}</td>
-                            <td>{{$rp->status_pembayaran}}</td>
+                            <td>{{$rp->status}}</td>
                             <td>{{$rp->nama_pelanggan}}</td>
+                            <td>{{$rp->nama_kos}}</td>
+                            <td>{{$rp->durasi_sewa}}</td>
+                            <td>{{$rp->jumlah_kamar}}</td>
+                            <td>{{$rp->tanggal_pembayaran}}</td>
+                            <td>{{$rp->total_bayar}}</td>
                             <td>
                                 <form action="#" method="POST">
                                     <a href="{{url('admin/riwayat_pesanan/show/'.$rp->id)}}" class="btn btn-info btn-sm">Detail</a>
@@ -104,28 +110,28 @@
 
                                     <!-- Modal -->
                                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$rp->id}}">
-  Hapus
-</button>
+                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$rp->id}}">
+                                  Hapus
+                                </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal{{$rp->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Apakah anda yakin menghapus data ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a class="btn btn-danger" href="{{url('admin/riwayat_pesanan/delete/'.$rp->id)}}">Hapus</a>
-      </div>
-    </div>
-  </div>
-</div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal{{$rp->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        Apakah anda yakin menghapus data ?
+                                      </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a class="btn btn-danger" href="{{url('admin/riwayat_pesanan/delete/'.$rp->id)}}">Hapus</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
                                 </form>
                             </td>
                         </tr>
@@ -137,5 +143,5 @@
             </table>
         </div>
     </div>
-    </div>
+  </div>
 @endsection

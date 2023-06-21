@@ -55,33 +55,32 @@
         </div>
 
         <div class="card-header">
-                               <a href="{{url('admin/pembayaran/pembayaranPDF')}}" class="btn btn-primary btn-sm" target="_blank"> Export To PDF </a>
-                               <a href="{{url('admin/pembayaran/exportexcel')}}" class="btn btn-success btn-sm" > Export To Excel </a>
-                            <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal">
-                             Import To Excel
-                            </button>
-
-                        </div>
-                        </div>
+                <a href="{{url('admin/pembayaran/pembayaranPDF')}}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF </a>
+                <a href="{{url('admin/pembayaran/exportexcel')}}" class="btn btn-success btn-sm" > Export To Excel </a>
+                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>
+              </div>
+          </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomor Kwitansi</th>
+                        <th>Durasi sewa</th>
+                        <th>Jumlah Kamar</th>
                         <th>Tanggal</th>
-                        <th>Jumlah</th>
-                        <th>Status</th>
+                        <th>Nominal Dibayarkan</th>
+                        <th>Bukti</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>No</th>
-                        <th>Nomor Kwitansi</th>
+                        <th>Durasi sewa</th>
+                        <th>Jumlah Kamar</th>
                         <th>Tanggal</th>
-                        <th>Jumlah</th>
-                        <th>Status</th>
+                        <th>Nominal Dibayarkan</th>
+                        <th>Bukti</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
@@ -92,10 +91,17 @@
                     @foreach ($pembayaran as $py)
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{$py->no_kwitansi}}</td>
+                            <td>{{$py->durasi_sewa}}</td>
+                            <td>{{$py->jumlah_kamar}}</td>
                             <td>{{$py->tanggal}}</td>
-                            <td>{{$py->jumlah}}</td>
-                            <td>{{$py->status}}</td>
+                            <td>{{$py->total}}</td>
+                            <td>
+                                @empty($py->bukti)
+                                    <img src="{{ url('admin/image/nofoto.png') }}" width="50%">
+                                @else
+                                    <img src="{{ url('admin/image') }}/{{ $py->bukti }}" width="50%">
+                                @endempty
+                            </td>
                             <td>
                                 <form action="#" method="POST">
                                     <a href="{{url('admin/pembayaran/show/'.$py->id)}}" class="btn btn-info btn-sm">Detail</a>
@@ -104,28 +110,28 @@
 
                                     <!-- <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                         onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button> -->
-<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$py->id}}">
-  Hapus
-</button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$py->id}}">
+                                    Hapus
+                                    </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal{{$py->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Apakah anda yakin akan menghapus data ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a class="btn btn-danger" href="{{url('admin/pembayaran/delete/'.$py->id)}}">Hapus</a>
-      </div>
-    </div>
-  </div>
-</div>
+                                    <!-- Modal -->
+                                <div class="modal fade" id="exampleModal{{$py->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                      <div class="modal-body">
+                                        Apakah anda yakin akan menghapus data ?
+                                      </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a class="btn btn-danger" href="{{url('admin/pembayaran/delete/'.$py->id)}}">Hapus</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
                                 </form>
                             </td>
                         </tr>
@@ -137,5 +143,5 @@
             </table>
         </div>
     </div>
-    </div>
+  </div>
 @endsection

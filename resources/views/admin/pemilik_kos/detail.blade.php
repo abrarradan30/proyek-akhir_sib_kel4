@@ -8,16 +8,13 @@
     <div class="row">
         <div class="col-md-5">
             <div class="project-info-box mt-0">
-            @foreach($pemilik_kos as $pk)
+                @foreach($pemilik_kos as $pk)
                 <h5>Deskripsi Pemilik Kos</h5>
                 <p class="mb-0">Berikut adalah detail pemilik kos :</p>
             </div>
             <input type="hidden" value="{{$pk->id}}" />
             <div class="project-info-box">
                 <p><b>Nama:</b>{{$pk->nama}}</p>
-                <p><b>username:</b> {{$pk->username}}</p>
-                <p><b>Password:</b>{{$pk->password}}</p>
-                <p><b>Email:</b> {{$pk->email}}</p>
                 <p><b>Jenis Kelamin:</b> {{$pk->jk}}</p>
                 <p><b>Alamat:</b> {{$pk->alamat}}</p>
                 <p><b>Telepon:</b> {{$pk->telepon}}</p>

@@ -25,7 +25,9 @@ class RiwayatPesananController extends Controller
         $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
         ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
         ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
-        ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
+        ->select('riwayat_pesanan.*', 'pelanggan.nama as nama_pelanggan', 'data_kos.nama_kos',
+        'pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal as tanggal_pembayaran', 
+        'pembayaran.total as total_bayar')
         ->get();
         return view('admin.riwayat_pesanan.index', compact('riwayat_pesanan'));
     }
@@ -45,7 +47,9 @@ class RiwayatPesananController extends Controller
         $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
         ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
         ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
-        ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
+        ->select('riwayat_pesanan.*', 'pelanggan.nama as nama_pelanggan', 'data_kos.nama_kos',
+        'pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal as tanggal_pembayaran', 
+        'pembayaran.total as total_bayar')
         ->get();
 
         return view('admin.riwayat_pesanan.create', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
@@ -57,31 +61,31 @@ class RiwayatPesananController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'durasi_sewa' => 'required|max:10',
+            'no_kwitansi' => 'required|max:10',
             'tanggal' => 'required',
-            'jumlah_kamar' => 'required|integer',
-            'total' => 'required',
+            'status' => 'required',
             'data_kos_id' => 'required|integer',
             'pembayaran_id' => 'required|integer',
             'pelanggan_id' => 'required|integer',
         ],
         [
-            'durasi_sewa.required' => 'Durasi sewa wajib diisi',
-            'durasi_sewa.max' => 'Durasi sewa maksimal 10 karakter',
+            'no_kwitansi.required' => 'No kwitansi wajib diisi',
+            'no_kwitansi.max' => 'No kwitansi maksimal 10 karakter',
             'tanggal.required' => 'Tanggal wajib diisi',
-            'jumlah_kamar.required' => 'Jumlah kamar wajib diisi',
-            'total.required' => 'Total jumlah bayar wajib diisi',
-            'data_kos_id.required' => 'Nama kos wajib diisi',
-            'pembayaran_id.required' => 'Status pembayaran wajib diisi',
+            'status.required' => 'Status pembayaran jumlah bayar wajib diisi',
             'pelanggan_id.required' => 'Nama pelanggan wajib diisi',
+            'data_kos_id.required' => 'Nama kos wajib diisi',
+            'pembayaran_id.required' => 'Durasi sewa wajib diisi',
+            'pembayaran_id.required' => 'Jumlah kamar wajib diisi',
+            'pembayaran_id.required' => 'Tanggal wajib diisi',
+            'pembayaran_id.required' => 'Total pembayaran wajib diisi',
         ]
         );
         //
         DB::table('riwayat_pesanan')->insert([
-            'durasi_sewa' => $request->durasi_sewa,
+            'no_kwitansi' => $request->no_kwitansi,
             'tanggal' => $request->tanggal,
-            'jumlah_kamar' => $request->jumlah_kamar,
-            'total' => $request->total,
+            'status' => $request->status,
             'data_kos_id' => $request->data_kos_id,
             'pembayaran_id' => $request->pembayaran_id,
             'pelanggan_id' => $request->pelanggan_id,
@@ -100,7 +104,9 @@ class RiwayatPesananController extends Controller
         $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
         ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
         ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
-        ->select('riwayat_pesanan.*', 'data_kos.nama_kos', 'pembayaran.status as status_pembayaran', 'pelanggan.nama as nama_pelanggan')
+        ->select('riwayat_pesanan.*', 'pelanggan.nama as nama_pelanggan', 'data_kos.nama_kos',
+        'pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal as tanggal_pembayaran', 
+        'pembayaran.total as total_bayar')
         ->where('riwayat_pesanan.id', $id)
         ->get();
 
@@ -120,7 +126,8 @@ class RiwayatPesananController extends Controller
         $pelanggan = DB::table('pelanggan')->get();
         $pembayaran = DB::table('pembayaran')->get();
         $riwayat_pesanan = DB::table('riwayat_pesanan')->where('id', $id)->get();
-        return view('admin.riwayat_pesanan.edit', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran'));
+        $ar_status = ['lunas', 'belum lunas'];
+        return view('admin.riwayat_pesanan.edit', compact('riwayat_pesanan','data_kos','pelanggan','pembayaran','ar_status'));
     }
 
     /**
@@ -130,20 +137,19 @@ class RiwayatPesananController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'durasi_sewa' => 'required|max:10',
+            'no_kwitansi' => 'required|max:10',
             'tanggal' => 'required',
-            'jumlah_kamar' => 'required|integer',
-            'total' => 'required',
+            'status' => 'required',
             'data_kos_id' => 'required|integer',
             'pembayaran_id' => 'required|integer',
             'pelanggan_id' => 'required|integer',
         ]);
         //
         DB::table('riwayat_pesanan')->where('id', $request->id)->update([
-            'durasi_sewa' => $request->durasi_sewa,
+            'no_kwitansi' => $request->no_kwitansi,
             'tanggal' => $request->tanggal,
-            'jumlah_kamar' => $request->jumlah_kamar,
-            'total' => $request->total,
+            'status' => $request->status,
+            'status' => $request->status,
             'data_kos_id' => $request->data_kos_id,
             'pembayaran_id' => $request->pembayaran_id,
             'pelanggan_id' => $request->pelanggan_id,
@@ -182,5 +188,33 @@ class RiwayatPesananController extends Controller
         $file->move('file_excel', $nama_file);
         Excel::import(new RiwayatPesananImport, public_path('/file_excel/'.$nama_file));
         return redirect('admin/riwayat_pesanan');
+    }
+    public function apiRiwayatPesanan(){
+        $riwayat_pesanan = RiwayatPesanan::all();
+        return response()->json(
+            [
+                'succes' => true,
+                'massage' => 'Data Riwayat Pesanan',
+                'data' => $riwayat_pesanan
+            ], 200
+        );
+    }
+    public function apiRiwayatPesananDetail($id){
+        $riwayat_pesanan = DB::table('riwayat_pesanan')->where('id', $id)->get();
+
+        if($riwayat_pesanan){
+            return response()->json([
+                'succes' => true,
+                'massage' => 'Data Riwayat Pesanan',
+                'data' => $riwayat_pesanan,
+            ], 200);
+        }
+        else {
+            return response()->json([
+                'succes' => false,
+                'massage' => 'Data Riwayat Pesanan tidak dikenal',
+                
+            ], 404);
+        }
     }
 }

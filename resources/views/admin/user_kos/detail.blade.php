@@ -15,9 +15,8 @@
                 <input type="hidden" value="{{$u->id}}"/>
                 <div class="project-info-box">
                     <p><b>Nama:</b> {{$u->nama}}</p>
-                    <p><b>Username:</b> {{$u->username}}</p>
-                    <p><b>Password:</b> {{$u->password}}</p>
                     <p><b>Email:</b> {{$u->email}}</p>
+                    <p><b>Password:</b> {{$u->password}}</p>
                     <p><b>Role:</b> {{$u->role}}</p>
                 </div>
                 <div class="project-info-box mt-0 mb-0">
@@ -36,7 +35,7 @@
             @else
                 <img src="{{url('admin/image')}}/{{$u->foto}}" alt="project-image" class="rounded">
             @endempty
-            <a href="{{url('admin/user')}}">
+            <a href="{{url('admin/user_kos')}}">
                 <button class="btn btn-primary btn-lg"> Back </button>
             </a>
             </div>

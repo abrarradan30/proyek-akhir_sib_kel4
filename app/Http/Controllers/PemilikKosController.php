@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PemilikKos;
 use RealRashid\SweetAlert\Facades\Alert;
-use DB;
+use Illuminate\Support\Facades\DB;
 use PDF;
 use App\Exports\PemilikKosExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -40,37 +40,29 @@ class PemilikKosController extends Controller
         // fungsi untuk mengisi data pada form
         $request->validate(
             [
-                'nama' => 'required|max:45',
-                'username' => 'required',
-                'password' => 'required',
-                'email' => 'required',
-                'jk' => 'required',
-                'alamat' => 'required',
-                'telepon' => 'required',
+                'nama'     => 'required|max:45',
+                'jk'       => 'required',
+                'alamat'   => 'required',
+                'telepon'  => 'required',
             ],
             [
-                'nama.required' => 'Nama wajib diisi',
-                'nama.max' => 'Nama maksimal 45 karakter',
-                'username.required' => 'Username wajib diisi',
-                'password.required' => 'Password wajib diisi',
-                'email.required' => 'Email wajib diisi',
-                'jk.required' => 'Jenis kelamin wajib diisi',
-                'alamat.required' => 'Alamat wajib diisi',
-                'telepon.required' => 'Telepon wajib diisi',
+                'nama.required'     => 'Nama wajib diisi',
+                'nama.max'          => 'Nama maksimal 45 karakter',
+                'jk.required'       => 'Jenis kelamin wajib diisi',
+                'alamat.required'   => 'Alamat wajib diisi',
+                'telepon.required'  => 'Telepon wajib diisi',
 
             ]
         );
         //fungsi untuk menambahkan pemilik kos
         DB::table('pemilik_kos')->insert([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
-            'email' => $request->email,
-            'jk' => $request->jk,
-            'alamat' => $request->alamat,
-            'telepon' => $request->telepon,
+            'nama'     => $request->nama,
+            'jk'       => $request->jk,
+            'alamat'   => $request->alamat,
+            'telepon'  => $request->telepon,
         ]);
 
+        Alert::success('Pemilik Kos', 'Berhasil menambahkan data pemilik kos');
         return redirect('admin/pemilik_kos');
     }
 
@@ -89,7 +81,7 @@ class PemilikKosController extends Controller
      */
     public function edit(string $id)
     {
-        //arahkan ke file edit yang ada di pemilikmkos view
+        //arahkan ke file edit yang ada di pemilik kos view
         $pemilik_kos = DB::table('pemilik_kos')->where('id', $id)->get();
         $ar_jk = ['l', 'p'];
 
@@ -102,25 +94,20 @@ class PemilikKosController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'nama' => 'required|max:45',
-            'username' => 'required',
-            'password' => 'required',
-            'email' => 'required',
-            'jk' => 'required',
-            'alamat' => 'nullable|string|min:10',
-            'telepon' => 'required',
+            'nama'     => 'required|max:45',
+            'jk'       => 'required',
+            'alamat'   => 'nullable|string|min:10',
+            'telepon'  => 'required',
         ]);
         //fungsi untuk menambahkan pemilik kos
         DB::table('pemilik_kos')->where('id', $request->id)->update([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
-            'email' => $request->email,
-            'jk' => $request->jk,
-            'alamat' => $request->alamat,
-            'telepon' => $request->telepon,
+            'nama'     => $request->nama,
+            'jk'       => $request->jk,
+            'alamat'   => $request->alamat,
+            'telepon'  => $request->telepon,
         ]);
 
+        Alert::info('Pemilik Kos', 'Berhasil mengedit data pemilik Kos');
         return redirect('admin/pemilik_kos');
     }
 
@@ -133,6 +120,7 @@ class PemilikKosController extends Controller
         DB::table('pemilik_kos')->where('id', $id)->delete();
         return redirect('admin/pemilik_kos');
     }
+
     //ini adalah fungsi percontohan untuk export pdf
     public function pemilik_kosPDF()
     {
@@ -141,10 +129,14 @@ class PemilikKosController extends Controller
         // return $pdf->download('data_pemilik_kos.pdf');
         return $pdf->stream();
     }
+
+    //export excel
     public function exportExcel()
     {
         return Excel::download(new PemilikKosExport, 'pemilik_kos.xlsx');
     }
+
+    //import excel
     public function importExcel(Request $request)
     {
         $file = $request->file('file');
@@ -152,5 +144,42 @@ class PemilikKosController extends Controller
         $file->move('file_excel', $nama_file);
         Excel::import(new PemilikKosImport, public_path('/file_excel/' . $nama_file));
         return redirect('admin/pemilik_kos');
+    }
+
+    //API
+    public function apiPemilikKos()
+    {
+        $pemilik_kos = PemilikKos::all();
+        return response()->json(
+            [
+                'success' => true,
+                'message' => 'Data Pemilik Kos',
+                'data' => $pemilik_kos
+            ],
+            200
+        );
+    }
+
+    public function apiPemilikKosDetail($id)
+    {
+        $pemilik_kos =  DB::table('pemilik_kos')->where('id', $id)->get();
+        if ($pemilik_kos) {
+            return response()->json(
+                [
+                    'success' => true,
+                    'message' => 'Detail Data Pemilik Kos',
+                    'data' => $pemilik_kos,
+                ],
+                200
+            );
+        } else {
+            return response()->json(
+                [
+                    'success' => false,
+                    'message' => 'Detail Data Pemilik Kos Tidak Dikenali'
+                ],
+                404
+            );
+        }
     }
 }

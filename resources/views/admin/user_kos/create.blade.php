@@ -15,7 +15,7 @@
   </ul>
 </div>
 @endif
-<form method="POST" action="{{url('admin/user/store')}}" enctype="multipart/form-data">
+<form method="POST" action="{{url('admin/user_kos/store')}}" enctype="multipart/form-data">
     {{csrf_field()}}
   <div class="form-group row">
     <label for="text" class="col-4 col-form-label">Nama</label> 
@@ -29,10 +29,10 @@
       </div>
   </div>
   <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label">Username</label> 
+    <label for="text3" class="col-4 col-form-label">Email</label> 
     <div class="col-8">
-      <input id="text2" name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Masukkan Username">
-      @error('username')
+      <input id="text3" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Email">
+      @error('email')
         <div class="invalid-feedback">
           {{$message}}
         </div>
@@ -44,17 +44,6 @@
     <div class="col-8">
       <input id="text1" name="password" type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan Password">
       @error('password')
-        <div class="invalid-feedback">
-          {{$message}}
-        </div>
-      @enderror
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="text3" class="col-4 col-form-label">Email</label> 
-    <div class="col-8">
-      <input id="text3" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Email">
-      @error('email')
         <div class="invalid-feedback">
           {{$message}}
         </div>

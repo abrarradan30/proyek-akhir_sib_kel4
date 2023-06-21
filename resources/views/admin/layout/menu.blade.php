@@ -9,6 +9,7 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
+                            @if(Auth::user()->role == 'admin')
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Master Data
@@ -21,9 +22,11 @@
                                     <a class="nav-link" href="{{url('admin/pelanggan')}}">Data Pelanggan</a>
                                     <a class="nav-link" href="{{url('admin/pembayaran')}}">Data Pembayaran</a>
                                     <a class="nav-link" href="{{url('admin/riwayat_pesanan')}}">Data Riwayat Pesanan</a>
-                                    <a class="nav-link" href="{{url('admin/user')}}">Data User</a>
+                                    <a class="nav-link" href="{{url('admin/user_kos')}}">Data User Kos</a>
+                                    <a class="nav-link" href="{{url('admin/user')}}">Data User Auth</a>
                                 </nav>
                             </div>
+                            @endif
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Pages

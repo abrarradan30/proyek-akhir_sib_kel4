@@ -40,33 +40,24 @@ class PelangganController extends Controller
     {
         // fungsi untuk mengisi data pada form
         $request->validate([
-            'nama' => 'required|max:45',
-            'username' => 'required',
-            'password' => 'required',
-            'email' => 'required',
-            'jk' => 'required',
-            'alamat' => 'required',
+            'nama'    => 'required|max:45',
+            'jk'      => 'required',
             'telepon' => 'required',
+            'alamat'  => 'required',
         ]);
         [
-            'nama.required' => 'Nama wajib diisi',
-            'nama.max' => 'Nama maksimal 45 karakter',
-            'username.required' => 'Username wajib diisi',
-            'password.required' => 'Password wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'jk.required' => 'Jenis kelamin wajib diisi',
-            'alamat.required' => 'Alamat wajib diisi',
+            'nama.required'    => 'Nama wajib diisi',
+            'nama.max'         => 'Nama maksimal 45 karakter',
+            'jk.required'      => 'Jenis kelamin wajib diisi',
             'telepon.required' => 'Telepon wajib diisi',
+            'alamat.required'  => 'Alamat wajib diisi',
 
         ];
         DB::table('pelanggan')->insert([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
-            'email' => $request->email,
-            'jk' => $request->jk,
+            'nama'    => $request->nama,
+            'jk'      => $request->jk,
             'telepon' => $request->telepon,
-            'alamat' => $request->alamat,
+            'alamat'  => $request->alamat,
         ]);
         
         Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
@@ -102,33 +93,24 @@ class PelangganController extends Controller
     {
         //
         $request->validate([
-            'nama' => 'required|max:45',
-            'username' => 'required',
-            'password' => 'required',
-            'email' => 'required',
-            'jk' => 'required',
-            'alamat' => 'required',
+            'nama'    => 'required|max:45',
+            'jk'      => 'required',
             'telepon' => 'required',
+            'alamat'  => 'required',
         ]);
         [
-            'nama.required' => 'Nama wajib diisi',
-            'nama.max' => 'Nama maksimal 45 karakter',
-            'username.required' => 'Username wajib diisi',
-            'password.required' => 'Password wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'jk.required' => 'Jenis kelamin wajib diisi',
-            'alamat.required' => 'Alamat wajib diisi',
+            'nama.required'    => 'Nama wajib diisi',
+            'nama.max'         => 'Nama maksimal 45 karakter',
+            'jk.required'      => 'Jenis kelamin wajib diisi',
             'telepon.required' => 'Telepon wajib diisi',
+            'alamat.required'  => 'Alamat wajib diisi',
 
         ];
         DB::table('pelanggan')->where('id', $request->id)->update([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
-            'email' => $request->email,
-            'jk' => $request->jk,
-            'alamat' => $request->alamat,
+            'nama'    => $request->nama,
+            'jk'      => $request->jk,
             'telepon' => $request->telepon,
+            'alamat'  => $request->alamat,
         ]);
 
         Alert::info('Pelanggan', 'Berhasil mengedit pelanggan');
@@ -150,11 +132,11 @@ class PelangganController extends Controller
         //return $pdf->download('data_user.pdf'); 
         return $pdf->stream('data_pelanggan.pdf');
     }
-    public function pelangganEXCEL() 
+    public function exportExcel() 
     {
         return Excel::download(new PelangganExport, 'pelanggan.xlsx');    
     }
-    public function pelangganIMPORT(Request $request)
+    public function importExcel(Request $request)
     {
         $file = $request->file('file');
         $nama_file = rand().$file->getClientOriginalName();
@@ -162,5 +144,33 @@ class PelangganController extends Controller
         Excel::import(new PelangganImport, public_path('/file_excel/'.$nama_file));
         return redirect('admin/pelanggan');
         
+    }
+    public function apiPelanggan(){
+        $pelanggan = Pelanggan::all();
+        return response()->json(
+            [
+                'succes'=>true,
+                'massage'=> 'Data Pelanggan',
+                'data'=>$pelanggan
+            ], 200
+        );
+    }
+    public function apiPelangganDetail($id){
+        $pelanggan = DB::table('pelanggan')->where('id', $id)->get();
+
+        if($pelanggan){
+            return response()->json([
+                'succes'=>true,
+                'massage'=> 'Data Pelanggan',
+                'data'=>$pelanggan,
+            ], 200);
+        }
+        else {
+            return response()->json([
+                'succes'=>false,
+                'massage'=> 'Data Pelanggan tidak dikenal',
+                
+            ], 404);
+        }
     }
 }

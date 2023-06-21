@@ -14,12 +14,10 @@
         <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Email</th>
-            <th>Kelamin</th>
+            <th>Jenis Kelamin</th>
+            <th>Telepon</th>
             <th>Alamat</th>
-            <th>Telefon</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -28,12 +26,9 @@
         <tr>
             <td>{{$no++}}</td>
             <td>{{$u->nama}}</td>
-            <td>{{$u->username}}</td>
-            <td>{{$u->password}}</td>
-            <td>{{$u->email}}</td>
-            <td>{{$u->alamat}}</td>
             <td>{{$u->jk}}</td>
             <td>{{$u->telepon}}</td>
+            <td>{{$u->alamat}}</td> 
         </tr>
         @endforeach
     </tbody>

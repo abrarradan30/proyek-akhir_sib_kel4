@@ -12,4 +12,4 @@ class UserKos extends Model
     protected $table = 'user'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
     protected $fillable = ['nama', 'username', 'password', 'email', 'role', 'foto']; // pemanggilan kolom
-}
+} 

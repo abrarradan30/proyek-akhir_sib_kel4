@@ -12,7 +12,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{url('admin/user/importexcel')}}" method="POST" enctype="multipart/form-data">
+      <form action="{{url('admin/user_kos/importexcel')}}" method="POST" enctype="multipart/form-data">
       <div class="modal-body">
         <div class="form-group">
             {{csrf_field()}}
@@ -46,12 +46,12 @@
                 DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
 
-            <a href="{{url('admin/user/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
+            <a href="{{url('admin/user_kos/create')}}" class="btn btn-primary  btn-sm">Tambah</a>
 
         </div>
         <div class="card-header">
-            <a href="{{url('admin/user/userPDF')}}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF </a>
-            <a href="{{url('admin/user/exportexcel')}}" class="btn btn-success btn-sm"> Export To Excel </a>   
+            <a href="{{url('admin/user_kos/user_kosPDF')}}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF </a>
+            <a href="{{url('admin/user_kos/exportexcel')}}" class="btn btn-success btn-sm"> Export To Excel </a>   
             <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>   
         </div>
         <div class="card-body">
@@ -60,9 +60,8 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
                         <th>Email</th>
+                        <th>Password</th>
                         <th>Role</th>
                         <th>Foto</th>
                         <th>Action</th>
@@ -72,9 +71,8 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
                         <th>Email</th>
+                        <th>Password</th>
                         <th>Role</th>
                         <th>Foto</th>
                         <th>Action</th>
@@ -88,9 +86,8 @@
                         <tr>
                             <td>{{ $no }}</td>
                             <td>{{$u->nama}}</td>
-                            <td>{{$u->username}}</td>
-                            <td>{{$u->password}}</td>
                             <td>{{$u->email}}</td>
+                            <td>{{$u->password}}</td>
                             <td>{{$u->role}}</td>
                             <td>
                                 @empty($u->foto)
@@ -101,34 +98,34 @@
                             </td>
                             <td>
                                 <form action="#" method="POST">
-                                    <a href="{{url('admin/user/show/'.$u->id)}}" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="{{url('admin/user_kos/show/'.$u->id)}}" class="btn btn-info btn-sm">Detail</a>
 
-                                    <a href="{{url('admin/user/edit/'.$u->id)}}" class="btn btn-warning btn-sm">Ubah</a>
+                                    <a href="{{url('admin/user_kos/edit/'.$u->id)}}" class="btn btn-warning btn-sm">Ubah</a>
 
                                     <!-- Modal -->
                                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$u->id}}">
-  Hapus
-</button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$u->id}}">
+                                       Hapus
+                                    </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal{{$u->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Apakah anda yakin menghapus data ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a class="btn btn-danger" href="{{url('admin/user/delete/'.$u->id)}}">Hapus</a>
-      </div>
-    </div>
-  </div>
-</div>
+                                    <!-- Modal -->
+                                <div class="modal fade" id="exampleModal{{$u->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                    <div class="modal-body">
+                                      Apakah anda yakin menghapus data {{$u->nama}} ?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          <a class="btn btn-danger" href="{{url('admin/user_kos/delete/'.$u->id)}}">Hapus</a>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
                                 </form>
                             </td>
                         </tr>
@@ -140,5 +137,5 @@
             </table>
         </div>
     </div>
-    </div>
+</div>
 @endsection

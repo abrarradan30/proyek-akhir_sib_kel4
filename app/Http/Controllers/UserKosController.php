@@ -39,20 +39,16 @@ class UserKosController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:50',
-            'username' => 'required|unique:user|max:50',
-            'password' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'role' => 'required',
             'foto' => 'required|image|mimes:jpg,jpeg,gif,svg|max:2048', 
         ],
         [
             'nama.required' => 'Nama wajib diisi',
             'nama.max' => 'Nama maksimal 50 karakter',
-            'username.required' => 'Username wajib diisi',
-            'username.unique' => 'Username sudah ada, masukkan Username yang lain',
-            'username.max' => 'Username maksimal 50 karakter',
-            'password.required' => 'Password wajib diisi',
             'email.required' => 'Email wajib diisi',
+            'password.required' => 'Password wajib diisi',
             'role.required' => 'Role wajib diisi',
         ]
         );
@@ -65,15 +61,14 @@ class UserKosController extends Controller
         }
         DB::table('user')->insert([
             'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
             'email' => $request->email,
+            'password' => $request->password,
             'role' => $request->role,
             'foto' => $fileName,
         ]);
 
         Alert::success('User', 'Berhasil menambahkan user');
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
 
     /**
@@ -104,9 +99,8 @@ class UserKosController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:50',
-            'username' => 'required|max:50',
-            'password' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'role' => 'required',
             'foto' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048', 
         ]);
@@ -127,15 +121,14 @@ class UserKosController extends Controller
         }
         DB::table('user')->where('id', $request->id)->update([
             'nama' => $request->nama,
-            'username' => $request->username,
-            'password' => $request->password,
             'email' => $request->email,
+            'password' => $request->password,
             'role' => $request->role,
             'foto' => $fileName,
         ]);
 
         Alert::info('User', 'Berhasil mengedit user');
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
 
     /**
@@ -145,15 +138,15 @@ class UserKosController extends Controller
     {
         //
         DB::table('user')->where('id', $id)->delete();
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
     // fungsi export PDF
-    public function userPDF()
+    public function user_kosPDF()
     {
         $user = UserKos::all();
-        $pdf = PDF::loadView('admin.user_kos.userPDF', ['user' => $user])->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('admin.user_kos.user_kosPDF', ['user' => $user])->setPaper('a4', 'landscape');
         //return $pdf->download('data_user.pdf'); 
-        return $pdf->stream('data_user.pdf');
+        return $pdf->stream('data_user_kos.pdf');
     }
     //fungsi export-importExcel
     public function exportExcel()
@@ -166,6 +159,6 @@ class UserKosController extends Controller
         $nama_file = rand().$file->getClientOriginalName();
         $file->move('file_excel', $nama_file);
         Excel::import(new UserKosImport, public_path('/file_excel/'.$nama_file));
-        return redirect('admin/user');
+        return redirect('admin/user_kos');
     }
 }

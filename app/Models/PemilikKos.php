@@ -10,7 +10,7 @@ class PemilikKos extends Model
     use HasFactory;
     protected $table = 'pemilik_kos'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
-    protected $fillable = ['nama', 'username', 'password', 'email', 'jk', 'alamat', 'telepon']; // pemanggilan kolom
+    protected $fillable = ['nama', 'jk', 'alamat', 'telepon']; // pemanggilan kolom
 
     public function data_kos()
     {

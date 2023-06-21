@@ -1,6 +1,32 @@
 @extends('admin.layout.appadmin')
 
 @section('content')
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{url('admin/pelanggan/importexcel')}}" method="POST" enctype="multipart/form-data">
+      <div class="modal-body">
+        <div class="form-group">
+            {{csrf_field()}}
+            <input type="file" name="file">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-outline btn-primary">Save changes</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<!-- Modal -->
     <h1 class="mt-4">Tables Pelanggan</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -23,11 +49,9 @@
         </div>
         <div class="card-header">
 
-        <a href="{{url('admin/pelanggan/pelangganPDF')}}" class="btn btn-success btn-sm" target="_blank"> Export To PDF </a>   
-        <a href="{{url('admin/pelanggan/pelangganEXCEL')}}" class="btn btn-info btn-sm" target="_blank"> Export To Excel </a>
-        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal">
-                             Import To Excel
-        </button>
+        <a href="{{url('admin/pelanggan/pelangganPDF')}}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF </a>   
+        <a href="{{url('admin/pelanggan/exportexcel')}}" class="btn btn-success btn-sm" target="_blank"> Export To Excel </a>
+        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>
         </div>
         
         <div class="card-body">
@@ -36,9 +60,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
                         <th>Jenis Kelamin</th>
                         <th>Telepon</th>
                         <th>Alamat</th>
@@ -49,9 +70,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
                         <th>Jenis Kelamin</th>
                         <th>Telepon</th>
                         <th>Alamat</th>
@@ -66,9 +84,6 @@
                         <tr>
                             <td>{{ $no }}</td>
                             <td>{{$p->nama}}</td>
-                            <td>{{$p->username}}</td>
-                            <td>{{$p->password}}</td>
-                            <td>{{$p->email}}</td>
                             <td>{{$p->jk}}</td>
                             <td>{{$p->telepon}}</td>
                             <td>{{$p->alamat}}</td>

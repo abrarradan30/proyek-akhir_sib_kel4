@@ -5,20 +5,20 @@
 <h2> Details Pembayaran</h2>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="project-info-box mt-0">
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="project-info-box mt-0">
                 @foreach ($pembayaran as $py)
                 <h5>Deskripsi Pembayaran</h5>
                 <p class="mb-0">Berikut adalah detail pembayaran kos :</p>
             </div>
             <input type="hidden" value="{{$py->id}}" />
             <div class="project-info-box">
-                <p><b>Nomor Kwitansi:</b> {{$py->no_kwitansi}}</p>
+                <p><b>Durasi Sewa:</b> {{$py->durasi_sewa}}</p>
+                <p><b>Jumlah Kamar:</b> {{$py->jumlah_kamar}}</p>
                 <p><b>Tanggal:</b> {{$py->tanggal}}</p>
-                <p><b>Jumlah:</b> {{$py->jumlah}}</p>
-                <p><b>Status Pembayaran:</b> {{$py->status}}</p>
+                <p><b>Total:</b> {{$py->total}}</p>
             </div>
             <div class="project-info-box mt-0 mb-0">
                 <p class="mb-0">
@@ -30,11 +30,18 @@
                 </p>
             </div>
         </div>
-            <a href="{{url('admin/pembayaran')}}" >
-                <button class="btn btn-primary btn-lg">Back</button>
-            </a>
-            <div class="col-md-7">
+        <div class="col-md-7">
+            @empty($py->bukti)
+                <img src="{{ url('admin/image/nofoto.png') }}" alt="project-image" class="rounded">
+            @else
+                <img src="{{ url('admin/image') }}/{{ $py->bukti }}" alt="project-image" class="rounded">
+            @endempty
+            <div class="project-info-box">
+                <a href="{{ url('admin/pembayaran') }}">
+                    <button class="btn btn-primary btn-lg">Back</button>
+                </a>
             </div>
+        </div>
         </div>
     </div>
 </div>

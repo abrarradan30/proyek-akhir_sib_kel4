@@ -46,15 +46,13 @@
             <!-- <i class="fas fa-table me-1"></i>
                                         DataTable Example -->
             <!-- Membuat tombol yang mengarahkan ke file produk._form.php -->
-            <a href="{{ url('admin/data_kos/create') }}" class="btn btn-primary  btn-sm">Tambah</a>
+            <a href="{{ url('admin/data_kos/create') }}" class="btn btn-primary btn-sm">Tambah</a>
         </div>
         <div class="card-header">
-            <a href="{{ url('admin/data_kos/data_kosPDF') }}" class="btn btn-success btn-sm" target="_blank"> Export To PDF</a>
+            <a href="{{ url('admin/data_kos/data_kosPDF') }}" class="btn btn-danger btn-sm" target="_blank"> Export To PDF</a>
             <a href="{{ url('admin/data_kos/exportexcel') }}" class="btn btn-success btn-sm"> Export To EXCEL</a>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal">
-                Import To EXCEL
-            </button>
+            <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To EXCEL </button>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">

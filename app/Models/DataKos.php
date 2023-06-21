@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DataKos extends Model
 {
     use HasFactory;
-    public $timestamps = false;
     protected $table = 'data_kos'; // pemanggilan nama table
     protected $primaryKey = 'id'; // pemanggilang id atau pk
     protected $fillable = [
