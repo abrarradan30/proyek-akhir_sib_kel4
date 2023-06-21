@@ -1,38 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Ngalamkos</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
-    <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/fonts/line-icons.css')}}">
-    <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/slicknav.css')}}">
-
-    <!-- Range Slider -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/ion.rangeSlider.css')}}">
-    <!-- Range Slider  -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/ion.rangeSlider.skinFlat.css')}}">
-    <!-- Nivo Lightbox -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/nivo-lightbox.css')}}" >
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/animate.css')}}">
-    <!-- Owl carousel -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/owl.carousel.css')}}">
-    <!-- Rav Slider -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/extras/settings.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/extras/layers.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/extras/navigation.css')}}">
-    <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/main.css')}}">
-    <!-- Responsive Style -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/responsive.css')}}">
-
+    <title>Ngalamkos</title>  
   </head>
   <body>
 <!-- Footer Section Start -->

@@ -77,7 +77,7 @@
               <span class="navbar-toggler-icon"></span>
               <span class="lin-menu"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="" width="20%"></a>
+            <a class="navbar-brand" href="index.html"><img src="{{asset('frontend/img/logo.png')}}" alt="" width="20%"></a>
           </div>
 
           <div class="collapse navbar-collapse" id="main-navbar">
@@ -139,22 +139,6 @@
       <div class="clearfix"></div>
     </header>
     <!-- Header Area wrapper End -->
-    
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{asset('frontend/js/jquery-min.js')}}"></script>
-    <script src="{{asset('frontend/js/popper.min.js')}}"></script>
-    <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.mixitup.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('frontend/js/ion.rangeSlider.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.parallax.js')}}"></script>
-    <script src="{{asset('frontend/js/waypoints.min.js')}}"></script>
-    <script src="{{asset('frontend/js/wow.js')}}"></script>
-    <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.slicknav.js')}}"></script>
-    <script src="{{asset('frontend/js/nivo-lightbox.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.slicknav.js')}}"></script>
-    <script src="{{asset('frontend/js/main.js')}}"></script>
     
   </body>
 </html>

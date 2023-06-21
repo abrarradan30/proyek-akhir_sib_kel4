@@ -1,78 +1,6 @@
 @extends('frontend.index')
 @section('front')
 
-    <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white"  data-toggle="sticky-onscroll">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              <span class="lin-menu"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="{{asset('frontend/img/logo.png')}}" alt="" width="20%"></a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="main-navbar">
-            <ul class="navbar-nav mr-auto w-100 justify-content-center">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Home <i class="fa fa-angle-down"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Pusat Bantuan <i class="fa fa-angle-down"></i>
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="about.html">Info Umum</a>
-                  <a class="dropdown-item" href="single-blog.html">Syarat & Ketentuan</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-            <div class="search-add float-right">
-              <form method="post">
-                <div class="form-group">
-                    <input type="search" name="field-name" value="" placeholder="Cari Lokasi" required="">
-                    <button type="submit" class="search-btn"><span class="lni-search"></span></button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Menu Start -->
-        <ul class="mobile-menu">
-          <li>
-            <a class="active" href="index.html">
-            Home
-            </a>
-          </li>
-          <li>
-            <a href="#">Pusat Bantuan</a>
-            <ul class="dropdown">
-              <li><a href="about.html">Info Umum</a></li>
-              <li><a href="agents.html">Syarat & Ketentuan</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="contact.html">
-            Contact Us
-            </a>
-          </li>
-        </ul>
-        <!-- Mobile Menu End -->
-      </nav>
-      <!-- Navbar End -->
-      <div class="clearfix"></div>
-    </header>
-    <!-- Header Area wrapper End -->
-
     <section id="intro" class="section-intro">
   
       <div class="search-container">
@@ -106,7 +34,7 @@
                 <div class="property-item">
                   <div class="item-thumb">
                     <a class="hover-effect" href="detail_kos.html">
-                      <img class="img-fluid" src="assets/img/property/house-1.jpg" alt="">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-1.jpg')}}" alt="">
                     </a>
                   </div>
                   <div class="item-body">
@@ -129,7 +57,7 @@
                 <div class="property-item">
                   <div class="item-thumb">
                     <a class="hover-effect" href="property.html">
-                      <img class="img-fluid" src="assets/img/property/house-2.jpg" alt="">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-2.jpg')}}" alt="">
                     </a>
                   </div>
                   <div class="item-body">
@@ -152,7 +80,7 @@
                 <div class="property-item">
                   <div class="item-thumb">
                     <a class="hover-effect" href="property.html">
-                      <img class="img-fluid" src="assets/img/property/house-3.jpg" alt="">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-3.jpg')}}" alt="">
                     </a>
                   </div>
                   <div class="item-body">
@@ -175,7 +103,7 @@
                 <div class="property-item">
                   <div class="item-thumb">
                     <a class="hover-effect" href="property.html">
-                      <img class="img-fluid" src="assets/img/property/house-4.jpg" alt="">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-4.jpg')}}" alt="">
                     </a>
                   </div>
                   <div class="item-body">
@@ -198,7 +126,7 @@
                 <div class="property-item">
                   <div class="item-thumb">
                     <a class="hover-effect" href="property.html">
-                      <img class="img-fluid" src="assets/img/property/house-5.jpg" alt="">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-5.jpg')}}" alt="">
                     </a>
                   </div>
                   <div class="item-body">
@@ -221,7 +149,7 @@
                 <div class="property-item">
                   <div class="item-thumb">
                     <a class="hover-effect" href="property.html">
-                      <img class="img-fluid" src="assets/img/property/house-6.jpg" alt="">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-6.jpg')}}" alt="">
                     </a>
                   </div>
                   <div class="item-body">
@@ -262,7 +190,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 col-lg-6 col-xs-12">
-            <img class="img-fluid" src="assets/img/about/img-3.png" alt="">
+            <img class="img-fluid" src="{{asset('frontend/img/about/img-3.png')}}" alt="">
           </div>
           <div class="col-md-12 col-lg-6 col-xs-12">
             <h2 class="intro-title">Ngalamkos</h2>
