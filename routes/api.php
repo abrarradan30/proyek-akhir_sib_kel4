@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/pembayaran/{id}', [PembayaranController::class, 'show']);
 Route::post('/pembayaran-create', [PembayaranController::class, 'store']);
-// Route::put('/pembayaran/{id}', [PembayaranController::class, 'update']);
-// Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
+Route::put('/pembayaran/{id}', [PembayaranController::class, 'update']);
+Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
