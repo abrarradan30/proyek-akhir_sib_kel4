@@ -145,4 +145,32 @@ class PelangganController extends Controller
         return redirect('admin/pelanggan');
         
     }
+    public function apiPelanggan(){
+        $pelanggan = Pelanggan::all();
+        return response()->json(
+            [
+                'succes'=>true,
+                'massage'=> 'Data Pelanggan',
+                'data'=>$pelanggan
+            ], 200
+        );
+    }
+    public function apiPelangganDetail($id){
+        $pelanggan = DB::table('pelanggan')->where('id', $id)->get();
+
+        if($pelanggan){
+            return response()->json([
+                'succes'=>true,
+                'massage'=> 'Data Pelanggan',
+                'data'=>$pelanggan,
+            ], 200);
+        }
+        else {
+            return response()->json([
+                'succes'=>false,
+                'massage'=> 'Data Pelanggan tidak dikenal',
+                
+            ], 404);
+        }
+    }
 }
