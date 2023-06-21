@@ -9,6 +9,7 @@ use App\Http\Controllers\RiwayatPesananController;
 use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,9 +23,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
+}); */
+Route::get('/', function () {
+    return view('front');
 });
 
 Route::group(['middleware' => ['auth', 'peran:admin']], function(){
