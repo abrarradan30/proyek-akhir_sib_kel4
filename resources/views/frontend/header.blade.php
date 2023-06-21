@@ -57,8 +57,8 @@
                 <a class="linkedin" href="#"><i class="lni-linkedin-filled"></i></a>
               </div>
               <div class="header-top-right float-right">
-                <a href="login.html" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
-                <a href="register.html" class="header-top-button"><i class="lni-pencil"></i> Register</a> |
+                <a href="{{ route('login') }}" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
+                <a href="{{ route('register') }}" class="header-top-button"><i class="lni-pencil"></i> Register</a> |
                 <a href="#" class="header-top-button"><i class="lni-user"></i> Messi</a> |
                 <a href="#" class="header-top-button"><i class="lni-exit"></i></a>
               </div>
