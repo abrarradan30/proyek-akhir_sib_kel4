@@ -9,6 +9,7 @@ use App\Http\Controllers\RiwayatPesananController;
 use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,9 +23,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
+}); */
+Route::get('/', function () {
+    return view('front');
 });
 
 Route::group(['middleware' => ['auth', 'peran:admin']], function(){
@@ -109,9 +113,20 @@ Route::get('/acces_denied2', function(){
     return view('admin/acces_denied');
 }); 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//APIpelanggan
+
+//Route REST API
+// Data Kos
+Route::get('/data_kos_api', [DataKosController::class, 'apiDataKos']);
+Route::get('/data_kos_api/{id}', [DataKosController::class, 'apiDataKosDetail']);
+//Pemilik Kos
+Route::get('/pemilik_kos_api', [PemilikKosController::class, 'apiPemilikKos']);
+Route::get('/pemilik_kos_api/{id}', [PemilikKosController::class, 'apiPemilikKosDetail']);
+// Pelanggan
 Route::get('/pelangganapi', [PelangganController::class, 'apiPelanggan']);
 Route::get('/pelangganapi/{id}', [PelangganController::class, 'apiPelangganDetail']);
-//APIpembayaran
+// Pembayaran
 Route::get('/pembayaranapi', [PembayaranController::class, 'apiPembayaran']);
 Route::get('/pembayaranapi/{id}', [PembayaranController::class, 'apiPembayaranDetail']);
+//Riwayat Pesanan
+Route::get('/riwayat_pesanan_api', [RiwayatPesananController::class, 'apiRiwayatPesanan']);
+Route::get('/riwayat_pesanan_api/{id}', [RiwayatPesananController::class, 'apiRiwayatPesananDetail']);

@@ -189,4 +189,32 @@ class RiwayatPesananController extends Controller
         Excel::import(new RiwayatPesananImport, public_path('/file_excel/'.$nama_file));
         return redirect('admin/riwayat_pesanan');
     }
+    public function apiRiwayatPesanan(){
+        $riwayat_pesanan = RiwayatPesanan::all();
+        return response()->json(
+            [
+                'succes' => true,
+                'massage' => 'Data Riwayat Pesanan',
+                'data' => $riwayat_pesanan
+            ], 200
+        );
+    }
+    public function apiRiwayatPesananDetail($id){
+        $riwayat_pesanan = DB::table('riwayat_pesanan')->where('id', $id)->get();
+
+        if($riwayat_pesanan){
+            return response()->json([
+                'succes' => true,
+                'massage' => 'Data Riwayat Pesanan',
+                'data' => $riwayat_pesanan,
+            ], 200);
+        }
+        else {
+            return response()->json([
+                'succes' => false,
+                'massage' => 'Data Riwayat Pesanan tidak dikenal',
+                
+            ], 404);
+        }
+    }
 }

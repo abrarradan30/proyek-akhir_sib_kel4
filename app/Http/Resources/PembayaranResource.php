@@ -7,6 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PembayaranResource extends JsonResource
 {
+<<<<<<< HEAD
     public $status;
     public $message;
 
@@ -16,6 +17,8 @@ class PembayaranResource extends JsonResource
         $this->status = $status;
         $this->message = $message;
     }
+=======
+>>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
     /**
      * Transform the resource into an array.
      *
@@ -23,11 +26,15 @@ class PembayaranResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+<<<<<<< HEAD
         // return parent::toArray($request);
         return[
             'success'=>$this->status,
             'message'=>$this->message,
             'data'=>$this->resource,
         ];
+=======
+        return parent::toArray($request);
+>>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
     }
 }

@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
+@import url(http://fontawesome.io/assets/font-awesome/css/font-awesome.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* background: url(https://www.toptal.com/designers/subtlepatterns/uploads/dark-paths.png); */
+    background-color: #f3f3f3;
+    color: #fff;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+#msform {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: absolute;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+#msform label{
+    font-family: 'Ubuntu', sans-serif !important;
+    color: #2C3E50;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px !important;
+}
+
+#msform input[type="text"],
+#msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif !important;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+#msform .radio-button {
+    display: flex;
+    font-family: 'Ubuntu', sans-serif !important;
+    color: #2C3E50;
+    font-size: 13px;
+    margin: 10px 4px 8px 0;
+}
+#msform input[type="file"]{
+    display: flex;
+    margin: 10px 4px 8px 0;
+}
+#msform .action-button {
+    width: 100px;
+    background: #0D4C92;
+    font-weight: 400;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #0D4C92;
+}
+
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form_holder {
+    text-align: center;
+    margin: 30px 0 0;
+}
