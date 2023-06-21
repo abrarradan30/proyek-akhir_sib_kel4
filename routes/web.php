@@ -117,8 +117,12 @@ Route::get('/data_kos_api/{id}', [DataKosController::class, 'apiDataKosDetail'])
 //Pemilik Kos
 Route::get('/pemilik_kos_api', [PemilikKosController::class, 'apiPemilikKos']);
 Route::get('/pemilik_kos_api/{id}', [PemilikKosController::class, 'apiPemilikKosDetail']);
+// Pelanggan
 Route::get('/pelangganapi', [PelangganController::class, 'apiPelanggan']);
 Route::get('/pelangganapi/{id}', [PelangganController::class, 'apiPelangganDetail']);
-//APIpembayaran
+// Pembayaran
 Route::get('/pembayaranapi', [PembayaranController::class, 'apiPembayaran']);
 Route::get('/pembayaranapi/{id}', [PembayaranController::class, 'apiPembayaranDetail']);
+//Riwayat Pesanan
+Route::get('/riwayat_pesanan_api', [RiwayatPesananController::class, 'apiRiwayatPesanan']);
+Route::get('/riwayat_pesanan_api/{id}', [RiwayatPesananController::class, 'apiRiwayatPesananDetail']);
