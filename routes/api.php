@@ -26,6 +26,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // API pembayaran
 
 // API pemilik kos
+Route::get('/pemilik_kos', [PemilikKosController::class, 'index']);
+Route::get('/pemilik_kos/{id}', [PemilikKosController::class, 'show']);
+Route::post('/pemilik_kos-create', [PemilikKosController::class, 'store']);
+Route::put('/pemilik_kos/{id}', [PemilikKosController::class, 'update']);
+Route::delete('/pemilik_kos/{id}', [PemilikKosController::class, 'destroy']);
 
 // API riwayat pesanan
 Route::get('/riwayat_pesanan', [RiwayatPesananController::class, 'index']);
