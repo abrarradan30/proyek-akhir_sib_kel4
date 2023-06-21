@@ -13,24 +13,24 @@ class PemilikKosController extends Controller
 {
     //
     public function index()
-    $pemilik_kos = DB :: table('pemilik_kos')->get();
-    return new PemilikKosResource(true,'Data Pemilik Kos',$pemilik_kos);
-    
-}
+    {
+    $pemilik_kos = DB::table('pemilik_kos')->get();
+    return new PemilikKosResource(true,'Data Pemilik Kos', $pemilik_kos);
+    }
 
-/**
- * Display the specified resource.
- */
-public function show($id)
-{
+    /**
+    * Display the specified resource.
+    */
+    public function show($id)
+    {
     $pemilik_kos = DB::table('pemilik_kos')->where('id', $id)->get();
     return new PemilikKosResource(true,'Detail Data Pemilik Kos',$pemilik_kos);
-}
-/**
- * Store a newly created resource in storage.
- */
-public function store(Request $request)
-{
+    }
+    /**
+    * Store a newly created resource in storage.
+    */
+    public function store(Request $request)
+    {
     // fungsi untuk mengisi data pada form
     $validator = Validator::make($request->all(),[
         'nama'    => 'required|max:45',
@@ -57,14 +57,14 @@ public function store(Request $request)
     ]);
     
     return new PemilikKosResource(true, 'Data berhasil di inputkan', $request->all());
-}
+    }
 
-/**
- * Update the specified resource in storage.
- */
+    /**
+    * Update the specified resource in storage.
+    */
 
-public function update(Request $request)
-{
+    public function update(Request $request)
+    {
     //
     $validator = Validator::make($request->all(),[
         'nama'    => 'required|max:45',
@@ -91,14 +91,15 @@ public function update(Request $request)
     ]);
 
     return new PemilikKosResource(true, 'Data berhasil di update', $request->all());
-}
+    }
 
-/**
- * Remove the specified resource from storage.
- */
-public function destroy(Request $request)
-{
+    /**
+    * Remove the specified resource from storage.
+    */
+    public function destroy(Request $request)
+    {
     DB::table('pemilik_kos')->where('id', $request->id)->delete();
     return new PemilikKosResource(true, 'Data berhasil di hapus', $request->all()); 
+    }
 }
 
