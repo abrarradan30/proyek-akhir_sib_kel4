@@ -33,7 +33,7 @@ body {
 }
 
 #msform fieldset {
-    background: white;
+    background: rgb(255, 255, 255);
     border: 0 none;
     border-radius: 3px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -41,7 +41,7 @@ body {
     box-sizing: border-box;
     width: 80%;
     margin: 0 10%;
-    position: absolute;
+    /* position: absolute; */
 }
 
 #msform fieldset:not(:first-of-type) {
