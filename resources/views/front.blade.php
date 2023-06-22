@@ -6,7 +6,7 @@
       <div class="search-container">
         <div class="container">
           <div class="row">
-            <img src="assets/img/background/bg-intro2.jpg" alt="">
+            <img src="{{asset('frontend/img/background/bg-intro2.jpg')}}" alt="">
             <div class="col-md-12">
               <!-- <h4 class="intro-sub-heading">You are using Fre Lite Version!</h4> -->
               <h3 class="intro-title">Temukan Kost Yang Sesuai Dengan Keinginanmu Di Ngalamkos</h3>

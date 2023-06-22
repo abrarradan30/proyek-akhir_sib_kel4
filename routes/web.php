@@ -30,7 +30,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('front');
 });
+// Route Front
 
+
+// Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         //Route::prefix('admin')->group(function () {
