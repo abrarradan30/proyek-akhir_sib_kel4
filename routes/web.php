@@ -112,9 +112,9 @@ Auth::routes();
 Route::get('/after_register', function () {
     return view('after_register');
 });
-Route::get('/acces_denied2', function () {
+/* Route::get('/acces_denied2', function () {
     return view('admin/acces_denied');
-});
+}); */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route REST API
