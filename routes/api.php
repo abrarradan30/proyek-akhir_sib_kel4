@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\PelangganController;
 use App\Http\Controllers\Api\PembayaranController;
 use App\Http\Controllers\Api\PemilikKosController;
 use App\Http\Controllers\Api\RiwayatPesananController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,11 @@ use App\Http\Controllers\Api\RiwayatPesananController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
 
+Route::middleware(["auth:sanctum"])->group(function(){
 // API datakos
 Route::get('/data_kos', [DataKosController::class, 'index']);
 Route::get('/data_kos/{id}', [DataKosController::class, 'show']);
@@ -57,3 +59,8 @@ Route::get('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'show']);
 Route::post('/riwayat_pesanan-create', [RiwayatPesananController::class, 'store']);
 Route::put('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'update']);
 Route::delete('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'destroy']);
+});
+
+// API auth user
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
