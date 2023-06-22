@@ -2,14 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-use App\Http\Controllers\Api\PembayaranController;
-=======
-use App\Http\Controllers\Api\PelangganController;
-use App\Http\Controllers\Api\RiwayatPesananController;
 use App\Http\Controllers\Api\DataKosController;
-
->>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
+use App\Http\Controllers\Api\PelangganController;
+use App\Http\Controllers\Api\PembayaranController;
+use App\Http\Controllers\Api\PemilikKosController;
+use App\Http\Controllers\Api\RiwayatPesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +22,6 @@ use App\Http\Controllers\Api\DataKosController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-<<<<<<< HEAD
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
-Route::get('/pembayaran/{id}', [PembayaranController::class, 'show']);
-Route::post('/pembayaran-create', [PembayaranController::class, 'store']);
-Route::put('/pembayaran/{id}', [PembayaranController::class, 'update']);
-Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
-=======
 
 // API datakos
 Route::get('/data_kos', [DataKosController::class, 'index']);
@@ -48,6 +38,11 @@ Route::put('/pelanggan/{id}', [PelangganController::class, 'update']);
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy']);
 
 // API pembayaran
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran/{id}', [PembayaranController::class, 'show']);
+Route::post('/pembayaran-create', [PembayaranController::class, 'store']);
+Route::put('/pembayaran/{id}', [PembayaranController::class, 'update']);
+Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
 
 // API pemilik kos
 Route::get('/pemilik_kos', [PemilikKosController::class, 'index']);
@@ -62,4 +57,3 @@ Route::get('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'show']);
 Route::post('/riwayat_pesanan-create', [RiwayatPesananController::class, 'store']);
 Route::put('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'update']);
 Route::delete('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'destroy']);
->>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
