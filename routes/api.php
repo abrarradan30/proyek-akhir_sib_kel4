@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\PembayaranController;
 =======
 use App\Http\Controllers\Api\PelangganController;
 use App\Http\Controllers\Api\RiwayatPesananController;
+use App\Http\Controllers\Api\DataKosController;
 
 >>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
 
@@ -33,6 +34,11 @@ Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
 =======
 
 // API datakos
+Route::get('/data_kos', [DataKosController::class, 'index']);
+Route::get('/data_kos/{id}', [DataKosController::class, 'show']);
+Route::post('/data_kos-create', [DataKosController::class, 'store']);
+Route::put('/data_kos/{id}', [DataKosController::class, 'update']);
+Route::delete('/data_kos/{id}', [DataKosController::class, 'destroy']);
 
 // API pelanggan
 Route::get('/pelanggan', [PelangganController::class, 'index']);
