@@ -32,6 +32,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/main.css')}}">
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/daftar-kos.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/form-pelanggan.css')}}">
+  
+
 
   </head>
   <body>
