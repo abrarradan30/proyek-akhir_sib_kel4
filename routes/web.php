@@ -10,6 +10,10 @@ use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\DetailKosController;
+use App\Http\Controllers\FormDataKosController;
+use App\Http\Controllers\FormPemilikKosController;
+use App\Http\Controllers\FrontRiwayatPesananController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -27,11 +31,27 @@ use Illuminate\Support\Facades\Auth;
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
 }); */
+
 Route::get('/', function () {
     return view('front');
 });
 // Route Front
-
+Route::get('/form_datakos', function () {
+    return view('form_datakos');
+});
+Route::get('/detail_kos', function () {
+    return view('detail_kos');
+});
+Route::get('/form_pemilikkos', function () {
+    return view('form_pemilikkos');
+});
+Route::get('/riwayat_pesanan', function () {
+    return view('front_riwayat_pesanan');
+});
+// Route::get('/detail_kos', [DetailKosController::class, 'index']);
+// Route::get('/form_datakos', [FormDataKosController::class, 'index']);
+// Route::get('/form_pemilikkos', [FormPemilikkosController::class, 'index']);
+// Route::get('/front_riwayat_pesanan', [FrontRiwayatPesananController::class, 'index']);
 
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {

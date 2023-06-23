@@ -12,6 +12,7 @@ class DetailKosController extends Controller
     public function index()
     {
         //
+        return view ('detail_kos');
     }
 
     /**
