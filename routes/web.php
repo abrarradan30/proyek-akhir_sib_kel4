@@ -18,6 +18,8 @@ use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
 use App\Http\Controllers\FrontRiwayatPesananController;
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\SyaratController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -64,6 +66,12 @@ Route::get('/form_pemilikkos', function () {
 });
 Route::get('/front_riwayat_pesanan', function () {
     return view('front_riwayat_pesanan');
+});
+Route::get('/info', function () {
+    return view('info');
+});
+Route::get('/syarat', function () {
+    return view('syarat');
 });
 
 // Route pelanggan dan pemilik kos

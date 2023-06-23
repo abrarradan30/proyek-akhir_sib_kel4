@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/form-pemilik-kos.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/detail-kos.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/riwayat-pesanan.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/info_syarat.css')}}">
 
   </head>
   <body>
@@ -104,7 +105,7 @@
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-center">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{{url('/')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Home <i class="fa fa-angle-down"></i>
                 </a>
               </li>
@@ -113,8 +114,8 @@
                   Pusat Bantuan <i class="fa fa-angle-down"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="about.html">Info Umum</a>
-                  <a class="dropdown-item" href="single-blog.html">Syarat & Ketentuan</a>
+                  <a class="dropdown-item" href="{{url('info')}}">Info Umum</a>
+                  <a class="dropdown-item" href="{{url('syarat')}}">Syarat & Ketentuan</a>
                 </div>
               </li>
               <li class="nav-item">
@@ -126,7 +127,7 @@
             <div class="search-add float-right">
               <form method="post">
                 <div class="form-group">
-                    <input type="search" name="field-name" value="" placeholder="Cari Kabupaten/Kota" required="">
+                    <input type="search" name="field-name" value="" placeholder="Search" required="">
                     <button type="submit" class="search-btn"><span class="lni-search"></span></button>
                 </div>
               </form>
