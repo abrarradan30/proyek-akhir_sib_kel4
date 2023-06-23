@@ -1,9 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Ngalamkos</title>  
-  </head>
-  <body> -->
 <!-- Footer Section Start -->
 <footer id="footer" class="footer-area section-padding">
       <div class="container">
@@ -86,10 +80,12 @@
     <script src="{{asset('frontend/js/jquery.slicknav.js')}}"></script>
     <script src="{{asset('frontend/js/nivo-lightbox.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.slicknav.js')}}"></script>
-    <script src="{{asset('frontend/js/main.js')}}"></script>
 
+    <!-- js form kos -->
+    <script src="{{asset('frontend/js/main.js')}}"></script>
     <script src="{{ asset('frontend/js/form-pembayaran.js')}}"></script>
     <script src="{{ asset('frontend/js/form-pelanggan.js')}}"></script>
-    
+    <script src="{{ asset('frontend/js/form-data-kos.js') }}"></script>
+    <script src="{{ asset('frontend/js/form-pemilik-kos.js') }}"></script>
   </body>
 </html>

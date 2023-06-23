@@ -14,6 +14,10 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DaftarKosController;
 use App\Http\Controllers\FormPelangganController;
 use App\Http\Controllers\FormPembayaranController;
+use App\Http\Controllers\DetailKosController;
+use App\Http\Controllers\FormDataKosController;
+use App\Http\Controllers\FormPemilikKosController;
+use App\Http\Controllers\FrontRiwayatPesananController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,26 +35,36 @@ use Illuminate\Support\Facades\Auth;
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
 }); */
+
 Route::get('/', function () {
     return view('front');
 });
-// Route Front
+
+// Route Front Form
 Route::get('/contact', function () {
     return view('contact');
 });
-
 Route::get('/daftar_kos', function () {
     return view('daftar_kos');
 });
-
 Route::get('/form_pelanggan', function () {
     return view('form_pelanggan');
 });
-
 Route::get('/form_pembayaran', function () {
     return view('form_pembayaran');
 }); 
-
+Route::get('/form_datakos', function () {
+    return view('form_datakos');
+});
+Route::get('/detail_kos', function () {
+    return view('detail_kos');
+});
+Route::get('/form_pemilikkos', function () {
+    return view('form_pemilikkos');
+});
+Route::get('/riwayat_pesanan', function () {
+    return view('front_riwayat_pesanan');
+});
 
 
 // Route Admin
@@ -132,9 +146,9 @@ Auth::routes();
 Route::get('/after_register', function () {
     return view('after_register');
 });
-Route::get('/acces_denied2', function () {
+/* Route::get('/acces_denied2', function () {
     return view('admin/acces_denied');
-});
+}); */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route REST API

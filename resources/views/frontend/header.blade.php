@@ -32,10 +32,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/main.css')}}">
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/responsive.css')}}">
+    {{-- form kos --}}
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/daftar-kos.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/form-pelanggan.css')}}">
-  
-
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/form-data-kos.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/form-pemilik-kos.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/detail-kos.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/riwayat-pesanan.css')}}">
 
   </head>
   <body>
@@ -144,5 +147,3 @@
     </header>
     <!-- Header Area wrapper End -->
     
-  </body>
-</html>
