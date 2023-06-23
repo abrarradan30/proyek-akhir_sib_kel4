@@ -74,7 +74,9 @@ Route::get('/syarat', function () {
     return view('syarat');
 });
 
-// Route pelanggan dan pemilik kos
+// Route front pelanggan dan pemilik kos
+//Route::get('/contact', [ContactController::class, 'create']);
+Route::post('/contact/store', [ContactController::class, 'store']);
 
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {

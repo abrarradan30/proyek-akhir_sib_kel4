@@ -21,7 +21,7 @@
           <div class="col-lg-5 col-md-6">
             <div class="contact-right-area">
               <h2 class="title-">Get In Touch</h2>
-              <p>If you are interested in working with us, <br> please get in touch.</p>
+              <p>Jika Anda tertarik untuk menyewakan kos dengan website kami, <br> hubungi kami.</p>
               <div class="contact-right">
                 <div class="single-contact">
                   <div class="contact-icon">
@@ -50,11 +50,13 @@
               </div>
             </div>
           </div>
+          <form method="POST" action="{{url('contact/store')}}" enctype="multipart/form-data">
+          {{csrf_field()}}
           <div class="col-lg-7 col-md-6 form-line">
             <h2>FeedBack</h2>
               <div class="form-group">
                  <label>Name </label>
-                <input type="text" class="form-control" id="name" name="email" placeholder="Your name" required data-error="Please enter your name">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required data-error="Please enter your name">
                 
                 <div class="help-block with-errors"></div>
               </div>
