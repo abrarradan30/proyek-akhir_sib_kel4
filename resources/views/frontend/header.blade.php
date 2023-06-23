@@ -64,10 +64,24 @@
                 <a class="linkedin" href="#"><i class="lni-linkedin-filled"></i></a>
               </div>
               <div class="header-top-right float-right">
+              @guest
+              @if (Route::has('login'))
                 <a href="{{ route('login') }}" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
+              @endif
+              @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="header-top-button"><i class="lni-pencil"></i> Register</a> |
-                <a href="#" class="header-top-button"><i class="lni-user"></i> Messi</a> |
-                <a href="#" class="header-top-button"><i class="lni-exit"></i></a>
+              @endif
+							@else 
+                <a href="#" class="header-top-button"><i class="lni-user"></i> 
+                {{ Auth::user()->name }} </a> |
+                <a href="{{ route('logout') }}" class="header-top-button"
+                  onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                <i class="lni-exit"></i></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+              @endguest
               </div>
             </div>
           </div>
@@ -84,7 +98,7 @@
               <span class="navbar-toggler-icon"></span>
               <span class="lin-menu"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="{{asset('frontend/img/logo.png')}}" alt="" width="20%"></a>
+            <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('frontend/img/logo.png')}}" alt="" width="20%"></a>
           </div>
 
           <div class="collapse navbar-collapse" id="main-navbar">
@@ -104,7 +118,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">
+                <a class="nav-link" href="{{url('contact')}}">
                   Contact Us
                 </a>
               </li>
@@ -112,7 +126,7 @@
             <div class="search-add float-right">
               <form method="post">
                 <div class="form-group">
-                    <input type="search" name="field-name" value="" placeholder="Cari Lokasi" required="">
+                    <input type="search" name="field-name" value="" placeholder="Cari Kabupaten/Kota" required="">
                     <button type="submit" class="search-btn"><span class="lni-search"></span></button>
                 </div>
               </form>
@@ -135,7 +149,7 @@
             </ul>
           </li>
           <li>
-            <a href="contact.html">
+            <a href="{{url('contact')}}">
             Contact Us
             </a>
           </li>
