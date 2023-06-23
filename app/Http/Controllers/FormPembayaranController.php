@@ -11,7 +11,7 @@ class FormPembayaranController extends Controller
      */
     public function index()
     {
-        //
+        return view('form_pembayaran');
     }
 
     /**

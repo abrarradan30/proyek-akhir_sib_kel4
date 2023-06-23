@@ -11,7 +11,7 @@ class DaftarKosController extends Controller
      */
     public function index()
     {
-        //
+        return view('daftar_kos');
     }
 
     /**

@@ -2,12 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\DataKosController;
-use App\Http\Controllers\Api\PelangganController;
+
 use App\Http\Controllers\Api\PembayaranController;
-use App\Http\Controllers\Api\PemilikKosController;
+
+use App\Http\Controllers\Api\PelangganController;
 use App\Http\Controllers\Api\RiwayatPesananController;
-use App\Http\Controllers\Api\AuthController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,17 +21,18 @@ use App\Http\Controllers\Api\AuthController;
 |
 */
 
-/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-}); */
+});
 
-Route::middleware(["auth:sanctum"])->group(function(){
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran/{id}', [PembayaranController::class, 'show']);
+Route::post('/pembayaran-create', [PembayaranController::class, 'store']);
+Route::put('/pembayaran/{id}', [PembayaranController::class, 'update']);
+Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
+
+
 // API datakos
-Route::get('/data_kos', [DataKosController::class, 'index']);
-Route::get('/data_kos/{id}', [DataKosController::class, 'show']);
-Route::post('/data_kos-create', [DataKosController::class, 'store']);
-Route::put('/data_kos/{id}', [DataKosController::class, 'update']);
-Route::delete('/data_kos/{id}', [DataKosController::class, 'destroy']);
 
 // API pelanggan
 Route::get('/pelanggan', [PelangganController::class, 'index']);
@@ -40,11 +42,6 @@ Route::put('/pelanggan/{id}', [PelangganController::class, 'update']);
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy']);
 
 // API pembayaran
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
-Route::get('/pembayaran/{id}', [PembayaranController::class, 'show']);
-Route::post('/pembayaran-create', [PembayaranController::class, 'store']);
-Route::put('/pembayaran/{id}', [PembayaranController::class, 'update']);
-Route::delete('/pembayaran/{id}', [PembayaranController::class, 'destroy']);
 
 // API pemilik kos
 Route::get('/pemilik_kos', [PemilikKosController::class, 'index']);
@@ -59,8 +56,4 @@ Route::get('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'show']);
 Route::post('/riwayat_pesanan-create', [RiwayatPesananController::class, 'store']);
 Route::put('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'update']);
 Route::delete('/riwayat_pesanan/{id}', [RiwayatPesananController::class, 'destroy']);
-});
 
-// API auth user
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);

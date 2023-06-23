@@ -11,7 +11,8 @@ class FormPelangganController extends Controller
      */
     public function index()
     {
-        //
+        return view('form_pelanggan');
+        
     }
 
     /**

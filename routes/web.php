@@ -10,6 +10,10 @@ use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DaftarKosController;
+use App\Http\Controllers\FormPelangganController;
+use App\Http\Controllers\FormPembayaranController;
 use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
@@ -35,7 +39,20 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('front');
 });
-// Route Front
+
+// Route Front Form
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/daftar_kos', function () {
+    return view('daftar_kos');
+});
+Route::get('/form_pelanggan', function () {
+    return view('form_pelanggan');
+});
+Route::get('/form_pembayaran', function () {
+    return view('form_pembayaran');
+}); 
 Route::get('/form_datakos', function () {
     return view('form_datakos');
 });
@@ -48,10 +65,7 @@ Route::get('/form_pemilikkos', function () {
 Route::get('/riwayat_pesanan', function () {
     return view('front_riwayat_pesanan');
 });
-// Route::get('/detail_kos', [DetailKosController::class, 'index']);
-// Route::get('/form_datakos', [FormDataKosController::class, 'index']);
-// Route::get('/form_pemilikkos', [FormPemilikkosController::class, 'index']);
-// Route::get('/front_riwayat_pesanan', [FrontRiwayatPesananController::class, 'index']);
+
 
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {
