@@ -5,6 +5,10 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="well search-result">
+                <div>
+                    <h2> Cari Riwayat Pesanan </h2>
+                </div>
+                <br>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search">
                         <span class="input-group-btn">

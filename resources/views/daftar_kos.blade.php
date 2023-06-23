@@ -5,8 +5,12 @@
         <div class="row ng-scope">
             <div class="col-md-9 col-md-pull-3">
                 <div class="well search-result">
+                    <div>
+                        <h2> Cari Kos </h2>
+                    </div>
+                    <br>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Cari Kabupaten/Kota">
                         <span class="input-group-btn">
                             <button class="btn btn-primary btn-lg" type="button">
                                 <i class="glyphicon glyphicon-search"></i>

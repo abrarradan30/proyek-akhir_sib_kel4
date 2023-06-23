@@ -62,10 +62,11 @@ Route::get('/detail_kos', function () {
 Route::get('/form_pemilikkos', function () {
     return view('form_pemilikkos');
 });
-Route::get('/riwayat_pesanan', function () {
+Route::get('/front_riwayat_pesanan', function () {
     return view('front_riwayat_pesanan');
 });
 
+// Route pelanggan dan pemilik kos
 
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {
