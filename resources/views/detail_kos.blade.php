@@ -4,19 +4,28 @@
 
     <div class="container my-5">
         <div class="card">
+            @foreach ($data_kos as $dk)
             <div class="card-body">
-                <h3 class="card-title">NAMA KOS</h3>
-                <h6 class="card-subtitle">Kos Putra</h6>
+                    
+                <input type="hidden" value="{{ $dk->id }}">
+                <h3 class="card-title">{{ $dk->nama_kos }}</h3>
+                <h6 class="card-subtitle">{{ $dk->jenis_kos }}</h6>
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-6">
-                        <div class="white-box text-center"><img src="https://www.bootdey.com/image/430x600/00CED1/000000"
-                                class="img-responsive"></div>
+                        <div class="white-box text-center">
+                            @empty($dk->gambar)
+                            <img src="{{ url('admin/image/nofoto.png') }}" alt="project-image" class="rounded">
+                        @else
+                            <img src="{{ url('admin/image') }}/{{ $dk->gambar }}" alt="project-image" class="rounded">
+                        @endempty
+                        </div>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-6">
                         <h4 class="box-title mt-5">Deskripsi Kos</h4>
-                        <p>...</p>
+                        <p>{{ $dk->deskripsi }}</p>
                         <h2 class="mt-5">
-                            Rp1.000.000
+                            {{-- harga --}}
+                            {{ $dk->harga }}
                             <!-- <small class="text-success">(5%off)</small> -->
                         </h2>
                         <!-- <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title=""
@@ -41,48 +50,49 @@
                                 <tbody>
                                     <tr>
                                         <td width="390">Nama Kos</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->nama_kos }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nomor Kamar</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->no_kamar }}</td>
                                     </tr>
                                     <tr>
                                         <td>Jenis Kos</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->jenis_kos }}</td>
                                     </tr>
                                     <tr>
                                         <td>Fasilitas</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->fasilitas }}</td>
                                     </tr>
                                     <tr>
                                         <td>Luas Ruang</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->luas_ruang }}</td>
                                     </tr>
                                     <tr>
                                         <td>Kabupaten/Kota</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->kabupaten_kota }}</td>
                                     </tr>
                                     <tr>
                                         <td>Kecamatan</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->kecamatan }}</td>
                                     </tr>
                                     <tr>
                                         <td>Jalan</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->jalan }}</td>
                                     </tr>
                                     <tr>
                                         <td>Kode Pos</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->kode_pos }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nomor Telepon</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->telepon }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nama Pemilik Kos</td>
-                                        <td>...</td>
+                                        <td>{{ $dk->nama_pemilik_kos }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -91,4 +101,5 @@
             </div>
         </div>
     </div>
+
 @endsection

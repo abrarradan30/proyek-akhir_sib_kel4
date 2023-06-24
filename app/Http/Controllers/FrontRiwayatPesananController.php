@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use App\Models\RiwayatPesanan;
 
 class FrontRiwayatPesananController extends Controller
 {
@@ -37,6 +40,16 @@ class FrontRiwayatPesananController extends Controller
     public function show(string $id)
     {
         //
+        $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
+        ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
+        ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
+        ->select('riwayat_pesanan.*', 'pelanggan.nama as nama_pelanggan', 'data_kos.nama_kos', 'data_kos.harga',
+        'pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal as tanggal_pembayaran', 
+        'pembayaran.total as total_bayar')
+        ->where('riwayat_pesanan.id', $id)
+        ->get();
+
+        return view('front_riwayat_pesanan', compact('riwayat_pesanan'));
     }
 
     /**

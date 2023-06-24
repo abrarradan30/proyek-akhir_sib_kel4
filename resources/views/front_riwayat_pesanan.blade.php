@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <div class="container my-5">
         <div class="row">
+            @foreach ($riwayat_pesanan as $rp)
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="well search-result">
                 <div>
@@ -30,16 +31,16 @@
                                 <div class="col-md-6">
                                     <div class="card-body">
                                         <h5 class="card-title">Riwayat Pesanan</h5>
-                                        <p class="card-text">No Kwitansi : </p>
-                                        <p class="card-text">Nama Pelanggan :</p>
-                                        <p class="card-text">Nama Kos :</p>
-                                        <p class="card-text">Tanggal Sewa :</p>
-                                        <p class="card-text">Status Pembayaran :</p>
-                                        <p class="card-text">Harga :</p>
-                                        <p class="card-text">Durasi Sewa :</p>
-                                        <p class="card-text">Jumlah Kamar :</p>
-                                        <p class="card-text">Tanggal Pembayaran :</p>
-                                        <p class="card-text">Total Harga :</p>
+                                        <p class="card-text">No Kwitansi : {{$rp->no_kwitansi}}</p>
+                                        <p class="card-text">Nama Pelanggan : {{$rp->nama_pelanggan}}</</p>
+                                        <p class="card-text">Nama Kos : {{$rp->nama_kos}}</p>
+                                        <p class="card-text">Tanggal Sewa : {{$rp->tanggal}}</p>
+                                        <p class="card-text">Status Pembayaran : {{$rp->status}}</p>
+                                        <p class="card-text">Harga : {{$rp->harga}}</p>
+                                        <p class="card-text">Durasi Sewa : {{$rp->durasi_sewa}}</p>
+                                        <p class="card-text">Jumlah Kamar : {{$rp->jumlah_kamar}}</p>
+                                        <p class="card-text">Tanggal Pembayaran : {{$rp->tanggal_pembayaran}}</p>
+                                        <p class="card-text">Total Harga : {{$rp->total_bayar}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -47,6 +48,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 @endsection
