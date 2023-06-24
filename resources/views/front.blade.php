@@ -170,7 +170,10 @@
             <div class="row">
               <div class="col-12">
                 <div class="section-title-header text-center">
-                  <a href="daftar_kos.html" rel="nofollow" class="btn btn-danger btn-lg">Selengkapnya</a>
+                  <a href="{{url('daftar_kos')}}" rel="nofollow" class="btn btn-danger btn-lg">Cari Kos</a> 
+                </div>
+                <div class="section-title-header text-center">
+                  <a href="{{url('form_pemilikkos')}}" rel="nofollow" class="btn btn-warning btn-lg">Sewakan Kos</a> 
                 </div>
               </div>
             </div>

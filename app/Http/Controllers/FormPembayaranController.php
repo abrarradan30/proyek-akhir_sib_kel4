@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\DB;
+use DB;
 class FormPembayaranController extends Controller
 {
     /**
@@ -61,7 +61,7 @@ class FormPembayaranController extends Controller
         ]);
 
         Alert::success('Pembayaran', 'Berhasil menambahkan pembayaran');
-        return redirect('/');
+        return redirect('form_pembayaran');
     }
 
     /**

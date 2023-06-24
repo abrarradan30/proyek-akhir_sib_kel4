@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/form-pemilik-kos.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/detail-kos.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/riwayat-pesanan.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/info_syarat.css')}}">
 
   </head>
   <body>
@@ -64,11 +65,25 @@
                 <a class="linkedin" href="#"><i class="lni-linkedin-filled"></i></a>
               </div>
               <div class="header-top-right float-right">
+              @guest
+              @if (Route::has('login'))
                 <a href="{{ route('login') }}" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
+              @endif
+              @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="header-top-button"><i class="lni-pencil"></i> Register</a> |
-                <a href="#" class="header-top-button"><i class="lni-user"></i> Messi</a> |
-                <a href="#" class="header-top-button"><i class="lni-exit"></i></a>
+              @endif
+							@else 
+                <a href="#" class="header-top-button"><i class="lni-user"></i> 
+                {{ Auth::user()->name }} </a> |
+                <a href="{{ route('logout') }}" class="header-top-button"
+                  onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                <i class="lni-exit"> Logout</i></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
               </div>
+              @endguest
             </div>
           </div>
         </div>
@@ -84,13 +99,13 @@
               <span class="navbar-toggler-icon"></span>
               <span class="lin-menu"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="{{asset('frontend/img/logo.png')}}" alt="" width="20%"></a>
+            <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('frontend/img/logo.png')}}" alt="" width="20%"></a>
           </div>
 
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-center">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{{url('/')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Home <i class="fa fa-angle-down"></i>
                 </a>
               </li>
@@ -99,12 +114,12 @@
                   Pusat Bantuan <i class="fa fa-angle-down"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="about.html">Info Umum</a>
-                  <a class="dropdown-item" href="single-blog.html">Syarat & Ketentuan</a>
+                  <a class="dropdown-item" href="{{url('info')}}">Info Umum</a>
+                  <a class="dropdown-item" href="{{url('syarat')}}">Syarat & Ketentuan</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">
+                <a class="nav-link" href="{{url('contact')}}">
                   Contact Us
                 </a>
               </li>
@@ -112,7 +127,7 @@
             <div class="search-add float-right">
               <form method="post">
                 <div class="form-group">
-                    <input type="search" name="field-name" value="" placeholder="Cari Lokasi" required="">
+                    <input type="search" name="field-name" value="" placeholder="Search" required="">
                     <button type="submit" class="search-btn"><span class="lni-search"></span></button>
                 </div>
               </form>
@@ -135,7 +150,7 @@
             </ul>
           </li>
           <li>
-            <a href="contact.html">
+            <a href="{{url('contact')}}">
             Contact Us
             </a>
           </li>

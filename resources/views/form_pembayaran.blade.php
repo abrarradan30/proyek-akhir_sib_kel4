@@ -3,7 +3,7 @@
 
   <div class="form_holder">
     <!-- <h2 class="fs-title" style="color:#fff;">steps jquery form with Icons</h2> -->
-    <form id="msform">
+    
     <form method="POST" action="{{ url('form_pembayaran/store') }}" enctype="multipart/form-data" id="msform">
             {{ csrf_field() }}
       <fieldset>
@@ -37,7 +37,7 @@
         <label>Total Pembayaran</label>
         <input type="text" name="total" placeholder="Masukkan Total Pembayaran" />
         <label>Bukti Pembayaran</label>
-        <input type="file" name="total" />
+        <input type="file" name="bukti" />
         <input type="submit" name="submit"  value="Submit" />
       </fieldset>
     </form>

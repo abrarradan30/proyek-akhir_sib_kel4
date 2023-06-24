@@ -56,7 +56,7 @@ class FormPelangganController extends Controller
         ]);
         
         Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
-        return redirect('form_pelanggan');
+        return redirect('form_pembayaran');
     }
 
     /**
