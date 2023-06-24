@@ -18,8 +18,8 @@
                 <p><b>Nama Kos:</b> {{ $dk->nama_kos }}</p>
                 <p><b>No Kamar:</b> {{ $dk->no_kamar }}</p>
                 <p><b>Jenis Kos:</b> {{ $dk->jenis_kos }}</p>
-                <p><b>Luas Ruang:</b> {{ $dk->luas_ruang }}</p>
                 <p><b>Fasilitas:</b> {{ $dk->fasilitas }}</p>
+                <p><b>Luas Ruang:</b> {{ $dk->luas_ruang }}</p>
                 <p><b>Harga:</b> {{ $dk->harga }}</p>
             </div>
             <div class="project-info-box mt-0 mb-0">

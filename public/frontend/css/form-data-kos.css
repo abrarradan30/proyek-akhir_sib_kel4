@@ -71,7 +71,8 @@ body {
     display: flex;
     margin: 10px 4px 8px 0;
 }
-#msform .action-button {
+#msform input[type="submit"]
+ {
     width: 100px;
     background: #0D4C92;
     font-weight: 400;
@@ -83,8 +84,8 @@ body {
     margin: 10px 5px;
 }
 
-#msform .action-button:hover,
-#msform .action-button:focus {
+#msform input[type="submit"]:hover,
+#msform input[type="submit"]:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #0D4C92;
 }
 

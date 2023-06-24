@@ -86,6 +86,5 @@
     <script src="{{ asset('frontend/js/form-pembayaran.js')}}"></script>
     <script src="{{ asset('frontend/js/form-pelanggan.js')}}"></script>
     <script src="{{ asset('frontend/js/form-data-kos.js') }}"></script>
-    <script src="{{ asset('frontend/js/form-pemilik-kos.js') }}"></script>
   </body>
 </html>
