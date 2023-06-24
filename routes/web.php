@@ -10,15 +10,23 @@ use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontController;
+
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DaftarKosController;
 use App\Http\Controllers\FormPelangganController;
 use App\Http\Controllers\FormPembayaranController;
+
 use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
 use App\Http\Controllers\FrontRiwayatPesananController;
+<<<<<<< HEAD
 use App\Http\Controllers\RekomendasiKosController;
+=======
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\SyaratController;
+
+>>>>>>> 4842a8fa601dc8294011a6b89e37ff1983d0160c
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -36,38 +44,74 @@ use Illuminate\Support\Facades\Auth;
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
 }); */
+<<<<<<< HEAD
 
 // Route::get('/', function () {
 //     return view('front');
 // });
+=======
+Route::get('/', function () {
+    return view('front');
+});
+>>>>>>> 4842a8fa601dc8294011a6b89e37ff1983d0160c
+
+// Route Front
+
 
 // Route Front Form
+<<<<<<< HEAD
 Route::get('/', [RekomendasiKosController::class, 'index']);
+=======
+Route::group(['middleware' => ['auth']], function() {
+>>>>>>> 4842a8fa601dc8294011a6b89e37ff1983d0160c
 
 Route::get('/contact', function () {
     return view('contact');
 });
+
 Route::get('/daftar_kos', function () {
     return view('daftar_kos');
 });
+
 Route::get('/form_pelanggan', function () {
     return view('form_pelanggan');
 });
+
 Route::get('/form_pembayaran', function () {
     return view('form_pembayaran');
 }); 
-// Route::get('/form_datakos', function () {
-//     return view('form_datakos');
-// });
-// Route::get('/detail_kos', function () {
-//     return view('detail_kos');
-// })
-// Route::get('/form_pemilikkos', function () {
-//     return view('form_pemilikkos');
-// });
+
+Route::get('/form_datakos', function () {
+    return view('form_datakos');
+});
+Route::get('/detail_kos', function () {
+    return view('detail_kos');
+});
+Route::get('/form_pemilikkos', function () {
+    return view('form_pemilikkos');
+});
 Route::get('/front_riwayat_pesanan', function () {
     return view('front_riwayat_pesanan');
 });
+Route::get('/info', function () {
+    return view('info');
+});
+Route::get('/syarat', function () {
+    return view('syarat');
+});
+});
+
+// Route front pelanggan dan pemilik kos
+Route::get('/form_pembayaran/create', [FormPembayaranController::class, 'create']);
+Route::post('/form_pembayaran/store', [FormPembayaranController::class, 'store']);
+
+Route::get('/form_pelanggan/create', [FormPelangganController::class, 'create']);
+Route::post('/form_pelanggan/store', [FormPelangganController::class, 'store']);
+
+
+//Route::get('/contact', [ContactController::class, 'create']);
+Route::post('/contact/store', [ContactController::class, 'store']);
+
 
 // Route pelanggan dan pemilik kos
 Route::get('/form_datakos', [FormDataKosController::class, 'create']);
@@ -79,6 +123,7 @@ Route::get('/form_pemilikkos/create', [FormPemilikKosController::class, 'create'
 Route::post('/form_pemilikkos/store', [FormPemilikKosController::class, 'store']);
 
 Route::get('/front_riwayat_pesanan/show/{id}', [FrontRiwayatPesananController::class, 'show']);
+
 
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {
@@ -107,6 +152,7 @@ Route::group(['middleware' => ['auth', 'peran:admin']], function () {
         Route::get('/pelanggan/pelangganPDF', [PelangganController::class, 'pelangganPDF']);
         Route::get('/pelanggan/exportexcel', [PelangganController::class, 'exportExcel']);
         Route::post('/pelanggan/importexcel', [PelangganController::class, 'importExcel']);
+
         // route pembayaran
         Route::get('/pembayaran', [PembayaranController::class, 'index']);
         Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
@@ -118,6 +164,8 @@ Route::group(['middleware' => ['auth', 'peran:admin']], function () {
         Route::get('/pembayaran/pembayaranPDF', [PembayaranController::class, 'pembayaranPDF']);
         Route::get('/pembayaran/exportexcel/', [PembayaranController::class, 'exportExcel']);
         Route::post('/pembayaran/importexcel', [PembayaranController::class, 'importExcel']);
+
+
         //route pemilik kos
         Route::get('/pemilik_kos', [PemilikKosController::class, 'index']);
         Route::get('/pemilik_kos/create', [PemilikKosController::class, 'create']);
@@ -159,9 +207,9 @@ Auth::routes();
 Route::get('/after_register', function () {
     return view('after_register');
 });
-/* Route::get('/acces_denied2', function () {
+Route::get('/acces_denied2', function () {
     return view('admin/acces_denied');
-}); */
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route REST API

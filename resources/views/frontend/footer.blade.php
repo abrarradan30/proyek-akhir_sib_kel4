@@ -49,7 +49,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <p>Copyright © 2023 <a rel="nofollow" href="https://uideck.com">Ngalamkos</a> All Right Reserved</p>
+            <p>Copyright © 2023 <a rel="nofollow" href="{{url('/')}}">Ngalamkos</a> All Right Reserved</p>
           </div>
         </div>
       </div>
