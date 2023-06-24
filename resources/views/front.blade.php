@@ -38,7 +38,7 @@
                     </a>
                   </div>
                   <div class="item-body">
-                    <h3 class="property-title"><a href="property.html">Amazing oceanfront apartment</a></h3>
+                    <h3 class="property-title"><a href="property.html">WE</a></h3>
                     <div class="adderess"><i class="lni-map-marker"></i> Drive Street, Los Angeles, US</div>
                     <div class="pricin-list">
                       <div class="property-price">
