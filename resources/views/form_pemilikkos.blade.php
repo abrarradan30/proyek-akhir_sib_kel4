@@ -1,5 +1,6 @@
 @extends('frontend.index')
 @section('front')
+@if(Auth::user()->role != 'pelanggan')
     <div class="form_holder">
         <form id="msform">
             <fieldset>
@@ -24,4 +25,7 @@
                 <input type="submit" name="submit" class="submit action-button" value="Submit" />
             </fieldset>
         </form>
+@else
+@include('front')
+@endif 
 @endsection

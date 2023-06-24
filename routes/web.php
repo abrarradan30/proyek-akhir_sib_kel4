@@ -43,6 +43,7 @@ Route::get('/', function () {
 });
 
 // Route Front Form
+Route::group(['middleware' => ['auth']], function() {
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -73,7 +74,7 @@ Route::get('/info', function () {
 Route::get('/syarat', function () {
     return view('syarat');
 });
-
+});
 // Route front pelanggan dan pemilik kos
 //Route::get('/contact', [ContactController::class, 'create']);
 Route::post('/contact/store', [ContactController::class, 'store']);

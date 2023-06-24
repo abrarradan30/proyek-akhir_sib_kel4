@@ -78,7 +78,7 @@
                 <a href="{{ route('logout') }}" class="header-top-button"
                   onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                <i class="lni-exit"></i></a>
+                <i class="lni-exit"> Logout</i></a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
                 </form>
