@@ -58,7 +58,7 @@ class FormPemilikKosController extends Controller
         ]);
 
         Alert::success('Pemilik Kos', 'Berhasil menambahkan data pemilik kos');
-        return redirect('/');
+        return redirect('form_pemilikkos');
     }
 
     /**
