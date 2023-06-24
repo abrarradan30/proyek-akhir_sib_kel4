@@ -18,6 +18,7 @@ use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
 use App\Http\Controllers\FrontRiwayatPesananController;
+use App\Http\Controllers\RekomendasiKosController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -36,11 +37,13 @@ use Illuminate\Support\Facades\Auth;
     return view('welcome');
 }); */
 
-Route::get('/', function () {
-    return view('front');
-});
+// Route::get('/', function () {
+//     return view('front');
+// });
 
 // Route Front Form
+Route::get('/', [RekomendasiKosController::class, 'index']);
+
 Route::get('/contact', function () {
     return view('contact');
 });
