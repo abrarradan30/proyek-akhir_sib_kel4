@@ -10,23 +10,19 @@ use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontController;
-
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DaftarKosController;
 use App\Http\Controllers\FormPelangganController;
 use App\Http\Controllers\FormPembayaranController;
-
 use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
 use App\Http\Controllers\FrontRiwayatPesananController;
-<<<<<<< HEAD
 use App\Http\Controllers\RekomendasiKosController;
-=======
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\SyaratController;
 
->>>>>>> 4842a8fa601dc8294011a6b89e37ff1983d0160c
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -44,26 +40,24 @@ use Illuminate\Support\Facades\Auth;
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
 }); */
-<<<<<<< HEAD
 
 // Route::get('/', function () {
 //     return view('front');
 // });
-=======
 Route::get('/', function () {
     return view('front');
 });
->>>>>>> 4842a8fa601dc8294011a6b89e37ff1983d0160c
+
 
 // Route Front
 
 
 // Route Front Form
-<<<<<<< HEAD
+
 Route::get('/', [RekomendasiKosController::class, 'index']);
-=======
+
 Route::group(['middleware' => ['auth']], function() {
->>>>>>> 4842a8fa601dc8294011a6b89e37ff1983d0160c
+
 
 Route::get('/contact', function () {
     return view('contact');
