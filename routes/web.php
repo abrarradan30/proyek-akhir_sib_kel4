@@ -66,8 +66,6 @@ Route::get('/form_pembayaran', function () {
     return view('form_pembayaran');
 }); 
 
-
-
 Route::get('/form_datakos', function () {
     return view('form_datakos');
 });
@@ -100,6 +98,18 @@ Route::post('/form_pelanggan/store', [FormPelangganController::class, 'store']);
 Route::post('/contact/store', [ContactController::class, 'store']);
 
 
+// Route pelanggan dan pemilik kos
+Route::get('/form_datakos', [FormDataKosController::class, 'create']);
+Route::post('/form_datakos/store', [FormDataKosController::class, 'store']);
+
+Route::get('/detail_kos/show/{id}', [DetailKosController::class, 'show']);
+
+Route::get('/form_pemilikkos/create', [FormPemilikKosController::class, 'create']);
+Route::post('/form_pemilikkos/store', [FormPemilikKosController::class, 'store']);
+
+Route::get('/front_riwayat_pesanan/show/{id}', [FrontRiwayatPesananController::class, 'show']);
+
+
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {
     Route::prefix('admin')->name('admin.')->group(function () {
@@ -128,9 +138,6 @@ Route::group(['middleware' => ['auth', 'peran:admin']], function () {
         Route::get('/pelanggan/exportexcel', [PelangganController::class, 'exportExcel']);
         Route::post('/pelanggan/importexcel', [PelangganController::class, 'importExcel']);
 
-       
-
-    
         // route pembayaran
         Route::get('/pembayaran', [PembayaranController::class, 'index']);
         Route::get('/pembayaran/create', [PembayaranController::class, 'create']);
