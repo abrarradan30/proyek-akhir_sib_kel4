@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pelanggan;
+use RealRashid\SweetAlert\Facades\Alert;
 
+use DB;
 class FormPelangganController extends Controller
 {
     /**
@@ -21,6 +24,7 @@ class FormPelangganController extends Controller
     public function create()
     {
         //
+        return view('form_pelanggan');
     }
 
     /**
@@ -29,6 +33,30 @@ class FormPelangganController extends Controller
     public function store(Request $request)
     {
         //
+         // fungsi untuk mengisi data pada form
+         $request->validate([
+            'nama'    => 'required|max:45',
+            'jk'      => 'required',
+            'telepon' => 'required',
+            'alamat'  => 'required',
+        ]);
+        [
+            'nama.required'    => 'Nama wajib diisi',
+            'nama.max'         => 'Nama maksimal 45 karakter',
+            'jk.required'      => 'Jenis kelamin wajib diisi',
+            'telepon.required' => 'Telepon wajib diisi',
+            'alamat.required'  => 'Alamat wajib diisi',
+
+        ];
+        DB::table('pelanggan')->insert([
+            'nama'    => $request->nama,
+            'jk'      => $request->jk,
+            'telepon' => $request->telepon,
+            'alamat'  => $request->alamat,
+        ]);
+        
+        Alert::success('Pelanggan', 'Berhasil menambahkan pelanggan');
+        return redirect('form_pelanggan');
     }
 
     /**

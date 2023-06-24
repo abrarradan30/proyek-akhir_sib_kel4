@@ -4,6 +4,8 @@
   <div class="form_holder">
     <!-- <h2 class="fs-title" style="color:#fff;">steps jquery form with Icons</h2> -->
     <form id="msform">
+    <form method="POST" action="{{ url('form_pembayaran/store') }}" enctype="multipart/form-data" id="msform">
+            {{ csrf_field() }}
       <fieldset>
         <h2 class="fs-title">Data Pembayaran</h2>
         <br>
@@ -36,14 +38,18 @@
         <input type="text" name="total" placeholder="Masukkan Total Pembayaran" />
         <label>Bukti Pembayaran</label>
         <input type="file" name="total" />
-        <input type="submit" name="submit" class="submit action-button" value="Submit" />
+        <input type="submit" name="submit"  value="Submit" />
       </fieldset>
     </form>
-  </div>
+
+  <script>
+            function submitButton(){
+               console.log("Submit");
+            }
+        </script>
+
 
   <!-- js form pemilik kos -->
   <!-- <script src="assets/js/form-data-kos.js"></script> -->
-
-
 
 @endsection

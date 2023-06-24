@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Pembayaran;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
 class FormPembayaranController extends Controller
 {
     /**
@@ -20,6 +22,7 @@ class FormPembayaranController extends Controller
     public function create()
     {
         //
+        return view('form_pembayaran');
     }
 
     /**
@@ -27,7 +30,38 @@ class FormPembayaranController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([  
+            'durasi_sewa' => 'required',
+            'jumlah_kamar' => 'required|integer',
+            'tanggal' => 'required',
+            'total' => 'required',
+            'bukti' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048',
+        ],
+        [
+            'durasi_sewa.required' => 'Durasi sewa wajib diisi',
+            'jumlah_kamar.required' => 'Jumlah kamar wajib diisi',
+            'tanggal.required'=> 'Tanggal Wajib Diisi',
+            'total.required'=> 'Total Bayar Wajib Diisi',
+            'bukti.required'=> 'Bukti Pembayaran Wajib Diisi',
+        ]
+        );
         //
+        if (!empty($request->bukti)) {
+            $fileName = 'bukti-' . $request->id . '.' . $request->bukti->extension();
+            $request->bukti->move(public_path('admin/image'), $fileName);
+        } else {
+            $fileName = '';
+        }
+        DB::table('pembayaran')->insert([
+            'durasi_sewa' => $request->durasi_sewa,
+            'jumlah_kamar' => $request->jumlah_kamar,
+            'tanggal'=> $request->tanggal,
+            'total'=> $request->total,
+            'bukti'=> $fileName,
+        ]);
+
+        Alert::success('Pembayaran', 'Berhasil menambahkan pembayaran');
+        return redirect('/');
     }
 
     /**

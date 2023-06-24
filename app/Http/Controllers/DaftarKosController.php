@@ -20,6 +20,7 @@ class DaftarKosController extends Controller
     public function create()
     {
         //
+       
     }
 
     /**
@@ -28,6 +29,7 @@ class DaftarKosController extends Controller
     public function store(Request $request)
     {
         //
+       
     }
 
     /**
@@ -36,6 +38,8 @@ class DaftarKosController extends Controller
     public function show(string $id)
     {
         //
+
+        return view('show_daftarkos');
     }
 
     /**
