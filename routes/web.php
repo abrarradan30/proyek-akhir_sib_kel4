@@ -67,6 +67,18 @@ Route::get('/front_riwayat_pesanan', function () {
 });
 
 // Route pelanggan dan pemilik kos
+Route::get('/form_datakos/create', [FormDataKosControllerController::class, 'create']);
+Route::post('/form_datakos/store', [FormDataKosController::class, 'store']);
+
+Route::get('/detail_kos-show/{id}', [DetailKosController::class, 'show']);
+
+Route::get('/form_pemilikkos-create', [FormPemilikKosController::class, 'create']);
+Route::post('/form_pemilikkos/store', [FormPemilikKosController::class, 'store']);
+
+
+Route::get('/fron_riwayat_pesanan-show/{id}', [FrontRiwayatPesananController::class, 'show']);
+
+Route::resource('detail_kos', DetailKosController::class);
 
 // Route Admin
 Route::group(['middleware' => ['auth', 'peran:admin']], function () {
