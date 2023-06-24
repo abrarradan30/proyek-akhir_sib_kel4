@@ -3,8 +3,11 @@
 
 <div class="form_holder">
     <!-- <h2 class="fs-title" style="color:#fff;">steps jquery form with Icons</h2> -->
-    <form id="msform" action="form-pembayaran.html">
+    
+    <form method="POST" action="{{ url('form_pelanggan/store') }}" enctype="multipart/form-data" id="msform">
+            {{ csrf_field() }}
       <fieldset>
+         
         <h2 class="fs-title">Data Pelanggan</h2>
         <br>
         <label>Nama</label>
@@ -24,10 +27,16 @@
         <input type="text" name="telepon" placeholder="Masukkan Nomor Telepon Aktif" /> 
         <label>Alamat</label>
         <textarea name="alamat" placeholder="Masukkan Alamat Lengkap"></textarea>
-        <input type="submit" name="submit" class="submit action-button" value="Submit" />
+        <input type="submit" name="submit"  value="Next" />
+        
       </fieldset>
     </form>
-  </div>
+   
+  <script>
+            function submitButton(){
+               console.log("Submit");
+            }
+        </script>
 
   <!-- js form pemilik kos -->
   <script src="assets/js/form-data-kos.js"></script>

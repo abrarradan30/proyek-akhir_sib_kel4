@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
+use RealRashid\SweetAlert\Facades\Alert;
+use DB;
 
 class ContactController extends Controller
 {
@@ -22,6 +25,8 @@ class ContactController extends Controller
     public function create()
     {
         //
+        return view('contact');
+
     }
 
     /**
@@ -29,7 +34,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //fungsi untuk menambahkan feedback
+        DB::table('feedback')->insert([
+            'name'     => $request->name,
+            'status'       => $request->status,
+            'message'   => $request->message,
+        ]);
+
+        Alert::success('Feedback', 'Berhasil menambahkan feedback');
+        return redirect('contact');
     }
 
     /**
