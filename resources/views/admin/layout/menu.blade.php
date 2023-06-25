@@ -22,7 +22,7 @@
                                     <a class="nav-link" href="{{url('admin/pelanggan')}}">Data Pelanggan</a>
                                     <a class="nav-link" href="{{url('admin/pembayaran')}}">Data Pembayaran</a>
                                     <a class="nav-link" href="{{url('admin/riwayat_pesanan')}}">Data Riwayat Pesanan</a>
-                                    <a class="nav-link" href="{{url('admin/user_kos')}}">Data User Kos</a>
+                                    <!-- <a class="nav-link" href="{{url('admin/user_kos')}}">Data User Kos</a> -->
                                     <a class="nav-link" href="{{url('admin/user')}}">Data User Auth</a>
                                 </nav>
                             </div>

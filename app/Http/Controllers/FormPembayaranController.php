@@ -34,15 +34,11 @@ class FormPembayaranController extends Controller
             'durasi_sewa' => 'required',
             'jumlah_kamar' => 'required|integer',
             'tanggal' => 'required',
-            'total' => 'required',
-            'bukti' => 'nullable|image|mimes:jpg,jpeg,gif,svg|max:2048',
         ],
         [
             'durasi_sewa.required' => 'Durasi sewa wajib diisi',
             'jumlah_kamar.required' => 'Jumlah kamar wajib diisi',
             'tanggal.required'=> 'Tanggal Wajib Diisi',
-            'total.required'=> 'Total Bayar Wajib Diisi',
-            'bukti.required'=> 'Bukti Pembayaran Wajib Diisi',
         ]
         );
         //
@@ -61,7 +57,7 @@ class FormPembayaranController extends Controller
         ]);
 
         Alert::success('Pembayaran', 'Berhasil menambahkan pembayaran');
-        return redirect('form_pembayaran');
+        return redirect('daftar_kos');
     }
 
     /**
