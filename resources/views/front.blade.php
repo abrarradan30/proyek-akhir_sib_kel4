@@ -13,126 +13,170 @@
                     </div>
                 </div>
             </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                <div class="section-title-header text-center">
+                  <a href="{{url('daftar_kos')}}" rel="nofollow" class="btn btn-danger btn-lg">Cari Kos</a> 
+                </div>
+                <div class="section-title-header text-center">
+                  <a href="{{url('form_pemilikkos')}}" rel="nofollow" class="btn btn-warning btn-lg">Sewakan Kos</a> 
+                </div>
+              </div>
+            </div>
         </div>
     </section>
 
     <!-- Property Section Start -->
     <section class="property section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title-header text-center">
-                        <h2 class="section-title">Rekomendasi Kos</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- <div class="section-title-header text-center">
+              <h2 class="section-title">Rekomendasi Kos</h2>
+            </div> -->
+          </div>
+        </div>
+        <div class="row">
+          <!-- <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="property-main">
+              <div class="property-wrap">
+                <div class="property-item">
+                  <div class="item-thumb">
+                    <a class="hover-effect" href="detail_kos.html">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-1.jpg')}}" alt="">
+                    </a>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="property-title"><a href="property.html">WE</a></h3>
+                    <div class="adderess"><i class="lni-map-marker"></i> Drive Street, Los Angeles, US</div>
+                    <div class="pricin-list">
+                      <div class="property-price">
+                        <span>$1,500</span>
+                      </div>
+                     <p><span>4 bds</span> . <span>4 ba</span> . <span>2500 Sqft</span></p>
                     </div>
-                </div>
+                  </div>               
+                </div>              
+              </div>
             </div>
-            @foreach ($ar_datakos->take(6) as $dk)
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-xs-12">
-                        <div class="property-main">
-                            <div class="property-wrap">
-                                <div class="property-item">
-                                    <div class="item-thumb">
-                                        <a class="hover-effect" href="{{ url('detail_kos/show/' . $dk->id) }}">
-                                            @empty($dk->gambar)
-                                                <img src="{{ url('admin/image/nofoto.jpg') }}" width="100%">
-                                            @else
-                                                <img src="{{ url('admin/image') }}/{{ $dk->gambar }} " width="100%">
-                                            @endempty
-                                        </a>
-                                    </div>
-                                    <div class="item-body">
-                                        <h3 class="property-title"><a href="#">{{ $dk->nama_kos }}</a></h3>
-                                        <div class="adderess"><i class="lni-map-marker"></i> {{ $dk->kabupaten_kota }}</div>
-                                        <div class="pricin-list">
-                                            <div class="property-price">
-                                                <span>{{ $dk->harga }}</span>
-                                            </div>
-                                            <p><span>{{ $dk->jenis_kos }}</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="property-main">
+              <div class="property-wrap">
+                <div class="property-item">
+                  <div class="item-thumb">
+                    <a class="hover-effect" href="property.html">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-2.jpg')}}" alt="">
+                    </a>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="property-title"><a href="property.html">Family Condo</a></h3>
+                    <div class="adderess"><i class="lni-map-marker"></i> Louis, Missouri, US</div>
+                    <div class="pricin-list">
+                      <div class="property-price">
+                        <span>$27,00</span>
+                      </div>
+                     <p><span>6 bds</span> . <span>8 ba</span> . <span>2600 Sqft</span></p>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 col-xs-12">
-                        <div class="property-main">
-                            <div class="property-wrap">
-                                <div class="property-item">
-                                    <div class="item-thumb">
-                                        <a class="hover-effect" href="property.html">
-                                            <img class="img-fluid" src="{{ asset('frontend/img/property/house-4.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item-body">
-                                        <h3 class="property-title"><a href="property.html">Family home for sale</a></h3>
-                                        <div class="adderess"><i class="lni-map-marker"></i> Sacramento, Chicago, US</div>
-                                        <div class="pricin-list">
-                                            <div class="property-price">
-                                                <span>$1,400</span>
-                                            </div>
-                                            <p><span>2 bds</span> . <span>2 ba</span> . <span>2200 Sqft</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  </div>               
+                </div>              
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="property-main">
+              <div class="property-wrap">
+                <div class="property-item">
+                  <div class="item-thumb">
+                    <a class="hover-effect" href="property.html">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-3.jpg')}}" alt="">
+                    </a>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="property-title"><a href="property.html">Guaranteed modern home</a></h3>
+                    <div class="adderess"><i class="lni-map-marker"></i> Avenue C, New York, US</div>
+                    <div class="pricin-list">
+                      <div class="property-price">
+                        <span>$1,750</span>
+                      </div>
+                     <p><span>8 bds</span> . <span>8 ba</span> . <span>3000 Sqft</span></p>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12">
-                        <div class="property-main">
-                            <div class="property-wrap">
-                                <div class="property-item">
-                                    <div class="item-thumb">
-                                        <a class="hover-effect" href="property.html">
-                                            <img class="img-fluid" src="{{ asset('frontend/img/property/house-5.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item-body">
-                                        <h3 class="property-title"><a href="property.html">Amazing oceanfront
-                                                apartment</a></h3>
-                                        <div class="adderess"><i class="lni-map-marker"></i> 53 W 88th St, Dallas, US
-                                        </div>
-                                        <div class="pricin-list">
-                                            <div class="property-price">
-                                                <span>$1,750</span>
-                                            </div>
-                                            <p><span>6 bds</span> . <span>6 ba</span> . <span>2700 Sqft</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  </div>               
+                </div>              
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="property-main">
+              <div class="property-wrap">
+                <div class="property-item">
+                  <div class="item-thumb">
+                    <a class="hover-effect" href="property.html">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-4.jpg')}}" alt="">
+                    </a>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="property-title"><a href="property.html">Family home for sale</a></h3>
+                    <div class="adderess"><i class="lni-map-marker"></i> Sacramento, Chicago, US</div>
+                    <div class="pricin-list">
+                      <div class="property-price">
+                        <span>$1,400</span>
+                      </div>
+                     <p><span>2 bds</span> . <span>2 ba</span> . <span>2200 Sqft</span></p>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12">
-                        <div class="property-main">
-                            <div class="property-wrap">
-                                <div class="property-item">
-                                    <div class="item-thumb">
-                                        <a class="hover-effect" href="property.html">
-                                            <img class="img-fluid" src="{{ asset('frontend/img/property/house-6.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </div>
-                                    <div class="item-body">
-                                        <h3 class="property-title"><a href="property.html">Luxury home for sale</a></h3>
-                                        <div class="adderess"><i class="lni-map-marker"></i> 365 Webber Street, Washington
-                                        </div>
-                                        <div class="pricin-list">
-                                            <div class="property-price">
-                                                <span>$1,800</span>
-                                            </div>
-                                            <p><span>5 bds</span> . <span>7 ba</span> . <span>2800 Sqft</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  </div>               
+                </div>              
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="property-main">
+              <div class="property-wrap">
+                <div class="property-item">
+                  <div class="item-thumb">
+                    <a class="hover-effect" href="property.html">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-5.jpg')}}" alt="">
+                    </a>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="property-title"><a href="property.html">Amazing oceanfront apartment</a></h3>
+                    <div class="adderess"><i class="lni-map-marker"></i> 53 W 88th St, Dallas, US</div>
+                    <div class="pricin-list">
+                      <div class="property-price">
+                        <span>$1,750</span>
+                      </div>
+                     <p><span>6 bds</span> . <span>6 ba</span> . <span>2700 Sqft</span></p>
                     </div>
-            @endforeach
-            <div class="container">
+                  </div>               
+                </div>              
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="property-main">
+              <div class="property-wrap">
+                <div class="property-item">
+                  <div class="item-thumb">
+                    <a class="hover-effect" href="property.html">
+                      <img class="img-fluid" src="{{asset('frontend/img/property/house-6.jpg')}}" alt="">
+                    </a>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="property-title"><a href="property.html">Luxury home for sale</a></h3>
+                    <div class="adderess"><i class="lni-map-marker"></i> 365 Webber Street, Washington</div>
+                    <div class="pricin-list">
+                      <div class="property-price">
+                        <span>$1,800</span>
+                      </div>
+                     <p><span>5 bds</span> . <span>7 ba</span> . <span>2800 Sqft</span></p>
+                    </div>
+                  </div>               
+                </div>              
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title-header text-center">
@@ -147,8 +191,63 @@
                 </div>
             </div>
         </div>
+      </div> -->
     </section>
-    <!-- Property Section End -->
+    <section id="services" class="services section-bg">
+
+
+
+     
+    <div class="container" data-aos="fade-up">
+      <div class="section-title-header text-center">
+        <h2 class="section-title">Rekomendasi Kos</h2>
+      </div>
+    <div class="row">
+          <section class="py-5">
+              <div class="container px-4 px-lg-5 mt-5">
+                  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    @foreach($ar_datakos->take(5) as $dk)
+                      <div class="col mb-5">
+                          <div class="card h-100">
+                              <!-- Product image-->
+                              @empty($dk->gambar)
+                                    <img src="{{ url('admin/image/nofoto.png') }}" width="100%">
+                                @else
+                                    <img src="{{ url('admin/image') }}/{{ $dk->gambar }}" width="100%">
+                                @endempty
+                              <!-- Product details-->
+                              <div class="card-body p-4">
+                                  <div class="text-center">
+                                      <!-- Product name-->
+                                      <h5 class="fw-bolder">{{$dk->nama_kos}}</h5>
+                                      <!-- Product reviews-->
+                                      <div class="d-flex justify-content-center small text-warning mb-2">
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                      </div>
+                                      <!-- Product price-->
+                                      Kos {{$dk->jenis_kos}} <br>
+                                      Rp. {{$dk->harga}} <br>
+                                      Lokasi : {{$dk->kabupaten_kota}}
+                                  </div>
+                              </div>
+                              <!-- Product actions-->
+                              <div class="card-footer p-4 pt-0 border-top-0">
+                                  <div class="text-center"><a class="btn btn-info btn-lg mt-auto" href="{{url('detail_kos/show/'.$dk->id) }}">Sewa</a></div>
+                              </div>
+                          </div>
+                      </div>
+                      @endforeach
+                  </div>
+              </div>
+          </section>
+          </div>
+          </div>
+      </section>
+    <!-- Property Section End -->   
 
     <!-- Featured Section Start -->
     <section class="featured-bg section-padding">

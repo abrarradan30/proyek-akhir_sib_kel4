@@ -40,14 +40,9 @@ use Illuminate\Support\Facades\Auth;
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
 }); */
-
-// Route::get('/', function () {
-//     return view('front');
-// });
 Route::get('/', function () {
     return view('front');
 });
-
 
 // Route Front
 
@@ -63,9 +58,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/daftar_kos', function () {
-    return view('daftar_kos');
-});
+// Route::get('/daftar_kos', function () {
+//     return view('daftar_kos');
+// });
+Route::get('/daftar_kos', [DaftarKosController::class, 'index']);
 
 Route::get('/form_pelanggan', function () {
     return view('form_pelanggan');
@@ -78,18 +74,24 @@ Route::get('/form_pembayaran', function () {
 Route::get('/form_datakos', function () {
     return view('form_datakos');
 });
+
 Route::get('/detail_kos', function () {
     return view('detail_kos');
 });
+
 Route::get('/form_pemilikkos', function () {
     return view('form_pemilikkos');
 });
-Route::get('/front_riwayat_pesanan', function () {
-    return view('front_riwayat_pesanan');
-});
+
+// Route::get('/front_riwayat_pesanan', function () {
+//     return view('front_riwayat_pesanan');
+// });
+Route::get('/front_riwayat_pesanan', [FrontRiwayatPesananController::class, 'index']);
+
 Route::get('/info', function () {
     return view('info');
 });
+
 Route::get('/syarat', function () {
     return view('syarat');
 });
