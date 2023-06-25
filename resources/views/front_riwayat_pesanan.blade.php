@@ -39,11 +39,11 @@
                                         <p class="card-text">Nama Kos : {{$rp->nama_kos}}</p>
                                         <p class="card-text">Tanggal Sewa : {{$rp->tanggal}}</p>
                                         <p class="card-text">Status Pembayaran : {{$rp->status}}</p>
-                                        <p class="card-text">Harga : {{$rp->harga}}</p>
+                                        <p class="card-text">Harga : Rp.{{$rp->harga}}</p>
                                         <p class="card-text">Durasi Sewa : {{$rp->durasi_sewa}}</p>
                                         <p class="card-text">Jumlah Kamar : {{$rp->jumlah_kamar}}</p>
                                         <p class="card-text">Tanggal Pembayaran : {{$rp->tanggal_pembayaran}}</p>
-                                        <p class="card-text">Total Harga : {{$rp->total_bayar}}</p>
+                                        <p class="card-text">Total Harga : Rp. {{$rp->total_bayar}}</p>
                                     </div>
                                 </div>
                             </div>

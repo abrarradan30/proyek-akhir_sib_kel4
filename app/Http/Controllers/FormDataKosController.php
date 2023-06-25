@@ -27,15 +27,12 @@ class FormDataKosController extends Controller
     {
         //
         $pemilik_kos = DB::table('pemilik_kos')->get();
-
-
         $data_kos = DB::table('data_kos')
             ->join('pemilik_kos', 'data_kos.pemilik_kos_id', '=', 'pemilik_kos.id')
             ->select('data_kos.*', 'pemilik_kos.nama as nama_pemilik_kos')
             ->get();
 
-            // dd($pemilik_kos);
-            return view('form_datakos', compact('pemilik_kos', 'data_kos'));
+            return view('form_datakos', compact('data_kos', 'pemilik_kos'));
     }
 
     /**
@@ -92,7 +89,7 @@ class FormDataKosController extends Controller
             'jenis_kos'      => $request->jenis_kos,
             'fasilitas'      => $request->fasilitas,
             'luas_ruang'     => $request->luas_ruang,
-            'gambar'         => $request->fileName,
+            'gambar'         => $fileName,
             'harga'          => $request->harga,
             'deskripsi'      => $request->deskripsi,
             'kabupaten_kota' => $request->kabupaten_kota,

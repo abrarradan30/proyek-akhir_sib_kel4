@@ -1,7 +1,7 @@
 @extends('frontend.index')
 @section('front')
 
-<div class="container">
+<div class="container my-5">
         <div class="row ng-scope">
             <div class="col-md-9 col-md-pull-3">
                 <div class="well search-result">
