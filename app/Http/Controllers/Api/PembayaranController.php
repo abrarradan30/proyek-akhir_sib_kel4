@@ -4,22 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Models\Pembayaran;
 use App\Http\Resources\PembayaranResource;
 use DB;
 use Illuminate\Support\Facades\Validator;
-=======
->>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
+
 
 class PembayaranController extends Controller
 {
     //
-<<<<<<< HEAD
     public function index(){
         $pembayaran = DB :: table('pembayaran')->get();
         return new PembayaranResource(true,'Data Pembayaran',$pembayaran);
-}
+    }
 
 
     public function show($id){
@@ -48,6 +45,7 @@ class PembayaranController extends Controller
             ]);
             return new PembayaranResource(true, 'data pembayaran berhasil diinput', $pembayaran);
     }
+    
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(),[
                 'durasi_sewa' => 'required',
@@ -67,14 +65,14 @@ class PembayaranController extends Controller
             ]);
 
             return new PembayaranResource(true, 'Data Pembayaran Berhasil Diubah', $pembayaran);
-        }
-        public function destroy($id){
+    }
+
+    public function destroy($id){
             $pembayaran = Pembayaran::whereId($id)->first();
             $pembayaran->delete();
     
             return new PembayaranResource(true, 'Data Pembayaran Berhasil Dihapus', $pembayaran);
-        }
     }
-=======
 }
->>>>>>> a400d8617bd9a354fd921ad3ecf5a3501d9d96e0
+
+
