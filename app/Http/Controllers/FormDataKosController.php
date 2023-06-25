@@ -101,7 +101,7 @@ class FormDataKosController extends Controller
         ]);
 
         Alert::success('Data Kos', 'Berhasil menambahkan data kos');
-        return redirect()->back();
+        return redirect('daftar_kos');
     }
 
     /**

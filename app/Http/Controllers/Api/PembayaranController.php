@@ -6,29 +6,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use App\Http\Resources\PembayaranResource;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 
 class PembayaranController extends Controller
 {
     //
-    public function index(){
-        $pembayaran = DB :: table('pembayaran')->get();
+    public function index()
+    {
+        $pembayaran = DB::table('pembayaran')->get();
         return new PembayaranResource(true,'Data Pembayaran',$pembayaran);
     }
 
 
-    public function show($id){
+    public function show($id)
+    {
         $pembayaran = DB::table('pembayaran')->where('id', $id)->get();
 
         return new PembayaranResource(true, 'Detail Pembayaran', $pembayaran);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $validator = Validator::make($request->all(), [
                 'durasi_sewa' => 'required',
-                'jumlah_kamar' => 'required',
+                'jumlah_kamar' => 'required|integer',
                 'tanggal' => 'required',
                 'total' => 'required',
                
@@ -43,13 +46,14 @@ class PembayaranController extends Controller
                 'total' => $request->total,
                 
             ]);
-            return new PembayaranResource(true, 'data pembayaran berhasil diinput', $pembayaran);
+            
+        return new PembayaranResource(true, 'data pembayaran berhasil diinput', $pembayaran);
     }
     
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(),[
                 'durasi_sewa' => 'required',
-                'jumlah_kamar' => 'required',
+                'jumlah_kamar' => 'required|integer',
                 'tanggal' => 'required',
                 'total' => 'required',
                
@@ -72,7 +76,6 @@ class PembayaranController extends Controller
             $pembayaran->delete();
     
             return new PembayaranResource(true, 'Data Pembayaran Berhasil Dihapus', $pembayaran);
+        }
     }
-}
-
 

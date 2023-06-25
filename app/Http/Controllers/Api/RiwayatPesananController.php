@@ -89,7 +89,7 @@ class RiwayatPesananController extends Controller
 
     public function destroy($id)
     {
-        $riwayat_pesanan = RiwayatPesanan::where($id)->first();
+        $riwayat_pesanan = RiwayatPesanan::whereId($id)->first();
         $riwayat_pesanan->delete();
         return new RiwayatPesananResource(true, 'Data riwayat pesanan berhasi dihapus', $riwayat_pesanan);
     }

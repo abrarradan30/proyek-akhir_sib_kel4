@@ -104,9 +104,9 @@
 
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-center">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{{url('/')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Home <i class="fa fa-angle-down"></i>
+              <li class="">
+                <a class="nav-link" href="{{url('/')}}">
+                  Home 
                 </a>
               </li>
               <li class="nav-item dropdown">

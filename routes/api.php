@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\PembayaranController;
 use App\Http\Controllers\Api\PemilikKosController;
 use App\Http\Controllers\Api\PelangganController;
 use App\Http\Controllers\Api\RiwayatPesananController;
-use App\Models\DataKos;
+
 
 /*
 |--------------------------------------------------------------------------

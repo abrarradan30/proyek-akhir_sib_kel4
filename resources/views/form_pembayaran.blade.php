@@ -34,9 +34,9 @@
         <p align="left">
         <input type="date" name="tanggal" />
         </p>
-        <label>Total Pembayaran</label>
+        <label>Total Pembayaran (*hubungi pemilik kos)</label>
         <input type="text" name="total" placeholder="Masukkan Total Pembayaran" />
-        <label>Bukti Pembayaran</label>
+        <label>Bukti Pembayaran (*hubungi pemilik kos)</label>
         <input type="file" name="bukti" />
         <input type="submit" name="submit"  value="Submit" />
       </fieldset>

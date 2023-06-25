@@ -52,7 +52,7 @@
           </div>
           <form method="POST" action="{{url('contact/store')}}" enctype="multipart/form-data">
           {{csrf_field()}}
-          <div class="col-lg-7 col-md-6 form-line">
+          <div class="col-lg-50 col-md-50 form-line">
             <h2>FeedBack</h2>
               <div class="form-group">
                  <label>Name </label>

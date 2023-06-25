@@ -31,6 +31,5 @@ class PembayaranResource extends JsonResource
             'message'=>$this->message,
             'data'=>$this->resource,
         ];
-        return parent::toArray($request);
     }
 }
