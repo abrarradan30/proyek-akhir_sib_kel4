@@ -22,6 +22,7 @@ use App\Http\Controllers\FormPemilikKosController;
 use App\Http\Controllers\FrontRiwayatPesananController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\SyaratController;
+use App\Http\Controllers\TestimoniController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -46,6 +47,7 @@ use Illuminate\Support\Facades\Auth;
 //     return view('front');
 // });
 Route::get('/', [FrontController::class, 'index']);
+//Route::get('/front', [TestimoniController::class, 'index']);
 Route::get('/daftar_kos', [DaftarKosController::class, 'index']);
 Route::get('/info', function () {
     return view('info');
@@ -60,7 +62,6 @@ Route::get('/info_pesan', function () {
     return view('info_pesan');
 });
 //Route::get('/contact', [ContactController::class, 'create']);
-Route::post('/contact/store', [ContactController::class, 'store']);
 Route::get('/detail_kos/show/{id}', [DetailKosController::class, 'show']);
 
 // Route Front Form -> Auth
@@ -77,7 +78,7 @@ Route::get('/form_datakos', function () {
 Route::get('/form_pemilikkos', function () {
     return view('form_pemilikkos');
 });
-
+Route::post('/contact/store', [ContactController::class, 'store']);
 // Route Pelanggan
 Route::get('/front_riwayat_pesanan', [FrontRiwayatPesananController::class, 'index']);
 Route::get('/front_riwayat_pesanan/show/{id}', [FrontRiwayatPesananController::class, 'show']);
@@ -90,7 +91,7 @@ Route::post('/form_pelanggan/store', [FormPelangganController::class, 'store']);
 });
 
 //Route PemilikKos
-Route::group(['middleware' => ['auth', 'peran:pemilikkos']], function() {
+Route::group(['middleware' => ['auth', 'peran:pemilik kos']], function() {
     Route::get('/form_datakos', [FormDataKosController::class, 'create']);
     Route::post('/form_datakos/store', [FormDataKosController::class, 'store']);
     

@@ -35,6 +35,6 @@
     
 
 @else
-@include('front')
+@include('contact')
 @endif 
 @endsection
