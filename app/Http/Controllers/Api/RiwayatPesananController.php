@@ -50,7 +50,7 @@ class RiwayatPesananController extends Controller
             'pelanggan_id' => 'required|integer', 
         ]);
         if($validator->fails()) {
-            return response()->join($validator->$errors(), 442);
+            return response()->json($validator->$errors(), 442);
         }
         $riwayat_pesanan = RiwayatPesanan::create([
             'no_kwitansi' => $request->no_kwitansi,
@@ -74,7 +74,7 @@ class RiwayatPesananController extends Controller
             'pelanggan_id' => 'required|integer', 
         ]);
         if($validator->fails()) {
-            return response()->join($validator->$errors(), 442);
+            return response()->json($validator->$errors(), 442);
         }
         $riwayat_pesanan = RiwayatPesanan::whereId($id)->update([
             'no_kwitansi' => $request->no_kwitansi,
