@@ -17,7 +17,7 @@
               <p></p>
               <span></span>
               <p class="mb20"></p>
-              <p>Pesanan anda akan diproses maksimal dalam 2x24 jam</p> 
+              <p>Pesanan anda akan diproses maksimal dalam 1x24 jam</p> 
               <br>
               <p>Info status pembayaran kos anda,</p>
               <p>dapat anda lihat pada bagian riwayat pesanan</p>

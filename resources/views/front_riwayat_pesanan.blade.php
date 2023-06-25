@@ -23,8 +23,8 @@
                 @foreach ($ar_riwayat_pesanan as $rp)
                     <div class="row justify-content-center">
                         <div class="card mb-12" style="max-width: 100%;">
-                            <div class="row g-10">
-                                <div class="col-md-6">
+                            <div class="row g-0">
+                                <div class="col-md-6" style="margin-top: 20px;">
                                 @empty($rp->bukti)
                                     <img src="{{ url('admin/image/nofoto.png') }}" width="60%" height="50%">
                                 @else
@@ -41,7 +41,9 @@
                                         <p class="card-text">Durasi Sewa = {{$rp->durasi_sewa}}</p>
                                         <p class="card-text">Jumlah Kamar = {{$rp->jumlah_kamar}}</p>
                                         <p class="card-text">Tanggal Pembayaran = {{$rp->tanggal_pembayaran}}</p>
-                                        <p class="card-text">Total Bayar Kos = {{$rp->total_bayar}}</p>                
+                                        <p class="card-text">Total Bayar Kos = {{$rp->total_bayar}}</p>
+                                        <br>
+                                        <a href="{{url('form_pembayaran')}}" rel="nofollow" class="btn btn-warning btn-sm">Bayar</a>                 
                                     </div>
                                 </div>
                             </div>

@@ -92,7 +92,7 @@ class FormDataKosController extends Controller
             'jenis_kos'      => $request->jenis_kos,
             'fasilitas'      => $request->fasilitas,
             'luas_ruang'     => $request->luas_ruang,
-            'gambar'         => $request->fileName,
+            'gambar'         => $fileName,
             'harga'          => $request->harga,
             'deskripsi'      => $request->deskripsi,
             'kabupaten_kota' => $request->kabupaten_kota,
