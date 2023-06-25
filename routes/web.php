@@ -56,6 +56,9 @@ Route::get('/syarat', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/info_pesan', function () {
+    return view('info_pesan');
+});
 //Route::get('/contact', [ContactController::class, 'create']);
 Route::post('/contact/store', [ContactController::class, 'store']);
 Route::get('/detail_kos/show/{id}', [DetailKosController::class, 'show']);

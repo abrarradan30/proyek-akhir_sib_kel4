@@ -57,7 +57,7 @@ class FormPembayaranController extends Controller
         ]);
 
         Alert::success('Pembayaran', 'Berhasil menambahkan pembayaran');
-        return redirect('daftar_kos');
+        return redirect('info_pesan');
     }
 
     /**

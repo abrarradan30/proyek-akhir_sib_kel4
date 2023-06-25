@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 use App\Models\RiwayatPesanan;
+use App\Models\DataKos;
+use App\Models\Pelanggan;
+use App\Models\Pembayaran;
+use DB;
 
 class FrontRiwayatPesananController extends Controller
 {
@@ -20,12 +22,12 @@ class FrontRiwayatPesananController extends Controller
         ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
         ->select('riwayat_pesanan.*', 'pelanggan.nama as nama_pelanggan', 'data_kos.nama_kos',
         'pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal as tanggal_pembayaran', 
-        'pembayaran.total as total_bayar')
+        'pembayaran.total as total_bayar', 'pembayaran.bukti')
         // ->groupBy('data_kos.nama_kos')
         // ->take(6)
         ->get();
 
-        $ar_riwayat_pesanan = RiwayatPesanan::all();
+        // $ar_riwayat_pesanan = RiwayatPesanan::all();
 
         return view('front_riwayat_pesanan', compact('ar_riwayat_pesanan'));
     }

@@ -23,7 +23,7 @@
                 @foreach ($ar_riwayat_pesanan as $rp)
                     <div class="row justify-content-center">
                         <div class="card mb-12" style="max-width: 100%;">
-                            <div class="row g-0">
+                            <div class="row g-10">
                                 <div class="col-md-6">
                                 @empty($rp->bukti)
                                     <img src="{{ url('admin/image/nofoto.png') }}" width="60%" height="50%">
@@ -33,17 +33,15 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <h5 class="card-title">Riwayat Pesanan</h5>
-                                        <p class="card-text">No Kwitansi : {{$rp->no_kwitansi}}</p>
-                                        <p class="card-text">Nama Pelanggan : {{$rp->nama_pelanggan}}</</p>
-                                        <p class="card-text">Nama Kos : {{$rp->nama_kos}}</p>
-                                        <p class="card-text">Tanggal Sewa : {{$rp->tanggal}}</p>
-                                        <p class="card-text">Status Pembayaran : {{$rp->status}}</p>
-                                        <p class="card-text">Harga : {{$rp->harga}}</p>
-                                        <p class="card-text">Durasi Sewa : {{$rp->durasi_sewa}}</p>
-                                        <p class="card-text">Jumlah Kamar : {{$rp->jumlah_kamar}}</p>
-                                        <p class="card-text">Tanggal Pembayaran : {{$rp->tanggal_pembayaran}}</p>
-                                        <p class="card-text">Total Harga : {{$rp->total_bayar}}</p>
+                                        <h5 class="card-title">Pesanan = {{$rp->no_kwitansi}}</h5>
+                                        <p class="card-text">Tanggal Terbit = {{$rp->tanggal}}</p>
+                                        <p class="card-text">Status Pembayaran = {{$rp->status}}</p>
+                                        <p class="card-text">Nama Pelanggan = {{$rp->nama_pelanggan}}</</p>
+                                        <p class="card-text">Nama Kos = {{$rp->nama_kos}}</p>
+                                        <p class="card-text">Durasi Sewa = {{$rp->durasi_sewa}}</p>
+                                        <p class="card-text">Jumlah Kamar = {{$rp->jumlah_kamar}}</p>
+                                        <p class="card-text">Tanggal Pembayaran = {{$rp->tanggal_pembayaran}}</p>
+                                        <p class="card-text">Total Bayar Kos = {{$rp->total_bayar}}</p>                
                                     </div>
                                 </div>
                             </div>
