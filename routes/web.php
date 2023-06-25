@@ -18,7 +18,6 @@ use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
 use App\Http\Controllers\FrontRiwayatPesananController;
-use App\Http\Controllers\RekomendasiKosController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\SyaratController;
 
@@ -40,61 +39,57 @@ use Illuminate\Support\Facades\Auth;
     Alert::success('Success Title', 'Success Message');
     return view('welcome');
 }); */
-Route::get('/', function () {
-    return view('front');
-});
-
+// Route::get('/', function () {
+//     return view('front');
+// });
+Route::get('/', [FrontController::class, 'index']);
 // Route Front
 
 
 // Route Front Form
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/', [RekomendasiKosController::class, 'index']);
+    Route::get('/contact', function () {
+        return view('contact');
+    });
 
-Route::group(['middleware' => ['auth']], function() {
+    // Route::get('/daftar_kos', function () {
+    //     return view('daftar_kos');
+    // });
+    Route::get('/daftar_kos', [DaftarKosController::class, 'index']);
 
+    Route::get('/form_pelanggan', function () {
+        return view('form_pelanggan');
+    });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+    Route::get('/form_pembayaran', function () {
+        return view('form_pembayaran');
+    });
 
-// Route::get('/daftar_kos', function () {
-//     return view('daftar_kos');
-// });
-Route::get('/daftar_kos', [DaftarKosController::class, 'index']);
+    Route::get('/form_datakos', function () {
+        return view('form_datakos');
+    });
 
-Route::get('/form_pelanggan', function () {
-    return view('form_pelanggan');
-});
+    Route::get('/detail_kos', function () {
+        return view('detail_kos');
+    });
 
-Route::get('/form_pembayaran', function () {
-    return view('form_pembayaran');
-}); 
+    Route::get('/form_pemilikkos', function () {
+        return view('form_pemilikkos');
+    });
 
-Route::get('/form_datakos', function () {
-    return view('form_datakos');
-});
+    // Route::get('/front_riwayat_pesanan', function () {
+    //     return view('front_riwayat_pesanan');
+    // });
+    Route::get('/front_riwayat_pesanan', [FrontRiwayatPesananController::class, 'index']);
 
-Route::get('/detail_kos', function () {
-    return view('detail_kos');
-});
+    Route::get('/info', function () {
+        return view('info');
+    });
 
-Route::get('/form_pemilikkos', function () {
-    return view('form_pemilikkos');
-});
-
-// Route::get('/front_riwayat_pesanan', function () {
-//     return view('front_riwayat_pesanan');
-// });
-Route::get('/front_riwayat_pesanan', [FrontRiwayatPesananController::class, 'index']);
-
-Route::get('/info', function () {
-    return view('info');
-});
-
-Route::get('/syarat', function () {
-    return view('syarat');
-});
+    Route::get('/syarat', function () {
+        return view('syarat');
+    });
 });
 
 // Route front pelanggan dan pemilik kos
