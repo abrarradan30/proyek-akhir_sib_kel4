@@ -51,6 +51,7 @@ class RiwayatPesananController extends Controller
         ]);
         if($validator->fails()) {
             return response()->json($validator->errors(), 442);
+
         }
         $riwayat_pesanan = RiwayatPesanan::create([
             'no_kwitansi' => $request->no_kwitansi,
