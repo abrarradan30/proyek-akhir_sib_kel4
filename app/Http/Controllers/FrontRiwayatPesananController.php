@@ -15,7 +15,19 @@ class FrontRiwayatPesananController extends Controller
     public function index()
     {
         //
-        return view ('front_riwayat_pesanan');
+        $ar_riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
+        ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
+        ->join('pelanggan', 'riwayat_pesanan.pelanggan_id', '=', 'pelanggan.id')
+        ->select('riwayat_pesanan.*', 'pelanggan.nama as nama_pelanggan', 'data_kos.nama_kos',
+        'pembayaran.durasi_sewa', 'pembayaran.jumlah_kamar', 'pembayaran.tanggal as tanggal_pembayaran', 
+        'pembayaran.total as total_bayar')
+        // ->groupBy('data_kos.nama_kos')
+        // ->take(6)
+        ->get();
+
+        $ar_riwayat_pesanan = RiwayatPesanan::all();
+
+        return view('front_riwayat_pesanan', compact('ar_riwayat_pesanan'));
     }
 
     /**

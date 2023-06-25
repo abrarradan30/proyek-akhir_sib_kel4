@@ -13,6 +13,16 @@
               <!-- <a href="https://rebrand.ly/estatebit-purchase-ud" rel="nofollow" class="btn btn-danger btn-lg">PURCHASE NOW</a> -->
             </div>
           </div>
+          <div class="row">
+              <div class="col-12">
+                <div class="section-title-header text-center">
+                  <a href="{{url('daftar_kos')}}" rel="nofollow" class="btn btn-danger btn-lg">Cari Kos</a> 
+                </div>
+                <div class="section-title-header text-center">
+                  <a href="{{url('form_pemilikkos')}}" rel="nofollow" class="btn btn-warning btn-lg">Sewakan Kos</a> 
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </section>
@@ -22,13 +32,13 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="section-title-header text-center">
+            <!-- <div class="section-title-header text-center">
               <h2 class="section-title">Rekomendasi Kos</h2>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12">
+          <!-- <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="property-main">
               <div class="property-wrap">
                 <div class="property-item">
@@ -165,8 +175,8 @@
                 </div>              
               </div>
             </div>
-          </div>
-          <div class="container">
+          </div> -->
+          <!-- <div class="container">
             <div class="row">
               <div class="col-12">
                 <div class="section-title-header text-center">
@@ -177,8 +187,62 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
     </section>
+    <section id="services" class="services section-bg">
+
+
+
+     
+    <div class="container" data-aos="fade-up">
+      <div class="section-title-header text-center">
+        <h2 class="section-title">Rekomendasi Kos</h2>
+      </div>
+    <div class="row">
+          <section class="py-5">
+              <div class="container px-4 px-lg-5 mt-5">
+                  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    @foreach($ar_datakos->take(5) as $dk)
+                      <div class="col mb-5">
+                          <div class="card h-100">
+                              <!-- Product image-->
+                              @empty($dk->gambar)
+                                    <img src="{{ url('admin/image/nofoto.png') }}" width="100%">
+                                @else
+                                    <img src="{{ url('admin/image') }}/{{ $dk->gambar }}" width="100%">
+                                @endempty
+                              <!-- Product details-->
+                              <div class="card-body p-4">
+                                  <div class="text-center">
+                                      <!-- Product name-->
+                                      <h5 class="fw-bolder">{{$dk->nama_kos}}</h5>
+                                      <!-- Product reviews-->
+                                      <div class="d-flex justify-content-center small text-warning mb-2">
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                          <div class="bi-star-fill"></div>
+                                      </div>
+                                      <!-- Product price-->
+                                      Kos {{$dk->jenis_kos}} <br>
+                                      Rp. {{$dk->harga}} <br>
+                                      Lokasi : {{$dk->kabupaten_kota}}
+                                  </div>
+                              </div>
+                              <!-- Product actions-->
+                              <div class="card-footer p-4 pt-0 border-top-0">
+                                  <div class="text-center"><a class="btn btn-info btn-lg mt-auto" href="{{url('detail_kos/show/'.$dk->id) }}">Sewa</a></div>
+                              </div>
+                          </div>
+                      </div>
+                      @endforeach
+                  </div>
+              </div>
+          </section>
+          </div>
+          </div>
+      </section>
     <!-- Property Section End -->   
 
     <!-- Featured Section Start -->

@@ -3,7 +3,6 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <div class="container my-5">
         <div class="row">
-            @foreach ($riwayat_pesanan as $rp)
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="well search-result">
                 <div>
@@ -21,12 +20,16 @@
                     </div>
                 </div>
                 <div class="well search-result">
+                @foreach ($ar_riwayat_pesanan as $rp)
                     <div class="row justify-content-center">
                         <div class="card mb-12" style="max-width: 100%;">
                             <div class="row g-0">
                                 <div class="col-md-6">
-                                    <img src="https://www.bootdey.com/image/400x200/7B68EE/000000"
-                                        class="img-fluid rounded-start" alt="...">
+                                @empty($rp->bukti)
+                                    <img src="{{ url('admin/image/nofoto.png') }}" width="60%" height="50%">
+                                @else
+                                    <img src="{{ url('admin/image') }}/{{ $rp->bukti }}" width="60%" height="50%">
+                                @endempty
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card-body">
@@ -46,9 +49,9 @@
                             </div>
                         </div>
                     </div>
+                @endforeach
                 </div>
             </div>
-            @endforeach
         </div>
     </div>
 @endsection
