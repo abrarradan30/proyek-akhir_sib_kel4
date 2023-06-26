@@ -7,7 +7,7 @@
                     <img src="{{ asset('frontend/img/background/bg-intro2.jpg') }}" alt="">
                     <div class="col-md-12">
                         <!-- <h4 class="intro-sub-heading">You are using Fre Lite Version!</h4> -->
-                        <h3 class="intro-title">Temukan Kost Yang Sesuai Dengan Keinginanmu Di Ngalamkos</h3>
+                        <h3 class="intro-title">Temukan Kos Yang Sesuai Dengan Keinginanmu Di Ngalamkos</h3>
                         <!-- <a href="https://rebrand.ly/estatebit-purchase-ud" rel="nofollow" class="btn btn-danger btn-lg">PURCHASE NOW</a> -->
                     </div>
                 </div>
