@@ -10,12 +10,10 @@ use App\Http\Controllers\UserKosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontController;
-
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DaftarKosController;
 use App\Http\Controllers\FormPelangganController;
 use App\Http\Controllers\FormPembayaranController;
-
 use App\Http\Controllers\DetailKosController;
 use App\Http\Controllers\FormDataKosController;
 use App\Http\Controllers\FormPemilikKosController;
@@ -23,6 +21,7 @@ use App\Http\Controllers\FrontRiwayatPesananController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\SyaratController;
 use App\Http\Controllers\TestimoniController;
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -47,6 +46,7 @@ use Illuminate\Support\Facades\Auth;
 //     return view('front');
 // });
 Route::get('/', [FrontController::class, 'index']);
+
 //Route::get('/front', [TestimoniController::class, 'index']);
 Route::get('/daftar_kos', [DaftarKosController::class, 'index']);
 Route::get('/info', function () {
