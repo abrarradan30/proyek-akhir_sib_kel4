@@ -61,7 +61,7 @@
               </div>
           </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+            <table class="table-hover text-nowrap mb-0 align-middle" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -97,9 +97,9 @@
                             <td>{{$py->total}}</td>
                             <td>
                                 @empty($py->bukti)
-                                    <img src="{{ url('admin/image/nofoto.png') }}" width="50%">
+                                    <img src="{{ url('admin/image/nofoto.jpg') }}" width="15%" style="width: 50px;">
                                 @else
-                                    <img src="{{ url('admin/image') }}/{{ $py->bukti }}" width="50%">
+                                    <img src="{{ url('admin/image') }}/{{ $py->bukti }}"  width="15%" style="width: 50px;">
                                 @endempty
                             </td>
                             <td>
