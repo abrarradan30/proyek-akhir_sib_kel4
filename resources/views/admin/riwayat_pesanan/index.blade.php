@@ -68,6 +68,7 @@
                         <th>Jumlah Kamar</th>
                         <th>Tanggal Pembayaran</th>
                         <th>Total Pembayaran</th>
+                        <th>Bukti Bayar</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -83,6 +84,7 @@
                       <th>Jumlah Kamar</th>
                       <th>Tanggal Pembayaran</th>
                       <th>Total Pembayaran</th>
+                      <th>Bukti Bayar</th>
                       <th>Action</th>
                     </tr>
                 </tfoot>
@@ -102,6 +104,13 @@
                             <td>{{$rp->jumlah_kamar}}</td>
                             <td>{{$rp->tanggal_pembayaran}}</td>
                             <td>{{$rp->total_bayar}}</td>
+                            <td>
+                            @empty($rp->bukti)
+                                <img src="{{ url('admin/image/nofoto.jpg') }}" width="60%" height="50%">
+                              @else
+                                <img src="{{ url('admin/image') }}/{{ $rp->bukti }}" width="60%" height="50%">
+                            @endempty
+                            </td>
                             <td>
                                 <form action="#" method="POST">
                                     <a href="{{url('admin/riwayat_pesanan/show/'.$rp->id)}}" class="btn btn-info btn-sm">Detail</a>

@@ -19,7 +19,7 @@
         DataTable Example -->
         <!-- membuat tombol mengarahkan ke file produk_form.php -->
         
-        <a href="{{url('admin/user/create')}}" class="btn btn-primary btn-sm"> Tambah</a>
+        <!-- <a href="{{url('admin/user/create')}}" class="btn btn-primary btn-sm"> Tambah</a> -->
         
     </div>
     <div class="card-body">
@@ -28,6 +28,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>Email</th>
                     <th>Akses</th>
                     <th>Action</th>
                 </tr>
@@ -36,6 +37,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>Email</th>
                     <th>Akses</th>
                     <th>Action</th>
                 </tr>
@@ -48,11 +50,12 @@
                 <tr>
                     <td>{{$no}}</td>
                     <td>{{$u->name}}</td>
+                    <td>{{$u->email}}</td>
                     <td>{{$u->role}}</td>
                     <td>
                     <form action="#" method="POST">
     
-                    <a class="btn btn-info btn-sm" href="{{url('admin/user/show/'.$u->id)}}"> Detail </a>
+                    <!-- <a class="btn btn-info btn-sm" href="{{url('admin/user/show/'.$u->id)}}"> Detail </a> -->
 
                     <a class="btn btn-warning btn-sm" href="{{url('admin/user/edit/'.$u->id)}}"> Ubah </a>
     

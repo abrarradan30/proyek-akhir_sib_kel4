@@ -175,6 +175,8 @@ Route::group(['middleware' => ['auth', 'peran:admin']], function () {
         Route::post('/user_kos/importexcel', [UserKosController::class, 'importExcel']);
         //route user
         Route::get('/user', [UserController::class, 'index']);
+        Route::get('/user/edit/{id}', [UserController::class, 'edit']);
+        Route::post('/user/update', [UserController::class, 'update']);
     });
 });
 Auth::routes();
