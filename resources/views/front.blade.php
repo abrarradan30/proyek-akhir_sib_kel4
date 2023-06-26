@@ -210,7 +210,7 @@
                           <div class="card h-100">
                               <!-- Product image-->
                               @empty($dk->gambar)
-                                    <img src="{{ url('admin/image/nofoto.png') }}" width="100%">
+                                    <img src="{{ url('admin/image/nofoto.jpg') }}" width="100%">
                                 @else
                                     <img src="{{ url('admin/image') }}/{{ $dk->gambar }}" width="100%">
                                 @endempty
