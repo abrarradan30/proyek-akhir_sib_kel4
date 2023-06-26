@@ -181,7 +181,7 @@
                                 labels: lbl_jenis_kos,
                                 datasets: [{
                                     data: jml_jenis_kos,
-                                    backgroundColor: ['#32CD32', '#4169E1', '#00FF00', '#0000CD'],
+                                    backgroundColor: ['#32CD32', '#4169E1', '#00DFA2', '#0000CD'],
                                 }],
                             },
                         });
