@@ -55,7 +55,7 @@
             <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To EXCEL </button>
         </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+            <table class="table-hover text-nowrap mb-0 align-middle" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -110,9 +110,9 @@
                             <td>{{ $dk->luas_ruang }}</td>
                             <td>
                                 @empty($dk->gambar)
-                                    <img src="{{ url('admin/image/nofoto.png') }}" width="50%">
+                                    <img src="{{ url('admin/image/nofoto.png') }}" width="15%" style="width: 50px;">
                                 @else
-                                    <img src="{{ url('admin/image') }}/{{ $dk->gambar }}" width="50%">
+                                    <img src="{{ url('admin/image') }}/{{ $dk->gambar }}" width="15%" style="width: 50px;">
                                 @endempty
                             </td>
                             <td>{{ $dk->harga }}</td>

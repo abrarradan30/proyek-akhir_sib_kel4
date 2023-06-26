@@ -55,7 +55,7 @@
             <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#exampleModal"> Import To Excel </button>
         </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+            <table class="table-hover text-nowrap mb-0 align-middle" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
