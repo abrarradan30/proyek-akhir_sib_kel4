@@ -25,7 +25,7 @@ class RiwayatPesananController extends Controller
         return new RiwayatPesananResource(true, 'Data Riwayat Pesanan', $riwayat_pesanan);
     }
 
-    public function show()
+    public function show($id)
     {
     $riwayat_pesanan = RiwayatPesanan::join('data_kos', 'riwayat_pesanan.data_kos_id', '=', 'data_kos.id')
         ->join('pembayaran', 'riwayat_pesanan.pembayaran_id', '=', 'pembayaran.id')
@@ -50,7 +50,8 @@ class RiwayatPesananController extends Controller
             'pelanggan_id' => 'required|integer', 
         ]);
         if($validator->fails()) {
-            return response()->json($validator->$errors(), 442);
+            return response()->json($validator->errors(), 442);
+
         }
         $riwayat_pesanan = RiwayatPesanan::create([
             'no_kwitansi' => $request->no_kwitansi,
@@ -74,7 +75,7 @@ class RiwayatPesananController extends Controller
             'pelanggan_id' => 'required|integer', 
         ]);
         if($validator->fails()) {
-            return response()->json($validator->$errors(), 442);
+            return response()->json($validator->errors(), 442);
         }
         $riwayat_pesanan = RiwayatPesanan::whereId($id)->update([
             'no_kwitansi' => $request->no_kwitansi,
@@ -89,7 +90,7 @@ class RiwayatPesananController extends Controller
 
     public function destroy($id)
     {
-        $riwayat_pesanan = RiwayatPesanan::where($id)->first();
+        $riwayat_pesanan = RiwayatPesanan::whereId($id)->first();
         $riwayat_pesanan->delete();
         return new RiwayatPesananResource(true, 'Data riwayat pesanan berhasi dihapus', $riwayat_pesanan);
     }
